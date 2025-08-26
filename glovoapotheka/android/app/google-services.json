@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "304243905922",
+    "project_id": "glovoapotheka",
+    "storage_bucket": "glovoapotheka.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304243905922:android:c641836039eae49f55eb9b",
+        "android_client_info": {
+          "package_name": "com.example.glovoapotheka"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOz59Xl8okirQDbDh98LJwkIBM2jC9aGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
