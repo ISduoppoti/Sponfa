@@ -17,45 +17,45 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthCubit, AuthState>(
-      builder: (context, state) {
-        final double screenWidth = MediaQuery.of(context).size.width;
-        const double mobileBreakpoint = 768.0;
-        final bool isMobile = screenWidth < mobileBreakpoint;
-
-        if (state.status == AuthStatus.unknown || state.status == AuthStatus.unauthenticated) {
-          // If the state is unauthorized, show responsive login screens.
-          if (isMobile) {
-            return Scaffold(
-              body: Stack(
-                children: [
-                  AnimatedBubles(),
-                  Center(
-                    child: LoginRegisterForm(), // Mobile view
-                  ),
-                ],
-              ),
-            );
-          } else {
-            return LoginViewDesktop(); // Desktop
-          }
-        } else if (state.status == AuthStatus.authenticated) {
-          // If the state is authorized, show responsive main application screens.
-          if (isMobile) {
-            return Text("Cabinet Mobile View");
-          } else {
-            return Text("Cabinet Desktop View");
-          }
+    return BlocListener<AuthCubit, AuthState>(
+      listener: (context, state) {
+        if (state.status == AuthStatus.authenticated) {
+          Navigator.pushReplacementNamed(context, '/home');
         }
-        // Fallback for AuthInitial or other unexpected states (e.g., a loading spinner)
-        return const MaterialApp(
-          home: Scaffold(
-            body: Center(
-              child: CircularProgressIndicator(),
-            ),
-          ),
-        );
       },
+      child: BlocBuilder<AuthCubit, AuthState>(
+        builder: (context, state) {
+          final double screenWidth = MediaQuery.of(context).size.width;
+          const double mobileBreakpoint = 768.0;
+          final bool isMobile = screenWidth < mobileBreakpoint;
+
+          if (state.status == AuthStatus.unknown || state.status == AuthStatus.unauthenticated) {
+            // If the state is unauthorized, show responsive login screens.
+            if (isMobile) {
+              return Scaffold(
+                body: Stack(
+                  children: [
+                    AnimatedBubles(),
+                    Center(
+                      child: LoginRegisterForm(), // Mobile view
+                    ),
+                  ],
+                ),
+              );
+            } else {
+              return LoginViewDesktop(); // Desktop
+            }
+          }
+          // Fallback for AuthInitial or other unexpected states (e.g., a loading spinner)
+          return const MaterialApp(
+            home: Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }

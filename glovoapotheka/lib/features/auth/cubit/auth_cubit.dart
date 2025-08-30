@@ -21,19 +21,21 @@ class AuthCubit extends Cubit<AuthState> {
     });
   }
 
-  Future<void> checkEmail(String email) async {
-    emit(state.copyWith(isLoading: true));
+  Future<void> signWithEmail(String email, String password) async {
+    emit(state.copyWith(isLoading: true, isError: false, error: null));
     try {
-      final exists = await _authRepository.checkEmailExists(email: email);
-      print(email);
-      print('Email exists: $exists');
-      if (exists) {
-        emit(AuthState.emailExists());   // user already registered
-      } else {
-        emit(AuthState.emailNotFound()); // new user
-      }
+      await _authRepository.signInWithEmail(email: email, password: password);
     } catch (e) {
-      emit(AuthState.failure(e.toString()));
+      emit(state.copyWith(isError: true, error: e.toString(), isLoading: false));
+    }
+  }
+
+  Future<void> registerWithEmail(String email, String password, String firstName) async {
+    emit(state.copyWith(isLoading: true, isError: false, error: null));
+    try {
+      await _authRepository.signUpWithEmail(email: email, password: password, firstName: firstName);
+    } catch (e) {
+      emit(state.copyWith(isError: true, error: e.toString(), isLoading: false));
     }
   }
 

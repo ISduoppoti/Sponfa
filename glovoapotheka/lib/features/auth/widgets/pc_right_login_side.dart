@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:glovoapotheka/features/auth/cubit/auth_cubit.dart';
+import 'package:glovoapotheka/domain/repositories/auth_repository.dart';
 
 class LoginRegisterForm extends StatefulWidget {
   const LoginRegisterForm({Key? key}) : super(key: key);
@@ -22,6 +26,8 @@ class _LoginRegisterFormState extends State<LoginRegisterForm>
   
   final _loginFormKey = GlobalKey<FormState>();
   final _registerFormKey = GlobalKey<FormState>();
+
+  String? _authError;
 
   @override
   void initState() {
@@ -62,16 +68,28 @@ class _LoginRegisterFormState extends State<LoginRegisterForm>
   }
 
   void _handleLogin() {
+    // Reset auth error on new login attempt
+    setState(() {
+      _authError = null;
+    });
+
     if (_loginFormKey.currentState!.validate()) {
       // Handle login logic
-      print('Login: ${_emailController.text}');
+      context.read<AuthCubit>().signWithEmail(
+        _emailController.text,
+        _passwordController.text,
+      );
     }
   }
 
   void _handleRegister() {
     if (_registerFormKey.currentState!.validate()) {
       // Handle register logic
-      print('Register: ${_emailController.text}, ${_firstNameController.text}');
+      context.read<AuthCubit>().registerWithEmail(
+        _emailController.text,
+        _passwordController.text,
+        _firstNameController.text,
+      );
     }
   }
 
@@ -166,20 +184,33 @@ class _LoginRegisterFormState extends State<LoginRegisterForm>
             },
           ),
           
-          FlexibleTextField(
-            controller: _passwordController,
-            label: 'Password',
-            hint: 'Enter your password',
-            isPassword: true,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter your password';
+          BlocListener<AuthCubit, AuthState>(
+            listener: (context, state) {
+              if (state.isError && state.error != null) {
+                setState(() {
+                  _authError = state.error;
+                });
+                // Immediately re-validate the form to show the new error
+                _loginFormKey.currentState?.validate();
               }
-              if (value.length < 6) {
-                return 'Password must be at least 6 characters';
-              }
-              return null;
             },
+            child: FlexibleTextField(
+              controller: _passwordController,
+              label: 'Password',
+              hint: 'Enter your password',
+              isPassword: true,
+              errorText: _authError,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your password';
+                }
+                if (value.length < 6) {
+                  return 'Password must be at least 6 characters';
+                }
+
+                return null;
+              },
+            ),
           ),
 
           const SizedBox(height: 8),
@@ -195,7 +226,16 @@ class _LoginRegisterFormState extends State<LoginRegisterForm>
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              child: const Text(
+              child: context.read<AuthCubit>().state.isLoading
+                ? const SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(
+                      color: Colors.white,
+                      strokeWidth: 2,
+                    ),
+                  )
+                : const Text(
                 'Sign In',
                 style: TextStyle(
                   fontSize: 16,
@@ -346,7 +386,16 @@ class _LoginRegisterFormState extends State<LoginRegisterForm>
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              child: const Text(
+              child: context.read<AuthCubit>().state.isLoading
+                ? const SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(
+                      color: Colors.white,
+                      strokeWidth: 2,
+                    ),
+                  )
+                : const Text(
                 'Create Account',
                 style: TextStyle(
                   fontSize: 16,
@@ -440,6 +489,7 @@ class FlexibleTextField extends StatefulWidget {
     required this.label,
     required this.hint,
     this.isPassword = false,
+    this.errorText,
     this.validator,
   }) : super(key: key);
 
@@ -447,6 +497,7 @@ class FlexibleTextField extends StatefulWidget {
   final String label;
   final String hint;
   final bool isPassword;
+  final String? errorText;
   final String? Function(String?)? validator;
 
   @override
@@ -474,6 +525,7 @@ class _FlexibleTextFieldState extends State<FlexibleTextField> {
         validator: widget.validator,
         decoration: InputDecoration(
           labelText: widget.label,
+          errorText: widget.errorText,
           hintText: widget.hint,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
