@@ -1,15 +1,21 @@
+# app/models/product.py
+from typing import List
+from sqlalchemy import String, Column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.core.db import Base
-from sqlalchemy import String
-from sqlalchemy.orm import Mapped, mapped_column
 
 
 class Product(Base):
     __tablename__ = "products"
-    id: Mapped[str] = mapped_column(String, primary_key=True)  # UUID text
-    name: Mapped[str] = mapped_column(String, index=True)
-    form: Mapped[str] = mapped_column(String)
-    strength: Mapped[str] = mapped_column(String)
-    gtin: Mapped[str] = mapped_column(String, index=True)
-    price_cents: Mapped[str] = mapped_column(String)
-    currency: Mapped[str] = mapped_column(String)
-    pharmacy_id: Mapped[str] = mapped_column(String)
+
+    # canonical product (one row per substance+strength+form)
+    id: Mapped[str] = mapped_column(String, primary_key=True)  # UUID stored as text
+    inn_name: Mapped[str] = mapped_column(String, index=True, nullable=False)  # e.g., "ibuprofen"
+    atc_code: Mapped[str] = mapped_column(String, index=True, nullable=True)  # optional WHO ATC
+    form: Mapped[str] = mapped_column(String, nullable=True)  # tablet, capsule, cream
+    strength: Mapped[str] = mapped_column(String, nullable=True)  # 400 mg
+
+    # relationships
+    brands: Mapped[List["Brand"]] = relationship("Brand", back_populates="product", cascade="all, delete-orphan")
+    packages: Mapped[List["Package"]] = relationship("Package", back_populates="product", cascade="all, delete-orphan")
+    translations: Mapped[List["Translation"]] = relationship("Translation", back_populates="product", cascade="all, delete-orphan")

@@ -1,20 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:glovoapotheka/data/models/product.dart'; // Your ProductModel
+import 'dart:math' as math;
+
 import 'package:glovoapotheka/features/search/cubit/search_cubit.dart';
 import 'package:glovoapotheka/features/search/cubit/search_state.dart';
 
-class CustomSearchWithOverlay extends StatefulWidget {
-  const CustomSearchWithOverlay({super.key});
+import 'package:glovoapotheka/domain/services/city_service.dart';
+
+import 'package:glovoapotheka/features/search/widgets/presearch_window_widget.dart';
+
+class UnifiedSearchBar extends StatefulWidget {
+  final bool isCitySelector;
+  final bool isNavBar;
+  final VoidCallback? onCityTap;
+  final double? width;
+
+  const UnifiedSearchBar({
+    super.key,
+    this.isCitySelector = true,
+    this.isNavBar = false,
+    this.onCityTap,
+    this.width,
+  });
 
   @override
-  State<CustomSearchWithOverlay> createState() => _CustomSearchWithOverlayState();
+  State<UnifiedSearchBar> createState() => _UnifiedSearchBarState();
 }
 
-class _CustomSearchWithOverlayState extends State<CustomSearchWithOverlay> {
+class _UnifiedSearchBarState extends State<UnifiedSearchBar> {
   final TextEditingController _controller = TextEditingController();
   final FocusNode _focusNode = FocusNode();
-  bool _showSuggestions = false;
   OverlayEntry? _overlayEntry;
   final GlobalKey _searchKey = GlobalKey();
 
@@ -24,8 +39,6 @@ class _CustomSearchWithOverlayState extends State<CustomSearchWithOverlay> {
     _focusNode.addListener(() {
       if (_focusNode.hasFocus) {
         _showOverlay();
-      } else {
-        _hideOverlay();
       }
     });
   }
@@ -33,75 +46,98 @@ class _CustomSearchWithOverlayState extends State<CustomSearchWithOverlay> {
   void _showOverlay() {
     if (_overlayEntry != null) return;
 
-    final RenderBox renderBox = _searchKey.currentContext!.findRenderObject() as RenderBox;
+    final RenderBox? renderBox = _searchKey.currentContext?.findRenderObject() as RenderBox?;
+    if (renderBox == null) return;
+    
     final size = renderBox.size;
     final offset = renderBox.localToGlobal(Offset.zero);
 
     _overlayEntry = OverlayEntry(
-      builder: (context) => Positioned(
-        left: offset.dx,
-        top: offset.dy + size.height + 5,
-        width: size.width,
-        child: Material(
-          elevation: 8,
-          borderRadius: BorderRadius.circular(8),
-          child: Container(
-            constraints: const BoxConstraints(maxHeight: 300),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
-                  blurRadius: 10,
-                  offset: const Offset(0, 5),
-                ),
-              ],
-            ),
-            child: BlocBuilder<SearchCubit, SearchState>(
-              builder: (context, state) {
-                if (state is SearchLoading) {
-                  return const SizedBox(
-                    height: 100,
-                    child: Center(child: CircularProgressIndicator()),
-                  );
-                } else if (state is SearchLoaded) {
-                  if (state.results.isEmpty) {
-                    return const SizedBox(
-                      height: 60,
-                      child: Center(child: Text('No products found.')),
-                    );
-                  }
-                  return SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: state.results.map((product) {
-                        return ListTile(
-                          title: Text(product.name),
-                          subtitle: Text('${product.form} - ${product.priceCents}'),
-                          onTap: () {
-                            print('Selected product: ${product.name}');
-                            _controller.text = product.name;
-                            _hideOverlay();
-                            _focusNode.unfocus();
-                          },
-                        );
-                      }).toList(),
+      builder: (context) => Positioned.fill(
+        child: GestureDetector(
+          behavior: HitTestBehavior.translucent,
+          onTap: () {
+            // close only when clicking outside overlay
+            _focusNode.unfocus();
+            _hideOverlay();
+          },
+          child: Stack(
+            children: [
+              Positioned(
+                left: offset.dx,
+                top: offset.dy + size.height + 5,
+                width: size.width,
+                child: Material(
+                  elevation: 8,
+                  borderRadius: BorderRadius.circular(widget.isNavBar ? 10 : 8),
+                  child: GestureDetector(
+                    behavior: HitTestBehavior.deferToChild,
+                    onTap: () {print("Inside");}, // absorb taps inside overlay
+                    child: Container(
+                      constraints: const BoxConstraints(maxHeight: 500),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(widget.isNavBar ? 10 : 8),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.1),
+                            blurRadius: 10,
+                            offset: const Offset(0, 5),
+                          ),
+                        ],
+                      ),
+                      child: BlocBuilder<SearchCubit, SearchState>(
+                        builder: (context, state) {
+                          if (state is SearchLoading) {
+                            return const SizedBox(
+                              height: 100,
+                              child: Center(
+                                child: CircularProgressIndicator()),
+                            );
+                          } else if (state is SearchLoaded) {
+                            if (state.results.isEmpty) {
+                              return const SizedBox(
+                                height: 60,
+                                child: Center(child: Text('No products found.')),
+                              );
+                            }
+                            return SingleChildScrollView(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: state.results.map((product) {
+                                  return ListTile(
+                                    title: Text(product.displayName),
+                                    subtitle: Text('${product.form} - ${product.lowestPriceFormatted}'),
+                                    onTap: () {
+                                      print('Selected product: ${product.displayName}');
+                                      _controller.text = product.displayName;
+                                      _hideOverlay();
+                                      _focusNode.unfocus();
+                                    },
+                                  );
+                                }).toList(),
+                              ),
+                            );
+                          } else if (state is SearchError) {
+                            return SizedBox(
+                              height: 60,
+                              child: Center(child: Text('Error: ${state.message}')),
+                            );
+                          } else {
+                            return SizedBox(
+                              child: SearchWidgetWindow(
+                                focusNode: _focusNode,
+                                onClose: _hideOverlay,
+                              ),
+                            );
+                          }
+                        },
+                      ),
                     ),
-                  );
-                } else if (state is SearchError) {
-                  return SizedBox(
-                    height: 60,
-                    child: Center(child: Text('Error: ${state.message}')),
-                  );
-                } else {
-                  return const SizedBox(
-                    height: 60,
-                    child: Center(child: Text('Start typing to search...')),
-                  );
-                }
-              },
-            ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -115,6 +151,32 @@ class _CustomSearchWithOverlayState extends State<CustomSearchWithOverlay> {
     _overlayEntry = null;
   }
 
+  void _showCitySelector(BuildContext context) async {
+    final cityService = context.read<CityService>();
+    final List<String> availableCities = await cityService.getAvailableCities();
+
+    if (!context.mounted) return;
+
+    final selected = await showDialog<String>(
+      context: context,
+      builder: (context) {
+        return SimpleDialog(
+          title: const Text("Select Your City"),
+          children: availableCities.map((city) {
+            return SimpleDialogOption(
+              onPressed: () => Navigator.pop(context, city),
+              child: Text(city),
+            );
+          }).toList(), // Convert the iterable to a List of widgets
+        );
+      },
+    );
+
+    if (selected != null) {
+      cityService.setCity(selected);
+    }
+  }
+
   @override
   void dispose() {
     _hideOverlay();
@@ -125,61 +187,90 @@ class _CustomSearchWithOverlayState extends State<CustomSearchWithOverlay> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    final screenWidth = MediaQuery.of(context).size.width;
+    
+    // Determine container properties based on isNavBar
+    final containerHeight = widget.isNavBar ? 50.0 : 60.0;
+    final borderRadius = widget.isNavBar ? 10.0 : 30.0;
+    final containerWidth = widget.width ?? 
+        (widget.isNavBar ? double.infinity : math.min(screenWidth * 0.8, 700));
+
+    final city = context.watch<CityService>().selectedCity;
+
+    return Container(
       key: _searchKey,
-      controller: _controller,
-      focusNode: _focusNode,
-      onChanged: (query) {
-        context.read<SearchCubit>().search(query);
-      },
-      decoration: const InputDecoration(
-        hintText: 'Search for products...',
-        suffixIcon: Icon(Icons.search),
-        border: InputBorder.none,
-        contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+      width: containerWidth,
+      height: containerHeight,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(borderRadius),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.1),
+            blurRadius: 20,
+            offset: const Offset(0, 10),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          // City selector (only shown if isCitySelector is true)
+          if (widget.isCitySelector) ...[
+            Container(
+              width: 150,
+              height: containerHeight,
+              child: TextButton(
+                onPressed: widget.onCityTap ?? () => _showCitySelector(context),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.location_on, color: Color(0xFFFF6B35)),
+                    const SizedBox(width: 8),
+                    Flexible(
+                      child: Text(
+                        city,
+                        style: const TextStyle(color: Color(0xFFFF6B35)),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            // Divider
+            Container(
+              width: 1,
+              height: 30,
+              color: Colors.grey[300],
+            ),
+          ],
+          
+          // Search field
+          Expanded(
+            child: TextField(
+              controller: _controller,
+              focusNode: _focusNode,
+              onChanged: (query) {
+                context.read<SearchCubit>().search(query);
+              },
+              decoration: InputDecoration(
+                hintText: widget.isNavBar 
+                    ? 'Enter medication name...' 
+                    : 'Search for products...',
+                suffixIcon: widget.isNavBar? const Icon(Icons.search) : const Padding(
+                  padding: EdgeInsets.only(right: 20.0),
+                  child: Icon(Icons.search),
+                ),
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: widget.isNavBar ? 20.0 : 16.0,
+                  vertical: 12.0,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
-
-/*    
-    return Row(
-      children: [
-        Expanded(
-          child: TextField(
-            decoration: InputDecoration(
-              hintText: "Enter medication name...",
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.symmetric(horizontal: 20),
-            ),
-          ),
-        ),
-        
-        // Search button
-        Container(
-          width: 120,
-          height: 60,
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFFFF6B35),
-              foregroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.search),
-                SizedBox(width: 4),
-                Text("Search", style: TextStyle(fontSize: 16)),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-*/

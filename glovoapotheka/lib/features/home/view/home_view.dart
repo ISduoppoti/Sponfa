@@ -2,11 +2,34 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 import 'package:glovoapotheka/core/widgets/top_navigation_bar.dart';
+import 'package:glovoapotheka/data/models/product.dart';
 
 import 'package:glovoapotheka/features/home/widgets/search_container_widget.dart';
 import 'package:glovoapotheka/features/home/widgets/how_it_works_widget.dart';
 import 'package:glovoapotheka/features/home/widgets/categories_widget.dart';
 import 'package:glovoapotheka/features/home/widgets/discount_goods_widger.dart';
+import 'package:glovoapotheka/features/home/widgets/popular_products_widget.dart';
+
+import 'package:glovoapotheka/domain/services/popular_products_service.dart';
+
+// Product model
+class Product {
+  final String name;
+  final String brand;
+  final String description;
+  final double price;
+  final String currency;
+  final String? imageUrl;
+
+  Product({
+    required this.name,
+    required this.brand,
+    required this.description,
+    required this.price,
+    this.currency = 'грн',
+    this.imageUrl,
+  });
+}
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -102,10 +125,16 @@ class _HomeViewState extends State<HomeView>
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child:Column(
                   children: [
-                    HowItWorksSection(),
-                    Divider(height: 1, color: Colors.grey.shade300),
                     SizedBox(height: 20),
                     CategorySelector(),
+                    SizedBox(height: 20),
+                    Divider(height: 1, color: Colors.grey.shade300),
+                    SizedBox(height: 20),
+                    PopularProductsRail(),
+                    SizedBox(height: 20),
+                    Divider(height: 1, color: Colors.grey.shade300),
+                    SizedBox(height: 20),
+                    HowItWorksSection(),
                     SizedBox(height: 20),
                     Divider(height: 1, color: Colors.grey.shade300),
                     SizedBox(height: 20),

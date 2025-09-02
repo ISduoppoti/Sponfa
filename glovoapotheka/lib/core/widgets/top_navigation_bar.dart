@@ -48,10 +48,10 @@ class TopNavigationBar extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 VolumetricPharmacyIcon(size: 40),
-                SizedBox(width: 16),
+                SizedBox(width: 8),
                 Flexible(
                   child: Text(
-                    "PharmaCompare",
+                    "Sponfa",
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,

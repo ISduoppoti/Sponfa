@@ -52,16 +52,6 @@ class _CategorySelectorState extends State<CategorySelector> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          'Shop by category',
-          style: TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-            color: Colors.black87,
-          ),
-        ),
-        const SizedBox(height: 26),
-        
         // Main categories row
         SizedBox(
           width: double.infinity,

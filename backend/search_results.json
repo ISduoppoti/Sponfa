@@ -1,0 +1,353 @@
+[
+  {
+    "product_id": "848d017d-76ef-4191-9e1a-620033da3f61",
+    "inn_name": "Pantoprazole",
+    "display_name": "Pantoprazole",
+    "description": null,
+    "atc_code": "JKL756H",
+    "form": "syrup",
+    "strength": "400 mg",
+    "brand_names": [
+      "Pantoprazole Classic"
+    ],
+    "available_packages": [
+      {
+        "package_id": "4af3e134-bfda-4d79-8e9c-0908bafdc7bc",
+        "gtin": "9973763116566",
+        "pack_size": "100 pcs",
+        "brand_name": "Pantoprazole Classic",
+        "manufacturer": "Pfizer",
+        "country_code": "DE",
+        "pharmacy_locations": [
+          {
+            "pharmacy_id": "3a9668c1-e657-4619-b58e-2f91da248b07",
+            "pharmacy_name": "Trubin KGaA Apotheke",
+            "pharmacy_address": "Tom-Schacht-Ring 2, Munich",
+            "pharmacy_city": "Tom-Schacht-Ring 2, Munich",
+            "pharmacy_country": "Tom-Schacht-Ring 2, Munich",
+            "price_cents": 66400,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          },
+          {
+            "pharmacy_id": "2adefaf7-3f8a-4ab2-a5e2-332dd268e455",
+            "pharmacy_name": "Žigová s.r.o. Apotheke",
+            "pharmacy_address": "Jurkovičova 35, Zilina",
+            "pharmacy_city": "Jurkovičova 35, Zilina",
+            "pharmacy_country": "Jurkovičova 35, Zilina",
+            "price_cents": 189800,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          },
+          {
+            "pharmacy_id": "b4ea3ac1-b3aa-4b3f-9b0a-8c622e403db6",
+            "pharmacy_name": "Marcin Dudík v.o.s. Apotheke",
+            "pharmacy_address": "Hradné údolie 876, Zilina",
+            "pharmacy_city": "Hradné údolie 876, Zilina",
+            "pharmacy_country": "Hradné údolie 876, Zilina",
+            "price_cents": 73500,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          },
+          {
+            "pharmacy_id": "35385493-9fd0-441c-a106-5698f824595a",
+            "pharmacy_name": "Ackermann Apotheke",
+            "pharmacy_address": "Bährgasse 14/43, Cologne",
+            "pharmacy_city": "Bährgasse 14/43, Cologne",
+            "pharmacy_country": "Bährgasse 14/43, Cologne",
+            "price_cents": 132800,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          }
+        ]
+      },
+      {
+        "package_id": "ea63d290-dbfb-4c93-aa0d-407c0f060978",
+        "gtin": "1434558122362",
+        "pack_size": "30 pcs",
+        "brand_name": "Pantoprazole Classic",
+        "manufacturer": "Pfizer",
+        "country_code": "SK",
+        "pharmacy_locations": [
+          {
+            "pharmacy_id": "2adefaf7-3f8a-4ab2-a5e2-332dd268e455",
+            "pharmacy_name": "Žigová s.r.o. Apotheke",
+            "pharmacy_address": "Jurkovičova 35, Zilina",
+            "pharmacy_city": "Jurkovičova 35, Zilina",
+            "pharmacy_country": "Jurkovičova 35, Zilina",
+            "price_cents": 158700,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          },
+          {
+            "pharmacy_id": "a54b1fa2-dedf-48b9-85c9-92a1e6ce1be0",
+            "pharmacy_name": "Strýček Apotheke",
+            "pharmacy_address": "Hroznová 9, Nitra",
+            "pharmacy_city": "Hroznová 9, Nitra",
+            "pharmacy_country": "Hroznová 9, Nitra",
+            "price_cents": 77100,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          }
+        ]
+      },
+      {
+        "package_id": "1c7dbff3-f629-4dd3-bbc0-fc3201a19626",
+        "gtin": "2294131869993",
+        "pack_size": "100 pcs",
+        "brand_name": "Pantoprazole Classic",
+        "manufacturer": "Pfizer",
+        "country_code": "DE",
+        "pharmacy_locations": [
+          {
+            "pharmacy_id": "2adefaf7-3f8a-4ab2-a5e2-332dd268e455",
+            "pharmacy_name": "Žigová s.r.o. Apotheke",
+            "pharmacy_address": "Jurkovičova 35, Zilina",
+            "pharmacy_city": "Jurkovičova 35, Zilina",
+            "pharmacy_country": "Jurkovičova 35, Zilina",
+            "price_cents": 92000,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          }
+        ]
+      },
+      {
+        "package_id": "386eb6f8-68a3-4b18-8c4c-b06f045ae7f1",
+        "gtin": "4824771093248",
+        "pack_size": "10 pcs",
+        "brand_name": "Pantoprazole Classic",
+        "manufacturer": "Pfizer",
+        "country_code": "DE",
+        "pharmacy_locations": [
+          {
+            "pharmacy_id": "899e9d88-9115-4523-a40f-fa057e02c0b9",
+            "pharmacy_name": "Dowerg Apotheke",
+            "pharmacy_address": "Henschelplatz 218, Berlin",
+            "pharmacy_city": "Henschelplatz 218, Berlin",
+            "pharmacy_country": "Henschelplatz 218, Berlin",
+            "price_cents": 85800,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          },
+          {
+            "pharmacy_id": "3a9668c1-e657-4619-b58e-2f91da248b07",
+            "pharmacy_name": "Trubin KGaA Apotheke",
+            "pharmacy_address": "Tom-Schacht-Ring 2, Munich",
+            "pharmacy_city": "Tom-Schacht-Ring 2, Munich",
+            "pharmacy_country": "Tom-Schacht-Ring 2, Munich",
+            "price_cents": 87100,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          },
+          {
+            "pharmacy_id": "1deb9f94-3fc5-41bc-812e-39418abff763",
+            "pharmacy_name": "Mrázová Apotheke",
+            "pharmacy_address": "Galandova 56, Presov",
+            "pharmacy_city": "Galandova 56, Presov",
+            "pharmacy_country": "Galandova 56, Presov",
+            "price_cents": 104900,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          },
+          {
+            "pharmacy_id": "4e72f5f0-c940-4248-8ed3-a56922c9f21b",
+            "pharmacy_name": "Mikuláková Apotheke",
+            "pharmacy_address": "Nevská 9, Kosice",
+            "pharmacy_city": "Nevská 9, Kosice",
+            "pharmacy_country": "Nevská 9, Kosice",
+            "price_cents": 141400,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          }
+        ]
+      }
+    ],
+    "language": "en"
+  },
+  {
+    "product_id": "312975a9-1121-487b-8c3e-c35464ce9d27",
+    "inn_name": "Paracetamol",
+    "display_name": "Paracetamol",
+    "description": null,
+    "atc_code": "N02BE01",
+    "form": "ointment",
+    "strength": "200 mg",
+    "brand_names": [
+      "Paracetamol Plus",
+      "Paracetamol Classic"
+    ],
+    "available_packages": [
+      {
+        "package_id": "20001fe9-6428-407a-bacc-aac5985c9888",
+        "gtin": "3039117182278",
+        "pack_size": "30 pcs",
+        "brand_name": "Paracetamol Plus",
+        "manufacturer": "Bayer",
+        "country_code": "SK",
+        "pharmacy_locations": [
+          {
+            "pharmacy_id": "5a3ebcd9-1358-4393-85a5-2bbf0d7f937e",
+            "pharmacy_name": "Kaul Schleich GbR Apotheke",
+            "pharmacy_address": "Reisinggasse 2-9, Hamburg",
+            "pharmacy_city": "Reisinggasse 2-9, Hamburg",
+            "pharmacy_country": "Reisinggasse 2-9, Hamburg",
+            "price_cents": 182200,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          },
+          {
+            "pharmacy_id": "4e72f5f0-c940-4248-8ed3-a56922c9f21b",
+            "pharmacy_name": "Mikuláková Apotheke",
+            "pharmacy_address": "Nevská 9, Kosice",
+            "pharmacy_city": "Nevská 9, Kosice",
+            "pharmacy_country": "Nevská 9, Kosice",
+            "price_cents": 179200,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          },
+          {
+            "pharmacy_id": "35385493-9fd0-441c-a106-5698f824595a",
+            "pharmacy_name": "Ackermann Apotheke",
+            "pharmacy_address": "Bährgasse 14/43, Cologne",
+            "pharmacy_city": "Bährgasse 14/43, Cologne",
+            "pharmacy_country": "Bährgasse 14/43, Cologne",
+            "price_cents": 147700,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          }
+        ]
+      },
+      {
+        "package_id": "cb61ff2d-fb7d-45d6-aec7-1f4ee9a4aab8",
+        "gtin": "2786801128059",
+        "pack_size": "20 pcs",
+        "brand_name": "Paracetamol Classic",
+        "manufacturer": "Pfizer",
+        "country_code": "SK",
+        "pharmacy_locations": [
+          {
+            "pharmacy_id": "1fee2328-1631-4ebb-9a16-b2e19d023e8f",
+            "pharmacy_name": "Krause GmbH Apotheke",
+            "pharmacy_address": "Röhrdanzallee 1, Munich",
+            "pharmacy_city": "Röhrdanzallee 1, Munich",
+            "pharmacy_country": "Röhrdanzallee 1, Munich",
+            "price_cents": 44900,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          }
+        ]
+      },
+      {
+        "package_id": "03006c28-5320-4653-ab82-445f447df714",
+        "gtin": "9401965569816",
+        "pack_size": "30 pcs",
+        "brand_name": "Paracetamol Plus",
+        "manufacturer": "Bayer",
+        "country_code": "DE",
+        "pharmacy_locations": [
+          {
+            "pharmacy_id": "1fee2328-1631-4ebb-9a16-b2e19d023e8f",
+            "pharmacy_name": "Krause GmbH Apotheke",
+            "pharmacy_address": "Röhrdanzallee 1, Munich",
+            "pharmacy_city": "Röhrdanzallee 1, Munich",
+            "pharmacy_country": "Röhrdanzallee 1, Munich",
+            "price_cents": 178400,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          }
+        ]
+      },
+      {
+        "package_id": "4108d4ff-a7d4-4ccb-98a3-cf1eaaf81b8f",
+        "gtin": "6995777387214",
+        "pack_size": "30 pcs",
+        "brand_name": "Paracetamol Classic",
+        "manufacturer": "Pfizer",
+        "country_code": "DE",
+        "pharmacy_locations": [
+          {
+            "pharmacy_id": "5a3ebcd9-1358-4393-85a5-2bbf0d7f937e",
+            "pharmacy_name": "Kaul Schleich GbR Apotheke",
+            "pharmacy_address": "Reisinggasse 2-9, Hamburg",
+            "pharmacy_city": "Reisinggasse 2-9, Hamburg",
+            "pharmacy_country": "Reisinggasse 2-9, Hamburg",
+            "price_cents": 198200,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          }
+        ]
+      },
+      {
+        "package_id": "12ccff9b-5ebe-4007-8bdf-a8b192defea5",
+        "gtin": "6889373467065",
+        "pack_size": "30 pcs",
+        "brand_name": "Paracetamol Classic",
+        "manufacturer": "Pfizer",
+        "country_code": "SK",
+        "pharmacy_locations": [
+          {
+            "pharmacy_id": "3a9668c1-e657-4619-b58e-2f91da248b07",
+            "pharmacy_name": "Trubin KGaA Apotheke",
+            "pharmacy_address": "Tom-Schacht-Ring 2, Munich",
+            "pharmacy_city": "Tom-Schacht-Ring 2, Munich",
+            "pharmacy_country": "Tom-Schacht-Ring 2, Munich",
+            "price_cents": 33900,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          }
+        ]
+      },
+      {
+        "package_id": "d85eda47-75c5-47fb-8694-2d2ff753c33f",
+        "gtin": "6349578856855",
+        "pack_size": "30 pcs",
+        "brand_name": "Paracetamol Plus",
+        "manufacturer": "Bayer",
+        "country_code": "DE",
+        "pharmacy_locations": [
+          {
+            "pharmacy_id": "899e9d88-9115-4523-a40f-fa057e02c0b9",
+            "pharmacy_name": "Dowerg Apotheke",
+            "pharmacy_address": "Henschelplatz 218, Berlin",
+            "pharmacy_city": "Henschelplatz 218, Berlin",
+            "pharmacy_country": "Henschelplatz 218, Berlin",
+            "price_cents": 121300,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          },
+          {
+            "pharmacy_id": "b4ea3ac1-b3aa-4b3f-9b0a-8c622e403db6",
+            "pharmacy_name": "Marcin Dudík v.o.s. Apotheke",
+            "pharmacy_address": "Hradné údolie 876, Zilina",
+            "pharmacy_city": "Hradné údolie 876, Zilina",
+            "pharmacy_country": "Hradné údolie 876, Zilina",
+            "price_cents": 146700,
+            "currency": "EUR",
+            "stock_quantity": 20,
+            "last_updated": "Some day"
+          }
+        ]
+      }
+    ],
+    "language": "en"
+  }
+]
