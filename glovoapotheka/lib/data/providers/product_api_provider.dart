@@ -10,11 +10,11 @@ class ProductApiProvider {
   ProductApiProvider({required this.baseUrl, this.getIdToken});
 
   Future<List<ProductModel>> search(
-    String query, {
+    String query,
+    double lat,
+    double lng, {
     int limit = 20,
     String language = 'en',
-    double? lat,
-    double? lng,
     int? radiusKm,
   }) async {
     // Build query parameters
@@ -24,8 +24,8 @@ class ProductApiProvider {
       'language': language,
     };
     
-    if (lat != null) queryParams['lat'] = lat.toString();
-    if (lng != null) queryParams['lng'] = lng.toString();
+    queryParams['lat'] = lat.toString();
+    queryParams['lng'] = lng.toString();
     if (radiusKm != null) queryParams['radius_km'] = radiusKm.toString();
     
     final uri = Uri.parse('$baseUrl/products/search').replace(

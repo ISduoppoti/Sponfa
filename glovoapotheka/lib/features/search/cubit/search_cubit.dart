@@ -1,5 +1,6 @@
 // lib/features/search/cubit/search_cubit.dart
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:glovoapotheka/domain/services/city_service.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:glovoapotheka/features/search/cubit/search_state.dart'; // State
 import 'package:glovoapotheka/domain/repositories/product_repository.dart'; // <--- IMPORT YOUR REPOSITORY INTERFACE
@@ -7,10 +8,11 @@ import 'package:glovoapotheka/domain/repositories/product_repository.dart'; // <
 class SearchCubit extends Cubit<SearchState> {
   // 1. DEPENDENCY: The Cubit depends on the Repository
   final ProductRepository _productRepository;
+  final CityService _cityService;
   final _searchController = BehaviorSubject<String>();
 
   // 2. CONSTRUCTOR: Receive the repository as a dependency
-  SearchCubit(this._productRepository) : super(SearchInitial()) {
+  SearchCubit(this._productRepository, this._cityService) : super(SearchInitial()) {
     // Debounce to prevent querying on every keystroke
     _searchController
         .debounceTime(const Duration(milliseconds: 600))
@@ -25,7 +27,7 @@ class SearchCubit extends Cubit<SearchState> {
   }
 
   void search(String query) {
-    print('Search called with query: $query'); // Add this
+    print('Search called with query: $query'); // Remove this
     final trimmedQuery = query.trim();
     _searchController.add(trimmedQuery);
   }
@@ -36,7 +38,12 @@ class SearchCubit extends Cubit<SearchState> {
     try {
       // 5. CALL REPOSITORY: The Cubit's only job is to tell the repository to search.
       // It has no idea whether it's an API call, database query, etc.
-      final results = await _productRepository.search(query: query);
+      final lat = _cityService.latitude;
+      final lng = _cityService.longitude;
+
+      print("$lat, $lng");
+      
+      final results = await _productRepository.search(query: query, lat: lat, lng: lng);
       
       // 6. EMIT LOADED STATE
       emit(SearchLoaded(results: results));

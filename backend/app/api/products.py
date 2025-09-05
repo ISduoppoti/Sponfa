@@ -17,7 +17,7 @@ async def search_products(
     language: Optional[str] = Query("en", description="Language code for translations"),
     lat: Optional[float] = None,
     lng: Optional[float] = None,
-    radius_km: Optional[int] = Query(None, ge=1, le=100),
+    radius_km: Optional[int] = Query(120, ge=1, le=200),
     db: AsyncSession = Depends(get_db)
 ):
     """
@@ -68,9 +68,8 @@ async def search_products(
     
     # Add location filtering if provided
     if lat is not None and lng is not None and radius_km is not None:
-        # Add distance calculation (you'll need to implement this based on your DB)
-        # For now, we'll skip location filtering
-        pass
+        print("I AM FILTERING")
+        stmt = stmt.where(Pharmacy.distance_to(lat, lng) <= radius_km)
     
     result = await db.execute(stmt)
     products = result.scalars().all()
@@ -83,10 +82,11 @@ async def search_products(
         product_name = product.inn_name  # default
         product_description = None
         
+        # TODO: Translation descr, name
         for translation in product.translations:
-            if translation.language_code == language and translation.name:
-                product_name = translation.name
-                product_description = translation.description
+            if translation.language_code == language and translation.translated_name:
+                product_name = translation.translated_name
+                product_description = translation.translated_description
                 break
         
         # Process packages with availability
@@ -97,7 +97,7 @@ async def search_products(
             if not package.inventories:
                 continue
                 
-            # Filter for packages with stock > 0
+            # Filter for packages with stock > 0 TODO:
             in_stock_inventories = [
                 inv for inv in package.inventories 
                 # if inv.stock_quantity and inv.stock_quantity > 0
@@ -113,13 +113,13 @@ async def search_products(
                     pharmacy_locations.append({
                         "pharmacy_id": inventory.pharmacy.id,
                         "pharmacy_name": inventory.pharmacy.name,
+                        "pharmacy_country": inventory.pharmacy.country, # eg "AT"
+                        "pharmacy_city": inventory.pharmacy.city,
                         "pharmacy_address": inventory.pharmacy.address,
-                        "pharmacy_city": inventory.pharmacy.address, # Assuming city is part of address
-                        "pharmacy_country": inventory.pharmacy.address, # NOT YET IMPLEMENTED TODO:
-                        "price_cents": int(inventory.price_cents * 100) if inventory.price_cents else None,  # Convert to cents
-                        "currency": "EUR",  # You might want to add this to your pharmacy model
-                        "stock_quantity": 20, # inventory.stock_quantity, not yet implemented TODO:
-                        "last_updated": "Some day" #inventory.updated_at.isoformat() if hasattr(inventory, 'updated_at') and inventory.updated_at else None
+                        "price_cents": int(inventory.price_cents) if inventory.price_cents else None,
+                        "currency": inventory.currency,
+                        "stock_quantity": inventory.stock_quantity,
+                        "last_updated": inventory.last_updated,
                     })
             
             if pharmacy_locations:
@@ -148,8 +148,52 @@ async def search_products(
                 "language": language
             })
 
-    #import json
-    #print("SAVING>>>>>>")
-    #with open("search_results.json", "w", encoding="utf-8") as f:
-        #json.dump(search_results, f, ensure_ascii=False, indent=2)
+    import json
+    print("SAVING>>>>>>")
+    with open("search_results.json", "w", encoding="utf-8") as f:
+        json.dump(search_results, f, ensure_ascii=False, indent=2)
     return search_results
+
+
+@router.get("/products/{product_id}/pharmacies")
+async def get_product_pharmacies(
+    product_id: str,
+    lat: Optional[float] = None,
+    lng: Optional[float] = None,
+    radius_km: Optional[int] = Query(None, ge=1, le=100),
+    db: AsyncSession = Depends(get_db),
+):
+    stmt = (
+        select(Pharmacy, PharmacyInventory, Package)
+        .join(PharmacyInventory, Pharmacy.id == PharmacyInventory.pharmacy_id)
+        .join(Package, Package.id == PharmacyInventory.package_id)
+        .where(Package.product_id == product_id)
+    )
+
+    # Apply radius filter
+    if lat is not None and lng is not None and radius_km is not None:
+        stmt = stmt.where(Pharmacy.distance_to(lat, lng) <= radius_km)
+        stmt = stmt.add_columns(distance_expr.label("distance_km"))
+        stmt = stmt.order_by("distance_km")
+
+    result = await db.execute(stmt)
+    rows = result.all()
+
+    pharmacies = []
+    for row in rows:
+        pharmacy = row[0]
+        inventory = row[1]
+        package = row[2]
+        distance = getattr(row, "distance_km", None)
+
+        pharmacies.append({
+            "id": pharmacy.id,
+            "name": pharmacy.name,
+            "latitude": pharmacy.latitude,
+            "longitude": pharmacy.longitude,
+            "distance_km": distance,
+            "stock": inventory.stock_quantity,
+            "package_id": package.id,
+        })
+
+    return pharmacies

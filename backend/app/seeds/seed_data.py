@@ -4,6 +4,8 @@ import random
 from typing import Dict
 from uuid import uuid4
 
+from faker import Faker
+
 # IMPORT YOUR DB + MODELS (adjust if your module paths differ)
 from app.core.db import Base, SessionLocal, engine
 from app.models import (
@@ -15,7 +17,6 @@ from app.models import (
     ProductImage,
     Translation,
 )
-from faker import Faker
 
 # --- Configuration ---
 NUM_PRODUCTS = 20
@@ -74,29 +75,13 @@ STRENGTHS = [
 CITY_COORDS: Dict[str, tuple] = {
     # Germany
     "Berlin": (52.5200, 13.4050),
-    "Munich": (48.1351, 11.5820),
-    "Hamburg": (53.5511, 9.9937),
-    "Frankfurt": (50.1109, 8.6821),
-    "Cologne": (50.9375, 6.9603),
     # Slovakia
     "Bratislava": (48.1486, 17.1077),
-    "Kosice": (48.7164, 21.2611),
-    "Presov": (48.9980, 21.2339),
-    "Zilina": (49.2230, 18.7390),
-    "Nitra": (48.3091, 18.0860),
 }
 
 COUNTRY_BY_CITY = {
     "Berlin": "DE",
-    "Munich": "DE",
-    "Hamburg": "DE",
-    "Frankfurt": "DE",
-    "Cologne": "DE",
     "Bratislava": "SK",
-    "Kosice": "SK",
-    "Presov": "SK",
-    "Zilina": "SK",
-    "Nitra": "SK",
 }
 
 
@@ -252,6 +237,7 @@ async def main():
                     translated_name=translate_for_lang(
                         p.inn_name, p.strength, p.form, lang
                     ),
+                    translated_description="Description of a product. High-quality ingredients with trusted effectiveness. A popular choice among customers for its value.",
                 )
                 session.add(tr)
                 translation_objs.append(tr)
@@ -262,9 +248,13 @@ async def main():
         # PHARMACIES (10, DE + SK)
         # -------------------------
         pharmacy_objs = []
-        city_keys = list(CITY_COORDS.keys())
-        for _ in range(NUM_PHARMACIES):
-            city = random.choice(city_keys)
+
+        # force half Berlin, half Bratislava
+        half = NUM_PHARMACIES // 2
+        city_keys = ["Berlin"] * half + ["Bratislava"] * half
+        random.shuffle(city_keys)
+
+        for city in city_keys:
             country_code = COUNTRY_BY_CITY[city]
             if country_code == "DE":
                 fake = fake_de
@@ -277,7 +267,9 @@ async def main():
             ph = Pharmacy(
                 id=gen_uuid(),
                 name=f"{fake.company()} Apotheke",
-                address=f"{fake.street_address()}, {city}",
+                country=f"{country_code}",
+                city=f"{city}",
+                address=f"{fake.street_address()}",
                 lat=str(round(lat, 6)),
                 lng=str(round(lng, 6)),
                 phone=fake.phone_number(),
@@ -307,14 +299,14 @@ async def main():
             for pkg in sampled_packages:
                 # price cents vary by pharmacy — random base (199..1999 cents)
                 price_cents = random.randint(199, 1999)
-                availability = random.random() > 0.1  # 90% chance available
+                stock_quantity = random.randint(1, 20)
                 inv = PharmacyInventory(
                     id=gen_uuid(),
                     pharmacy_id=ph.id,
                     package_id=pkg.id,
                     price_cents=price_cents,
                     currency="EUR",
-                    availability=availability,
+                    stock_quantity=stock_quantity,
                 )
                 session.add(inv)
                 inventory_objs.append(inv)

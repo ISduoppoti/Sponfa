@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glovoapotheka/domain/repositories/auth_repository.dart';
 import 'package:glovoapotheka/domain/services/city_service.dart';
+import 'package:glovoapotheka/domain/services/popular_products_service.dart';
 import 'package:glovoapotheka/features/auth/cubit/auth_cubit.dart';
 import 'package:glovoapotheka/features/auth/view/login_view.dart';
 import 'package:glovoapotheka/features/home/view/home_view.dart';
@@ -52,6 +53,10 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<CityService>(
           create: (_) => CityService(),
         ),
+        ChangeNotifierProvider<PopularProductsService>( // Use Provider for simple non-listening classes
+          create: (context) => PopularProductsService(),
+          child: const MyApp(),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -67,6 +72,7 @@ class MyApp extends StatelessWidget {
             create: (context) => SearchCubit(
               // The Cubit gets its dependency from the RepositoryProvider above
               context.read<ProductRepository>(),
+              context.read<CityService>(),
             ),
           ),
         ],
@@ -86,23 +92,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// This widget listens to the AuthCubit state and shows the correct screen
-/*
-class AuthWrapper extends StatelessWidget {
-  const AuthWrapper({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<AuthCubit, AuthState>(
-      builder: (context, state) {
-        if (state.status == AuthStatus.authenticated) {
-          return const HomeView(); // User is logged in, show Home
-        } else {
-          return const LoginView(); // User is not logged in, show Login
-        }
-      },
-    );
-  }
-}
-*/

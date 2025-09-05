@@ -11,6 +11,7 @@ class Translation(Base):
     product_id: Mapped[str] = mapped_column(String, nullable=False)
     language_code: Mapped[str] = mapped_column(String(5), nullable=False)  # "de", "it", "fr", "en"
     translated_name: Mapped[str] = mapped_column(String, nullable=False)
+    translated_description: Mapped[str] = mapped_column(String, nullable=True)
 
     from sqlalchemy import ForeignKey
     product_id = mapped_column(ForeignKey("products.id"), nullable=False)

@@ -52,10 +52,10 @@ class _PopularProductsRailState extends State<PopularProductsRail> {
       });
 
       final service = PopularProductsService();
-      final products = await service.getPopularProducts();
+      //final products = await service.getPopularProducts();
       
       setState(() {
-        _products = products;
+        //_products = products;
         _isLoading = false;
       });
 

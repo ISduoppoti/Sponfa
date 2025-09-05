@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'dart:math' as math;
 
 import 'package:glovoapotheka/core/widgets/top_navigation_bar.dart';
@@ -9,6 +10,7 @@ import 'package:glovoapotheka/features/home/widgets/how_it_works_widget.dart';
 import 'package:glovoapotheka/features/home/widgets/categories_widget.dart';
 import 'package:glovoapotheka/features/home/widgets/discount_goods_widger.dart';
 import 'package:glovoapotheka/features/home/widgets/popular_products_widget.dart';
+import 'package:glovoapotheka/features/home/widgets/product_showcase_widget.dart';
 
 import 'package:glovoapotheka/domain/services/popular_products_service.dart';
 
@@ -130,7 +132,13 @@ class _HomeViewState extends State<HomeView>
                     SizedBox(height: 20),
                     Divider(height: 1, color: Colors.grey.shade300),
                     SizedBox(height: 20),
-                    PopularProductsRail(),
+                    //PopularProductsRail(),
+                    ShowcaseWidget(
+                      type: ShowcaseType.popular,
+                      title: "Popular Products",
+                      description: "Some description",
+                      products: context.read<PopularProductsService>().getPopularProducts(),
+                    ),
                     SizedBox(height: 20),
                     Divider(height: 1, color: Colors.grey.shade300),
                     SizedBox(height: 20),
@@ -138,7 +146,14 @@ class _HomeViewState extends State<HomeView>
                     SizedBox(height: 20),
                     Divider(height: 1, color: Colors.grey.shade300),
                     SizedBox(height: 20),
-                    DiscountGoods(),
+                    ShowcaseWidget(
+                      type: ShowcaseType.seasonal,
+                      title: "Popular Products",
+                      description: "Some description",
+                      products: context.read<PopularProductsService>().getPopularProducts(),
+                    ),
+                    //DiscountGoods()
+                    SizedBox(height: 20,)
                   ],
                 ),
               ),

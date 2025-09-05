@@ -31,7 +31,7 @@ class _UnifiedSearchBarState extends State<UnifiedSearchBar> {
   final TextEditingController _controller = TextEditingController();
   final FocusNode _focusNode = FocusNode();
   OverlayEntry? _overlayEntry;
-  final GlobalKey _searchKey = GlobalKey();
+  final GlobalKey _searchContainerKey = GlobalKey(); // Changed to wrap entire container
 
   @override
   void initState() {
@@ -46,7 +46,7 @@ class _UnifiedSearchBarState extends State<UnifiedSearchBar> {
   void _showOverlay() {
     if (_overlayEntry != null) return;
 
-    final RenderBox? renderBox = _searchKey.currentContext?.findRenderObject() as RenderBox?;
+    final RenderBox? renderBox = _searchContainerKey.currentContext?.findRenderObject() as RenderBox?;
     if (renderBox == null) return;
     
     final size = renderBox.size;
@@ -92,7 +92,7 @@ class _UnifiedSearchBarState extends State<UnifiedSearchBar> {
                             return const SizedBox(
                               height: 100,
                               child: Center(
-                                child: CircularProgressIndicator()),
+                                child: CircularProgressIndicator(color: Colors.orange)),
                             );
                           } else if (state is SearchLoaded) {
                             if (state.results.isEmpty) {
@@ -153,7 +153,9 @@ class _UnifiedSearchBarState extends State<UnifiedSearchBar> {
 
   void _showCitySelector(BuildContext context) async {
     final cityService = context.read<CityService>();
-    final List<String> availableCities = await cityService.getAvailableCities();
+    await cityService.loadCities(); // ensure cities are loaded
+
+    final availableCities = cityService.cities.map((c) => c.name).toList();
 
     if (!context.mounted) return;
 
@@ -167,12 +169,13 @@ class _UnifiedSearchBarState extends State<UnifiedSearchBar> {
               onPressed: () => Navigator.pop(context, city),
               child: Text(city),
             );
-          }).toList(), // Convert the iterable to a List of widgets
+          }).toList(),
         );
       },
     );
 
     if (selected != null) {
+      cityService.detectCityFromLocation();
       cityService.setCity(selected);
     }
   }
@@ -187,49 +190,99 @@ class _UnifiedSearchBarState extends State<UnifiedSearchBar> {
 
   @override
   Widget build(BuildContext context) {
+    final CityService _cityService = context.watch<CityService>();
     final screenWidth = MediaQuery.of(context).size.width;
     
     // Determine container properties based on isNavBar
     final containerHeight = widget.isNavBar ? 50.0 : 60.0;
-    final borderRadius = widget.isNavBar ? 10.0 : 30.0;
+    final borderRadius = widget.isNavBar ? 10.0 : 15.0;
     final containerWidth = widget.width ?? 
         (widget.isNavBar ? double.infinity : math.min(screenWidth * 0.8, 700));
 
     final city = context.watch<CityService>().selectedCity;
 
     return Container(
-      key: _searchKey,
+      key: _searchContainerKey, // Moved key to outer container
       width: containerWidth,
       height: containerHeight,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(borderRadius),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          ),
-        ],
+      decoration: const BoxDecoration(
+        color: Colors.transparent, // Transparent wrapper
       ),
       child: Row(
         children: [
-          // City selector (only shown if isCitySelector is true)
+          // Search field container
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                // Ensure focus happens when tapping the search container
+                _focusNode.requestFocus();
+              },
+              child: Container(
+                alignment: Alignment.center,
+                height: containerHeight,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(borderRadius),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.1),
+                      blurRadius: 20,
+                      offset: const Offset(0, 10),
+                    ),
+                  ],
+                ),
+                child: TextField(
+                  controller: _controller,
+                  focusNode: _focusNode,
+                  onChanged: (query) {
+                    context.read<SearchCubit>().search(query);
+                  },
+                  decoration: InputDecoration(
+                    hintText: widget.isNavBar
+                        ? 'Enter medication name...'
+                        : 'Search for products...',
+                    suffixIcon: const Icon(Icons.search),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: widget.isNavBar ? 20.0 : 16.0,
+                      vertical: 12.0,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+
+          // City selector (if enabled)
           if (widget.isCitySelector) ...[
-            Container(
-              width: 150,
-              height: containerHeight,
-              child: TextButton(
-                onPressed: widget.onCityTap ?? () => _showCitySelector(context),
+            const SizedBox(width: 8), // spacing
+            GestureDetector(
+              onTap: widget.onCityTap ?? () => _showCitySelector(context),
+              child: Container(
+                width: 150,
+                height: containerHeight,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 255, 130, 0),
+                  borderRadius: BorderRadius.circular(borderRadius),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.1),
+                      blurRadius: 20,
+                      offset: const Offset(0, 10),
+                    ),
+                  ],
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.location_on, color: Color(0xFFFF6B35)),
+                    const Icon(Icons.location_on,
+                        color: Color.fromARGB(255, 255, 255, 255)),
                     const SizedBox(width: 8),
                     Flexible(
                       child: Text(
                         city,
-                        style: const TextStyle(color: Color(0xFFFF6B35)),
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 255, 255, 255)),
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
@@ -237,38 +290,7 @@ class _UnifiedSearchBarState extends State<UnifiedSearchBar> {
                 ),
               ),
             ),
-            // Divider
-            Container(
-              width: 1,
-              height: 30,
-              color: Colors.grey[300],
-            ),
           ],
-          
-          // Search field
-          Expanded(
-            child: TextField(
-              controller: _controller,
-              focusNode: _focusNode,
-              onChanged: (query) {
-                context.read<SearchCubit>().search(query);
-              },
-              decoration: InputDecoration(
-                hintText: widget.isNavBar 
-                    ? 'Enter medication name...' 
-                    : 'Search for products...',
-                suffixIcon: widget.isNavBar? const Icon(Icons.search) : const Padding(
-                  padding: EdgeInsets.only(right: 20.0),
-                  child: Icon(Icons.search),
-                ),
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: widget.isNavBar ? 20.0 : 16.0,
-                  vertical: 12.0,
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );

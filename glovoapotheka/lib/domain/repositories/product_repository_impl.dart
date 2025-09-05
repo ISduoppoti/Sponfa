@@ -7,9 +7,9 @@ class ProductRepositoryImpl implements ProductRepository {
   ProductRepositoryImpl(this.api);
 
   @override
-  Future<List<ProductModel>> search({required String query, double? lat, double? lng, int? radiusKm, int limit = 20, String? sort}) {
+  Future<List<ProductModel>> search({required String query, required double lat, required double lng, int? radiusKm, int limit = 20, String? sort}) {
     // Forward for MVP; later attach filters as query params
-    return api.search(query, limit: limit);
+    return api.search(query, lat, lng,  limit: limit);
   }
 
   @override
