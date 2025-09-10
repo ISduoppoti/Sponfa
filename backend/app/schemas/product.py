@@ -1,54 +1,100 @@
 # app/schemas/product.py
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import Optional, List
+from datetime import datetime
 
+# Simple search result for typeahead/search
+class ProductSearchItem(BaseModel):
+    product_id: str
+    inn_name: str
+    display_name: str  # Translated name or inn_name
+    form: Optional[str] = None
+    strength: Optional[str] = None
+
+    class Config:
+        from_attributes = True
+
+# Detailed pharmacy location info
 class PharmacyLocationInfo(BaseModel):
-    """Information about where a package is available"""
-    pharmacy_id: str  # Changed to str to match your schema
+    pharmacy_id: str
     pharmacy_name: str
     pharmacy_address: str
     pharmacy_city: str
     pharmacy_country: str
-    price_cents: Optional[int]  # Price in cents (e.g., 1250 = €12.50)
+    lat: Optional[float] = None
+    lng: Optional[float] = None
+    price_cents: Optional[int] = None
     currency: str = "EUR"
     stock_quantity: int
-    last_updated: Optional[str]  # ISO format datetime string
+    last_updated: Optional[str] = None
 
+    class Config:
+        from_attributes = True
+
+# Package availability with pharmacy locations
 class PackageAvailabilityInfo(BaseModel):
-    """A package with all its availability information"""
     package_id: str
-    gtin: Optional[str]
-    pack_size: Optional[str]  # e.g., "20 tablets"
-    brand_name: Optional[str]
-    manufacturer: Optional[str]
-    country_code: Optional[str]
-    pharmacy_locations: List[PharmacyLocationInfo]  # All pharmacies where this package is available
+    gtin: Optional[str] = None
+    pack_size: Optional[str] = None
+    brand_name: Optional[str] = None
+    manufacturer: Optional[str] = None
+    country_code: Optional[str] = None
+    pharmacy_locations: List[PharmacyLocationInfo]
 
-class ProductSearchResponse(BaseModel):
-    """Complete search response with all connected data"""
-    product_id: str
-    inn_name: str  # Original INN name
-    display_name: str  # Translated name or INN fallback
-    description: Optional[str]  # Translated description
-    atc_code: Optional[str]
-    form: Optional[str]  # tablet, capsule, etc.
-    strength: Optional[str]  # 500mg, etc.
-    brand_names: List[str]  # All brand names for this product
-    available_packages: List[PackageAvailabilityInfo]
-    language: str  # Language of the translation used
-    
     class Config:
         from_attributes = True
 
-# Simple response for basic searches (backward compatibility)
-class ProductSimpleResponse(BaseModel):
+# Detailed product response with full information
+class ProductDetailModel(BaseModel):
     product_id: str
-    display_name: str
-    form: Optional[str]
-    strength: Optional[str]
+    inn_name: str
+    display_name: str  # Translated name or inn_name
+    description: Optional[str] = None  # Translated description
+    atc_code: Optional[str] = None
+    form: Optional[str] = None
+    strength: Optional[str] = None
     brand_names: List[str]
-    min_price_cents: Optional[int]  # Lowest price across all packages
-    total_stock: int  # Total stock across all pharmacies
-    
+    available_packages: List[PackageAvailabilityInfo]
+    language: str
+
     class Config:
         from_attributes = True
+
+# Pharmacy search request
+class PharmaciesSearchRequest(BaseModel):
+    package_ids: List[str]
+    lat: Optional[float] = None
+    lng: Optional[float] = None
+    radius_km: Optional[int] = 120
+    must_have_all: bool = False
+    sort_by: str = "distance"  # "distance", "price", "name"
+    limit: int = 50
+
+# Individual package line in pharmacy search results
+class PharmacyPackageLine(BaseModel):
+    package_id: str
+    price_cents: Optional[int] = None
+    currency: Optional[str] = "EUR"
+    stock_quantity: int
+    last_updated: Optional[str] = None
+
+    class Config:
+        from_attributes = True
+
+# Pharmacy search result
+class PharmacySearchResult(BaseModel):
+    pharmacy_id: str
+    pharmacy_name: str
+    address: Optional[str] = None
+    city: Optional[str] = None
+    country: Optional[str] = None
+    lat: Optional[float] = None
+    lng: Optional[float] = None
+    distance_km: Optional[float] = None
+    packages: List[PharmacyPackageLine]
+
+    class Config:
+        from_attributes = True
+
+# Legacy schema names for backward compatibility
+ProductTypeaheadItem = ProductSearchItem  # Alias for backward compatibility

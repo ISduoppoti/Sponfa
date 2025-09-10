@@ -38,17 +38,16 @@ class SearchCubit extends Cubit<SearchState> {
     try {
       // 5. CALL REPOSITORY: The Cubit's only job is to tell the repository to search.
       // It has no idea whether it's an API call, database query, etc.
-      final lat = _cityService.latitude;
-      final lng = _cityService.longitude;
-
-      print("$lat, $lng");
+      final lat = _cityService.selectedCity.lat;
+      final lng = _cityService.selectedCity.lng;
       
       final results = await _productRepository.search(query: query, lat: lat, lng: lng);
       
       // 6. EMIT LOADED STATE
       emit(SearchLoaded(results: results));
-    } catch (e) {
+    } catch (e, s) {
       // 7. EMIT ERROR STATE
+      print("Stack Trace: $s");
       emit(SearchError(message: "Search failed: ${e.toString()}"));
     }
   }

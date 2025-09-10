@@ -61,4 +61,37 @@ class ProductApiProvider {
     
     return ProductModel.fromJson(jsonDecode(res.body));
   }
+
+  Future<ProductDetailModel> getProductPackages({
+    required String productId,
+    String language = 'en',
+    double? lat,
+    double? lng,
+    int? radiusKm,
+    bool onlyInStock = true,
+  }) async {
+    final queryParams = <String, String>{
+      'language': language,
+      'only_in_stock': onlyInStock.toString(),
+    };
+    
+    if (lat != null) queryParams['lat'] = lat.toString();
+    if (lng != null) queryParams['lng'] = lng.toString();
+    if (radiusKm != null) queryParams['radius_km'] = radiusKm.toString();
+    
+    final uri = Uri.parse('$baseUrl/products/$productId/packages').replace(
+      queryParameters: queryParams,
+    );
+    
+    final headers = <String, String>{'Content-Type': 'application/json'};
+    final token = getIdToken != null ? await getIdToken!() : null;
+    if (token != null) headers['Authorization'] = 'Bearer $token';
+
+    final res = await http.get(uri, headers: headers);
+    if (res.statusCode != 200) {
+      throw Exception('Get product packages failed: ${res.statusCode} ${res.body}');
+    }
+    
+    return ProductDetailModel.fromJson(jsonDecode(res.body));
+  }
 }

@@ -1,1645 +1,199 @@
 [
   {
-    "product_id": "15877571-1d25-48b3-8271-af8e389a2790",
-    "inn_name": "Lisinopril",
-    "display_name": "Lisinopril",
-    "description": null,
-    "atc_code": "I615H45",
-    "form": "capsule",
-    "strength": "100 mg",
+    "product_id": "d0e30948-3487-440a-947e-ebe24d502e8f",
+    "inn_name": "Pantoprazole",
+    "display_name": "Pantoprazole",
+    "form": "syrup",
+    "strength": "400 mg",
     "brand_names": [
-      "Lisinopril Fast"
-    ],
-    "available_packages": [
-      {
-        "package_id": "866f144f-7e0b-47f6-8dc1-6f1925745756",
-        "gtin": "7556464170805",
-        "pack_size": "30 pcs",
-        "brand_name": "Lisinopril Fast",
-        "manufacturer": "Stada",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "b5ca62b8-63a6-491f-96ac-0f56ace90be8",
-            "pharmacy_name": "Hanúska Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Strážnická 43",
-            "price_cents": 288,
-            "currency": "EUR",
-            "stock_quantity": 11,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "128cc296-c21e-4431-9987-b3e7397cfe57",
-            "pharmacy_name": "Heintze GmbH & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Irena-Seip-Allee 4-8",
-            "price_cents": 1160,
-            "currency": "EUR",
-            "stock_quantity": 9,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "d5b159a3-eab9-4433-ba02-8e1c5c82bf95",
-            "pharmacy_name": "Heuser Bolzmann AG & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Gerdi-Ortmann-Straße 32-44",
-            "price_cents": 1286,
-            "currency": "EUR",
-            "stock_quantity": 17,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "943ab3fa-fda2-4b46-bc46-f51af89656e5",
-            "pharmacy_name": "Mikuláková Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Nevská 9",
-            "price_cents": 386,
-            "currency": "EUR",
-            "stock_quantity": 7,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "99169a1e-8668-4517-8bdc-525de9f38cea",
-        "gtin": "9904902787429",
-        "pack_size": "10 pcs",
-        "brand_name": "Lisinopril Fast",
-        "manufacturer": "Stada",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "e681436e-8e56-4bb3-bed1-f4e63ec6e5d6",
-            "pharmacy_name": "Mrázová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Galandova 56",
-            "price_cents": 1631,
-            "currency": "EUR",
-            "stock_quantity": 10,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
-  },
-  {
-    "product_id": "37953558-64c5-4595-87c0-45d0f3a1d959",
-    "inn_name": "Amoxicillin",
-    "display_name": "Amoxicillin",
-    "description": null,
-    "atc_code": "K560N65",
-    "form": "tablet",
-    "strength": "300 mg",
-    "brand_names": [
-      "Amoxicillin Plus"
-    ],
-    "available_packages": [
-      {
-        "package_id": "568e7813-5d30-40fc-98f2-221341b52ce2",
-        "gtin": "0801326773602",
-        "pack_size": "50 pcs",
-        "brand_name": "Amoxicillin Plus",
-        "manufacturer": "Novartis",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "128cc296-c21e-4431-9987-b3e7397cfe57",
-            "pharmacy_name": "Heintze GmbH & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Irena-Seip-Allee 4-8",
-            "price_cents": 892,
-            "currency": "EUR",
-            "stock_quantity": 20,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "e681436e-8e56-4bb3-bed1-f4e63ec6e5d6",
-            "pharmacy_name": "Mrázová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Galandova 56",
-            "price_cents": 1442,
-            "currency": "EUR",
-            "stock_quantity": 12,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "d5b159a3-eab9-4433-ba02-8e1c5c82bf95",
-            "pharmacy_name": "Heuser Bolzmann AG & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Gerdi-Ortmann-Straße 32-44",
-            "price_cents": 383,
-            "currency": "EUR",
-            "stock_quantity": 10,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "084f5f8c-3458-4418-a273-5c158c863176",
-            "pharmacy_name": "Mackovič Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Rybárska brána 518",
-            "price_cents": 1048,
-            "currency": "EUR",
-            "stock_quantity": 4,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "943ab3fa-fda2-4b46-bc46-f51af89656e5",
-            "pharmacy_name": "Mikuláková Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Nevská 9",
-            "price_cents": 697,
-            "currency": "EUR",
-            "stock_quantity": 5,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "fe62b6b8-ea43-428b-b290-44dcfcf7aa2b",
-        "gtin": "0256342160733",
-        "pack_size": "20 pcs",
-        "brand_name": "Amoxicillin Plus",
-        "manufacturer": "Novartis",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "7d7583e5-f28d-4172-bb40-5d9a448efa7b",
-            "pharmacy_name": "Kramer AG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Schleichring 7",
-            "price_cents": 1107,
-            "currency": "EUR",
-            "stock_quantity": 6,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "3b740f86-ecd0-40e0-8a06-90c6c0f6cc32",
-            "pharmacy_name": "Bohnbach Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Larissa-Hoffmann-Gasse 8164",
-            "price_cents": 1468,
-            "currency": "EUR",
-            "stock_quantity": 8,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "e681436e-8e56-4bb3-bed1-f4e63ec6e5d6",
-            "pharmacy_name": "Mrázová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Galandova 56",
-            "price_cents": 647,
-            "currency": "EUR",
-            "stock_quantity": 7,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "084f5f8c-3458-4418-a273-5c158c863176",
-            "pharmacy_name": "Mackovič Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Rybárska brána 518",
-            "price_cents": 1906,
-            "currency": "EUR",
-            "stock_quantity": 16,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "943ab3fa-fda2-4b46-bc46-f51af89656e5",
-            "pharmacy_name": "Mikuláková Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Nevská 9",
-            "price_cents": 242,
-            "currency": "EUR",
-            "stock_quantity": 2,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "3eb01ae8-aa2f-4c00-9510-bafeda5bf6cc",
-        "gtin": "3309232719374",
-        "pack_size": "10 pcs",
-        "brand_name": "Amoxicillin Plus",
-        "manufacturer": "Novartis",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "128cc296-c21e-4431-9987-b3e7397cfe57",
-            "pharmacy_name": "Heintze GmbH & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Irena-Seip-Allee 4-8",
-            "price_cents": 1529,
-            "currency": "EUR",
-            "stock_quantity": 3,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "e681436e-8e56-4bb3-bed1-f4e63ec6e5d6",
-            "pharmacy_name": "Mrázová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Galandova 56",
-            "price_cents": 761,
-            "currency": "EUR",
-            "stock_quantity": 1,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "9fc1c43c-2100-4399-a87f-4a5a44ed2b6f",
-            "pharmacy_name": "Cibulová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Svätého Vincenta 2",
-            "price_cents": 953,
-            "currency": "EUR",
-            "stock_quantity": 9,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "1ecfb0db-e206-48f5-a823-61b27052e28a",
-        "gtin": "6183242102499",
-        "pack_size": "100 pcs",
-        "brand_name": "Amoxicillin Plus",
-        "manufacturer": "Bayer",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "b5ca62b8-63a6-491f-96ac-0f56ace90be8",
-            "pharmacy_name": "Hanúska Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Strážnická 43",
-            "price_cents": 1627,
-            "currency": "EUR",
-            "stock_quantity": 8,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "128cc296-c21e-4431-9987-b3e7397cfe57",
-            "pharmacy_name": "Heintze GmbH & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Irena-Seip-Allee 4-8",
-            "price_cents": 1482,
-            "currency": "EUR",
-            "stock_quantity": 16,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "3b740f86-ecd0-40e0-8a06-90c6c0f6cc32",
-            "pharmacy_name": "Bohnbach Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Larissa-Hoffmann-Gasse 8164",
-            "price_cents": 788,
-            "currency": "EUR",
-            "stock_quantity": 18,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "9fc1c43c-2100-4399-a87f-4a5a44ed2b6f",
-            "pharmacy_name": "Cibulová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Svätého Vincenta 2",
-            "price_cents": 1500,
-            "currency": "EUR",
-            "stock_quantity": 15,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
-  },
-  {
-    "product_id": "4b74c0a0-7cbd-408d-aba7-b4fcfe3b497e",
-    "inn_name": "Cetirizine",
-    "display_name": "Cetirizine",
-    "description": null,
-    "atc_code": "S186J45",
-    "form": "spray",
-    "strength": "5 mg/ml",
-    "brand_names": [
-      "Cetirizine Extra",
-      "Cetirizine Fast"
-    ],
-    "available_packages": [
-      {
-        "package_id": "38a999ab-af2a-47f9-b0ab-4455acf2a421",
-        "gtin": "3834657871331",
-        "pack_size": "100 pcs",
-        "brand_name": "Cetirizine Fast",
-        "manufacturer": "Sandoz",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "d5b159a3-eab9-4433-ba02-8e1c5c82bf95",
-            "pharmacy_name": "Heuser Bolzmann AG & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Gerdi-Ortmann-Straße 32-44",
-            "price_cents": 469,
-            "currency": "EUR",
-            "stock_quantity": 18,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "084f5f8c-3458-4418-a273-5c158c863176",
-            "pharmacy_name": "Mackovič Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Rybárska brána 518",
-            "price_cents": 994,
-            "currency": "EUR",
-            "stock_quantity": 15,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "ed7a8a83-8a11-400f-a1ca-a3964b696b68",
-        "gtin": "2067974034471",
-        "pack_size": "20 pcs",
-        "brand_name": "Cetirizine Extra",
-        "manufacturer": "Teva",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "b5ca62b8-63a6-491f-96ac-0f56ace90be8",
-            "pharmacy_name": "Hanúska Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Strážnická 43",
-            "price_cents": 1407,
-            "currency": "EUR",
-            "stock_quantity": 11,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "d5b159a3-eab9-4433-ba02-8e1c5c82bf95",
-            "pharmacy_name": "Heuser Bolzmann AG & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Gerdi-Ortmann-Straße 32-44",
-            "price_cents": 558,
-            "currency": "EUR",
-            "stock_quantity": 7,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
-  },
-  {
-    "product_id": "5504c4ff-25b7-4cce-b82d-a7a9ef40dbc0",
-    "inn_name": "Metformin",
-    "display_name": "Metformin",
-    "description": null,
-    "atc_code": "V756J06",
-    "form": "tablet",
-    "strength": "100 mg",
-    "brand_names": [
-      "Metformin Extra"
-    ],
-    "available_packages": [
-      {
-        "package_id": "18c3e64b-b7ba-487e-b920-c04575e0bb6b",
-        "gtin": "3201632870831",
-        "pack_size": "50 pcs",
-        "brand_name": "Metformin Extra",
-        "manufacturer": "GSK",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "b5ca62b8-63a6-491f-96ac-0f56ace90be8",
-            "pharmacy_name": "Hanúska Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Strážnická 43",
-            "price_cents": 989,
-            "currency": "EUR",
-            "stock_quantity": 5,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "943ab3fa-fda2-4b46-bc46-f51af89656e5",
-            "pharmacy_name": "Mikuláková Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Nevská 9",
-            "price_cents": 1898,
-            "currency": "EUR",
-            "stock_quantity": 18,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "05257fcb-26a9-4124-922f-f4b9504d42d2",
-        "gtin": "5876036690967",
-        "pack_size": "50 pcs",
-        "brand_name": "Metformin Extra",
-        "manufacturer": "GSK",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "9fc1c43c-2100-4399-a87f-4a5a44ed2b6f",
-            "pharmacy_name": "Cibulová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Svätého Vincenta 2",
-            "price_cents": 1164,
-            "currency": "EUR",
-            "stock_quantity": 1,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "943ab3fa-fda2-4b46-bc46-f51af89656e5",
-            "pharmacy_name": "Mikuláková Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Nevská 9",
-            "price_cents": 641,
-            "currency": "EUR",
-            "stock_quantity": 8,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
-  },
-  {
-    "product_id": "63cc26cd-e9c5-4d79-a68d-b90498d4095c",
-    "inn_name": "Paracetamol",
-    "display_name": "Paracetamol",
-    "description": null,
-    "atc_code": "N02BE01",
-    "form": "ointment",
-    "strength": "200 mg",
-    "brand_names": [
-      "Paracetamol Plus",
-      "Paracetamol Classic"
-    ],
-    "available_packages": [
-      {
-        "package_id": "db469db6-b0a2-47fd-91e6-dc4cb206f467",
-        "gtin": "3039117182278",
-        "pack_size": "30 pcs",
-        "brand_name": "Paracetamol Plus",
-        "manufacturer": "Bayer",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "6442acfd-35c2-47da-9b45-406be8182378",
-            "pharmacy_name": "Ackermann Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Bährgasse 14/43",
-            "price_cents": 1726,
-            "currency": "EUR",
-            "stock_quantity": 3,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "2d235597-a044-46c9-8ccb-cc1dc7050252",
-        "gtin": "2786801128059",
-        "pack_size": "20 pcs",
-        "brand_name": "Paracetamol Classic",
-        "manufacturer": "Pfizer",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "943ab3fa-fda2-4b46-bc46-f51af89656e5",
-            "pharmacy_name": "Mikuláková Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Nevská 9",
-            "price_cents": 449,
-            "currency": "EUR",
-            "stock_quantity": 15,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "d17d6724-f5ce-4e05-a172-8efe5de7fdd2",
-        "gtin": "9401965569816",
-        "pack_size": "30 pcs",
-        "brand_name": "Paracetamol Plus",
-        "manufacturer": "Bayer",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "943ab3fa-fda2-4b46-bc46-f51af89656e5",
-            "pharmacy_name": "Mikuláková Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Nevská 9",
-            "price_cents": 871,
-            "currency": "EUR",
-            "stock_quantity": 5,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "6442acfd-35c2-47da-9b45-406be8182378",
-            "pharmacy_name": "Ackermann Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Bährgasse 14/43",
-            "price_cents": 468,
-            "currency": "EUR",
-            "stock_quantity": 1,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "b4a90efb-bc33-48c3-8de8-c0dc3e904e9d",
-        "gtin": "6889373467065",
-        "pack_size": "30 pcs",
-        "brand_name": "Paracetamol Classic",
-        "manufacturer": "Pfizer",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "128cc296-c21e-4431-9987-b3e7397cfe57",
-            "pharmacy_name": "Heintze GmbH & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Irena-Seip-Allee 4-8",
-            "price_cents": 977,
-            "currency": "EUR",
-            "stock_quantity": 11,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "3b740f86-ecd0-40e0-8a06-90c6c0f6cc32",
-            "pharmacy_name": "Bohnbach Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Larissa-Hoffmann-Gasse 8164",
-            "price_cents": 492,
-            "currency": "EUR",
-            "stock_quantity": 8,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "6f64d5f4-3ebc-41e0-b664-f48a976648d5",
-        "gtin": "6349578856855",
-        "pack_size": "30 pcs",
-        "brand_name": "Paracetamol Plus",
-        "manufacturer": "Bayer",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "b5ca62b8-63a6-491f-96ac-0f56ace90be8",
-            "pharmacy_name": "Hanúska Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Strážnická 43",
-            "price_cents": 457,
-            "currency": "EUR",
-            "stock_quantity": 17,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "9fc1c43c-2100-4399-a87f-4a5a44ed2b6f",
-            "pharmacy_name": "Cibulová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Svätého Vincenta 2",
-            "price_cents": 1467,
-            "currency": "EUR",
-            "stock_quantity": 18,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
-  },
-  {
-    "product_id": "6bb85c51-97d5-464d-9bef-5a259f8f0f1b",
-    "inn_name": "Salbutamol",
-    "display_name": "Salbutamol",
-    "description": null,
-    "atc_code": "UIO927J",
-    "form": "capsule",
-    "strength": "300 mg",
-    "brand_names": [
-      "Salbutamol Plus",
-      "Salbutamol Classic"
-    ],
-    "available_packages": [
-      {
-        "package_id": "81edbcbe-97cc-4c7f-afbd-9ed44fe2ac17",
-        "gtin": "4893252880957",
-        "pack_size": "100 pcs",
-        "brand_name": "Salbutamol Classic",
-        "manufacturer": "GSK",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "128cc296-c21e-4431-9987-b3e7397cfe57",
-            "pharmacy_name": "Heintze GmbH & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Irena-Seip-Allee 4-8",
-            "price_cents": 1943,
-            "currency": "EUR",
-            "stock_quantity": 11,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "9fc1c43c-2100-4399-a87f-4a5a44ed2b6f",
-            "pharmacy_name": "Cibulová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Svätého Vincenta 2",
-            "price_cents": 1634,
-            "currency": "EUR",
-            "stock_quantity": 10,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "f83c56f2-a557-4d8d-8765-8e4592fb9bca",
-        "gtin": "6482366299468",
-        "pack_size": "50 pcs",
-        "brand_name": "Salbutamol Plus",
-        "manufacturer": "Bayer",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "e681436e-8e56-4bb3-bed1-f4e63ec6e5d6",
-            "pharmacy_name": "Mrázová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Galandova 56",
-            "price_cents": 1358,
-            "currency": "EUR",
-            "stock_quantity": 2,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "d5b159a3-eab9-4433-ba02-8e1c5c82bf95",
-            "pharmacy_name": "Heuser Bolzmann AG & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Gerdi-Ortmann-Straße 32-44",
-            "price_cents": 1993,
-            "currency": "EUR",
-            "stock_quantity": 12,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "084f5f8c-3458-4418-a273-5c158c863176",
-            "pharmacy_name": "Mackovič Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Rybárska brána 518",
-            "price_cents": 958,
-            "currency": "EUR",
-            "stock_quantity": 18,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "f802a4a2-877f-4f30-9b00-6a178e0d5b75",
-        "gtin": "4332003791769",
-        "pack_size": "10 pcs",
-        "brand_name": "Salbutamol Plus",
-        "manufacturer": "Bayer",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "b5ca62b8-63a6-491f-96ac-0f56ace90be8",
-            "pharmacy_name": "Hanúska Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Strážnická 43",
-            "price_cents": 1213,
-            "currency": "EUR",
-            "stock_quantity": 2,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "e44387e8-e9da-45a6-85a4-e7261e077c78",
-        "gtin": "4964990913341",
-        "pack_size": "50 pcs",
-        "brand_name": "Salbutamol Plus",
-        "manufacturer": "Bayer",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "7d7583e5-f28d-4172-bb40-5d9a448efa7b",
-            "pharmacy_name": "Kramer AG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Schleichring 7",
-            "price_cents": 1620,
-            "currency": "EUR",
-            "stock_quantity": 10,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "e681436e-8e56-4bb3-bed1-f4e63ec6e5d6",
-            "pharmacy_name": "Mrázová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Galandova 56",
-            "price_cents": 1370,
-            "currency": "EUR",
-            "stock_quantity": 12,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "d5b159a3-eab9-4433-ba02-8e1c5c82bf95",
-            "pharmacy_name": "Heuser Bolzmann AG & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Gerdi-Ortmann-Straße 32-44",
-            "price_cents": 1698,
-            "currency": "EUR",
-            "stock_quantity": 5,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
+      "Pantoprazole Classic"
+    ]
   },
   {
     "product_id": "70a3f363-e529-4d43-9606-469ca6def9cb",
     "inn_name": "Atorvastatin",
     "display_name": "Atorvastatin",
-    "description": null,
-    "atc_code": "O658Y65",
     "form": "spray",
     "strength": "300 mg",
     "brand_names": [
       "Atorvastatin Extra",
       "Atorvastatin Plus"
-    ],
-    "available_packages": [
-      {
-        "package_id": "bd6bb0cb-bbf8-4b66-87ff-8cd9f0af2aae",
-        "gtin": "4648877190659",
-        "pack_size": "10 pcs",
-        "brand_name": "Atorvastatin Extra",
-        "manufacturer": "Stada",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "7d7583e5-f28d-4172-bb40-5d9a448efa7b",
-            "pharmacy_name": "Kramer AG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Schleichring 7",
-            "price_cents": 258,
-            "currency": "EUR",
-            "stock_quantity": 2,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "3b740f86-ecd0-40e0-8a06-90c6c0f6cc32",
-            "pharmacy_name": "Bohnbach Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Larissa-Hoffmann-Gasse 8164",
-            "price_cents": 1140,
-            "currency": "EUR",
-            "stock_quantity": 9,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "d5b159a3-eab9-4433-ba02-8e1c5c82bf95",
-            "pharmacy_name": "Heuser Bolzmann AG & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Gerdi-Ortmann-Straße 32-44",
-            "price_cents": 757,
-            "currency": "EUR",
-            "stock_quantity": 6,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "943ab3fa-fda2-4b46-bc46-f51af89656e5",
-            "pharmacy_name": "Mikuláková Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Nevská 9",
-            "price_cents": 1810,
-            "currency": "EUR",
-            "stock_quantity": 19,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
+    ]
   },
   {
-    "product_id": "9da3ba58-2f44-47d8-8cea-cbeefda65325",
-    "inn_name": "Simvastatin",
-    "display_name": "Simvastatin",
-    "description": null,
-    "atc_code": "QJL716J",
-    "form": "syrup",
-    "strength": "200 mg",
-    "brand_names": [
-      "Simvastatin Plus"
-    ],
-    "available_packages": [
-      {
-        "package_id": "24104a79-824f-4521-b6b1-5f932b1a0a24",
-        "gtin": "0450533158692",
-        "pack_size": "50 pcs",
-        "brand_name": "Simvastatin Plus",
-        "manufacturer": "Stada",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "7d7583e5-f28d-4172-bb40-5d9a448efa7b",
-            "pharmacy_name": "Kramer AG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Schleichring 7",
-            "price_cents": 799,
-            "currency": "EUR",
-            "stock_quantity": 12,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "9fc1c43c-2100-4399-a87f-4a5a44ed2b6f",
-            "pharmacy_name": "Cibulová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Svätého Vincenta 2",
-            "price_cents": 420,
-            "currency": "EUR",
-            "stock_quantity": 8,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
-  },
-  {
-    "product_id": "a4966fd6-2fb5-4456-9962-146e46688e33",
-    "inn_name": "Vitamin C",
-    "display_name": "Vitamin C",
-    "description": null,
-    "atc_code": "A128G6A",
+    "product_id": "15877571-1d25-48b3-8271-af8e389a2790",
+    "inn_name": "Lisinopril",
+    "display_name": "Lisinopril",
     "form": "capsule",
-    "strength": "200 mg",
+    "strength": "100 mg",
     "brand_names": [
-      "Vitamin C Fast"
-    ],
-    "available_packages": [
-      {
-        "package_id": "bf3769da-7f2a-4b8a-9315-acc9b48bd3f2",
-        "gtin": "9353487401640",
-        "pack_size": "30 pcs",
-        "brand_name": "Vitamin C Fast",
-        "manufacturer": "Novartis",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "e681436e-8e56-4bb3-bed1-f4e63ec6e5d6",
-            "pharmacy_name": "Mrázová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Galandova 56",
-            "price_cents": 1440,
-            "currency": "EUR",
-            "stock_quantity": 16,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "943ab3fa-fda2-4b46-bc46-f51af89656e5",
-            "pharmacy_name": "Mikuláková Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Nevská 9",
-            "price_cents": 1814,
-            "currency": "EUR",
-            "stock_quantity": 20,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "c83b9762-ef32-4c9f-9fec-a7d01e526660",
-        "gtin": "9058651850671",
-        "pack_size": "100 pcs",
-        "brand_name": "Vitamin C Fast",
-        "manufacturer": "Roche",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "b5ca62b8-63a6-491f-96ac-0f56ace90be8",
-            "pharmacy_name": "Hanúska Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Strážnická 43",
-            "price_cents": 1370,
-            "currency": "EUR",
-            "stock_quantity": 13,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "084f5f8c-3458-4418-a273-5c158c863176",
-            "pharmacy_name": "Mackovič Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Rybárska brána 518",
-            "price_cents": 1057,
-            "currency": "EUR",
-            "stock_quantity": 19,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
+      "Lisinopril Fast"
+    ]
   },
   {
-    "product_id": "af5a0f62-dd81-428a-9dc8-058c917a0871",
-    "inn_name": "Hydrochlorothiazide",
-    "display_name": "Hydrochlorothiazide",
-    "description": null,
-    "atc_code": "ASD786J",
-    "form": "ointment",
+    "product_id": "4b74c0a0-7cbd-408d-aba7-b4fcfe3b497e",
+    "inn_name": "Cetirizine",
+    "display_name": "Cetirizine",
+    "form": "spray",
     "strength": "5 mg/ml",
     "brand_names": [
-      "Hydrochlorothiazide Fast"
-    ],
-    "available_packages": [
-      {
-        "package_id": "d5ef7e3d-96ba-447c-ac21-a7b574d33496",
-        "gtin": "6513338726247",
-        "pack_size": "10 pcs",
-        "brand_name": "Hydrochlorothiazide Fast",
-        "manufacturer": "Sandoz",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "7d7583e5-f28d-4172-bb40-5d9a448efa7b",
-            "pharmacy_name": "Kramer AG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Schleichring 7",
-            "price_cents": 966,
-            "currency": "EUR",
-            "stock_quantity": 14,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "3b740f86-ecd0-40e0-8a06-90c6c0f6cc32",
-            "pharmacy_name": "Bohnbach Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Larissa-Hoffmann-Gasse 8164",
-            "price_cents": 522,
-            "currency": "EUR",
-            "stock_quantity": 3,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "9fc1c43c-2100-4399-a87f-4a5a44ed2b6f",
-            "pharmacy_name": "Cibulová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Svätého Vincenta 2",
-            "price_cents": 652,
-            "currency": "EUR",
-            "stock_quantity": 3,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "7f1987b7-d09b-4ed0-b639-eeb76c34f43e",
-        "gtin": "3036541458685",
-        "pack_size": "30 pcs",
-        "brand_name": "Hydrochlorothiazide Fast",
-        "manufacturer": "Sandoz",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "e681436e-8e56-4bb3-bed1-f4e63ec6e5d6",
-            "pharmacy_name": "Mrázová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Galandova 56",
-            "price_cents": 243,
-            "currency": "EUR",
-            "stock_quantity": 13,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "9fc1c43c-2100-4399-a87f-4a5a44ed2b6f",
-            "pharmacy_name": "Cibulová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Svätého Vincenta 2",
-            "price_cents": 1528,
-            "currency": "EUR",
-            "stock_quantity": 14,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "6442acfd-35c2-47da-9b45-406be8182378",
-            "pharmacy_name": "Ackermann Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Bährgasse 14/43",
-            "price_cents": 742,
-            "currency": "EUR",
-            "stock_quantity": 2,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "0836c8f7-c9ba-4c4b-a04f-21e89acaeeb0",
-        "gtin": "7986872774348",
-        "pack_size": "50 pcs",
-        "brand_name": "Hydrochlorothiazide Fast",
-        "manufacturer": "Sandoz",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "d5b159a3-eab9-4433-ba02-8e1c5c82bf95",
-            "pharmacy_name": "Heuser Bolzmann AG & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Gerdi-Ortmann-Straße 32-44",
-            "price_cents": 1850,
-            "currency": "EUR",
-            "stock_quantity": 10,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "9fc1c43c-2100-4399-a87f-4a5a44ed2b6f",
-            "pharmacy_name": "Cibulová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Svätého Vincenta 2",
-            "price_cents": 870,
-            "currency": "EUR",
-            "stock_quantity": 20,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "943ab3fa-fda2-4b46-bc46-f51af89656e5",
-            "pharmacy_name": "Mikuláková Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Nevská 9",
-            "price_cents": 1810,
-            "currency": "EUR",
-            "stock_quantity": 11,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "7d03f34f-f148-4296-8485-c2e88443b826",
-        "gtin": "3135182337498",
-        "pack_size": "30 pcs",
-        "brand_name": "Hydrochlorothiazide Fast",
-        "manufacturer": "Sandoz",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "3b740f86-ecd0-40e0-8a06-90c6c0f6cc32",
-            "pharmacy_name": "Bohnbach Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Larissa-Hoffmann-Gasse 8164",
-            "price_cents": 1143,
-            "currency": "EUR",
-            "stock_quantity": 9,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "fc96565e-a455-4074-a384-0e53a59e924e",
-        "gtin": "5168087603859",
-        "pack_size": "30 pcs",
-        "brand_name": "Hydrochlorothiazide Fast",
-        "manufacturer": "Sandoz",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "943ab3fa-fda2-4b46-bc46-f51af89656e5",
-            "pharmacy_name": "Mikuláková Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Nevská 9",
-            "price_cents": 1513,
-            "currency": "EUR",
-            "stock_quantity": 20,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
+      "Cetirizine Extra",
+      "Cetirizine Fast"
+    ]
+  },
+  {
+    "product_id": "2cf284f6-a7b2-467a-afb4-bfb3563194c7",
+    "inn_name": "Losartan",
+    "display_name": "Losartan",
+    "form": "tablet",
+    "strength": "250 mg",
+    "brand_names": [
+      "Losartan Classic"
+    ]
   },
   {
     "product_id": "b0418a0e-d7ad-47f5-9222-cd709eb9caaf",
     "inn_name": "Diclofenac",
     "display_name": "Diclofenac",
-    "description": null,
-    "atc_code": "W156F56",
     "form": "ointment",
     "strength": "5 mg/ml",
     "brand_names": [
       "Diclofenac Classic"
-    ],
-    "available_packages": [
-      {
-        "package_id": "0a286fe0-bb60-4a43-95fd-f123b96ae93f",
-        "gtin": "9301031051834",
-        "pack_size": "100 pcs",
-        "brand_name": "Diclofenac Classic",
-        "manufacturer": "Roche",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "943ab3fa-fda2-4b46-bc46-f51af89656e5",
-            "pharmacy_name": "Mikuláková Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Nevská 9",
-            "price_cents": 623,
-            "currency": "EUR",
-            "stock_quantity": 19,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "5765382c-c504-4347-81d4-3c99b6cf31b1",
-        "gtin": "8820812191361",
-        "pack_size": "10 pcs",
-        "brand_name": "Diclofenac Classic",
-        "manufacturer": "Roche",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "084f5f8c-3458-4418-a273-5c158c863176",
-            "pharmacy_name": "Mackovič Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Rybárska brána 518",
-            "price_cents": 771,
-            "currency": "EUR",
-            "stock_quantity": 2,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "6442acfd-35c2-47da-9b45-406be8182378",
-            "pharmacy_name": "Ackermann Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Bährgasse 14/43",
-            "price_cents": 1404,
-            "currency": "EUR",
-            "stock_quantity": 11,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "a53a48a8-b254-435b-979f-ae29b6eff7ee",
-        "gtin": "8083136783777",
-        "pack_size": "100 pcs",
-        "brand_name": "Diclofenac Classic",
-        "manufacturer": "Roche",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "b5ca62b8-63a6-491f-96ac-0f56ace90be8",
-            "pharmacy_name": "Hanúska Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Strážnická 43",
-            "price_cents": 1724,
-            "currency": "EUR",
-            "stock_quantity": 16,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "9fc1c43c-2100-4399-a87f-4a5a44ed2b6f",
-            "pharmacy_name": "Cibulová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Svätého Vincenta 2",
-            "price_cents": 437,
-            "currency": "EUR",
-            "stock_quantity": 5,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "084f5f8c-3458-4418-a273-5c158c863176",
-            "pharmacy_name": "Mackovič Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Rybárska brána 518",
-            "price_cents": 1459,
-            "currency": "EUR",
-            "stock_quantity": 14,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "943ab3fa-fda2-4b46-bc46-f51af89656e5",
-            "pharmacy_name": "Mikuláková Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Nevská 9",
-            "price_cents": 619,
-            "currency": "EUR",
-            "stock_quantity": 3,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "6442acfd-35c2-47da-9b45-406be8182378",
-            "pharmacy_name": "Ackermann Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Bährgasse 14/43",
-            "price_cents": 231,
-            "currency": "EUR",
-            "stock_quantity": 6,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
+    ]
+  },
+  {
+    "product_id": "a4966fd6-2fb5-4456-9962-146e46688e33",
+    "inn_name": "Vitamin C",
+    "display_name": "Vitamin C",
+    "form": "capsule",
+    "strength": "200 mg",
+    "brand_names": [
+      "Vitamin C Fast"
+    ]
+  },
+  {
+    "product_id": "bc65d560-66a6-4c8b-b934-8e678a33c76d",
+    "inn_name": "Ibuprofen",
+    "display_name": "Ibuprofen",
+    "form": "tablet",
+    "strength": "400 mg",
+    "brand_names": [
+      "Ibuprofen Fast",
+      "Ibuprofen Plus"
+    ]
+  },
+  {
+    "product_id": "5504c4ff-25b7-4cce-b82d-a7a9ef40dbc0",
+    "inn_name": "Metformin",
+    "display_name": "Metformin",
+    "form": "tablet",
+    "strength": "100 mg",
+    "brand_names": [
+      "Metformin Extra"
+    ]
   },
   {
     "product_id": "b94573f7-1e55-43c8-b906-0cfc294b8cd3",
     "inn_name": "Furosemide",
     "display_name": "Furosemide",
-    "description": null,
-    "atc_code": "RQW652J",
     "form": "spray",
     "strength": "400 mg",
     "brand_names": [
       "Furosemide Classic",
       "Furosemide Plus"
-    ],
-    "available_packages": [
-      {
-        "package_id": "c090e349-bcb1-4694-8183-eaa678b6474d",
-        "gtin": "7468723430980",
-        "pack_size": "50 pcs",
-        "brand_name": "Furosemide Classic",
-        "manufacturer": "Roche",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "9fc1c43c-2100-4399-a87f-4a5a44ed2b6f",
-            "pharmacy_name": "Cibulová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Svätého Vincenta 2",
-            "price_cents": 452,
-            "currency": "EUR",
-            "stock_quantity": 15,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "084f5f8c-3458-4418-a273-5c158c863176",
-            "pharmacy_name": "Mackovič Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Rybárska brána 518",
-            "price_cents": 1719,
-            "currency": "EUR",
-            "stock_quantity": 5,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "6442acfd-35c2-47da-9b45-406be8182378",
-            "pharmacy_name": "Ackermann Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Bährgasse 14/43",
-            "price_cents": 1276,
-            "currency": "EUR",
-            "stock_quantity": 4,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "e42dd30c-1d61-484c-adf2-e3292696b014",
-        "gtin": "9806990162720",
-        "pack_size": "50 pcs",
-        "brand_name": "Furosemide Classic",
-        "manufacturer": "Roche",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "e681436e-8e56-4bb3-bed1-f4e63ec6e5d6",
-            "pharmacy_name": "Mrázová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Galandova 56",
-            "price_cents": 1376,
-            "currency": "EUR",
-            "stock_quantity": 10,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
-  },
-  {
-    "product_id": "d0e30948-3487-440a-947e-ebe24d502e8f",
-    "inn_name": "Pantoprazole",
-    "display_name": "Pantoprazole",
-    "description": null,
-    "atc_code": "JKL756H",
-    "form": "syrup",
-    "strength": "400 mg",
-    "brand_names": [
-      "Pantoprazole Classic"
-    ],
-    "available_packages": [
-      {
-        "package_id": "186f563f-4e2e-4421-8d20-425e30ea2f67",
-        "gtin": "9973763116566",
-        "pack_size": "100 pcs",
-        "brand_name": "Pantoprazole Classic",
-        "manufacturer": "Pfizer",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "128cc296-c21e-4431-9987-b3e7397cfe57",
-            "pharmacy_name": "Heintze GmbH & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Irena-Seip-Allee 4-8",
-            "price_cents": 1985,
-            "currency": "EUR",
-            "stock_quantity": 18,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "7d7583e5-f28d-4172-bb40-5d9a448efa7b",
-            "pharmacy_name": "Kramer AG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Schleichring 7",
-            "price_cents": 1756,
-            "currency": "EUR",
-            "stock_quantity": 4,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "9fc1c43c-2100-4399-a87f-4a5a44ed2b6f",
-            "pharmacy_name": "Cibulová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Svätého Vincenta 2",
-            "price_cents": 1396,
-            "currency": "EUR",
-            "stock_quantity": 13,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "494a3d47-6a2d-4a4c-90c8-b93757b5ec46",
-        "gtin": "1434558122362",
-        "pack_size": "30 pcs",
-        "brand_name": "Pantoprazole Classic",
-        "manufacturer": "Pfizer",
-        "country_code": "SK",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "3b740f86-ecd0-40e0-8a06-90c6c0f6cc32",
-            "pharmacy_name": "Bohnbach Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Larissa-Hoffmann-Gasse 8164",
-            "price_cents": 1103,
-            "currency": "EUR",
-            "stock_quantity": 12,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "e681436e-8e56-4bb3-bed1-f4e63ec6e5d6",
-            "pharmacy_name": "Mrázová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Galandova 56",
-            "price_cents": 1904,
-            "currency": "EUR",
-            "stock_quantity": 10,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "36628288-ef8f-4d67-812d-de8458ba89fe",
-        "gtin": "2294131869993",
-        "pack_size": "100 pcs",
-        "brand_name": "Pantoprazole Classic",
-        "manufacturer": "Pfizer",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "7d7583e5-f28d-4172-bb40-5d9a448efa7b",
-            "pharmacy_name": "Kramer AG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Schleichring 7",
-            "price_cents": 1087,
-            "currency": "EUR",
-            "stock_quantity": 4,
-            "last_updated": null
-          }
-        ]
-      },
-      {
-        "package_id": "097bb7bb-f1f5-4e96-9174-bfd4b3ff24b7",
-        "gtin": "4824771093248",
-        "pack_size": "10 pcs",
-        "brand_name": "Pantoprazole Classic",
-        "manufacturer": "Pfizer",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "b5ca62b8-63a6-491f-96ac-0f56ace90be8",
-            "pharmacy_name": "Hanúska Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Strážnická 43",
-            "price_cents": 858,
-            "currency": "EUR",
-            "stock_quantity": 7,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "e681436e-8e56-4bb3-bed1-f4e63ec6e5d6",
-            "pharmacy_name": "Mrázová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Galandova 56",
-            "price_cents": 1470,
-            "currency": "EUR",
-            "stock_quantity": 9,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "d5b159a3-eab9-4433-ba02-8e1c5c82bf95",
-            "pharmacy_name": "Heuser Bolzmann AG & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Gerdi-Ortmann-Straße 32-44",
-            "price_cents": 868,
-            "currency": "EUR",
-            "stock_quantity": 14,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
+    ]
   },
   {
     "product_id": "eaccf062-7b08-473d-8438-d786d229886d",
     "inn_name": "Ranitidine",
     "display_name": "Ranitidine",
-    "description": null,
-    "atc_code": "DA567WA",
     "form": "tablet",
     "strength": "500 mg",
     "brand_names": [
       "Ranitidine Classic"
-    ],
-    "available_packages": [
-      {
-        "package_id": "31cbb507-2a9e-4748-8142-5ce3b7a97e14",
-        "gtin": "4352408240084",
-        "pack_size": "10 pcs",
-        "brand_name": "Ranitidine Classic",
-        "manufacturer": "Bayer",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "b5ca62b8-63a6-491f-96ac-0f56ace90be8",
-            "pharmacy_name": "Hanúska Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Strážnická 43",
-            "price_cents": 971,
-            "currency": "EUR",
-            "stock_quantity": 15,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "d5b159a3-eab9-4433-ba02-8e1c5c82bf95",
-            "pharmacy_name": "Heuser Bolzmann AG & Co. OHG Apotheke",
-            "pharmacy_country": "DE",
-            "pharmacy_city": "Berlin",
-            "pharmacy_address": "Gerdi-Ortmann-Straße 32-44",
-            "price_cents": 725,
-            "currency": "EUR",
-            "stock_quantity": 16,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
+    ]
+  },
+  {
+    "product_id": "6bb85c51-97d5-464d-9bef-5a259f8f0f1b",
+    "inn_name": "Salbutamol",
+    "display_name": "Salbutamol",
+    "form": "capsule",
+    "strength": "300 mg",
+    "brand_names": [
+      "Salbutamol Classic",
+      "Salbutamol Plus"
+    ]
   },
   {
     "product_id": "f8b0ac65-1f55-4a21-8fe4-2494cc4d0206",
     "inn_name": "Levothyroxine",
     "display_name": "Levothyroxine",
-    "description": null,
-    "atc_code": "R756M32",
     "form": "capsule",
     "strength": "10 mg/ml",
     "brand_names": [
       "Levothyroxine Extra"
-    ],
-    "available_packages": [
-      {
-        "package_id": "43fad177-f2cb-4843-a0d6-257b0c127fc7",
-        "gtin": "2419049663193",
-        "pack_size": "100 pcs",
-        "brand_name": "Levothyroxine Extra",
-        "manufacturer": "Teva",
-        "country_code": "DE",
-        "pharmacy_locations": [
-          {
-            "pharmacy_id": "b5ca62b8-63a6-491f-96ac-0f56ace90be8",
-            "pharmacy_name": "Hanúska Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Strážnická 43",
-            "price_cents": 1643,
-            "currency": "EUR",
-            "stock_quantity": 13,
-            "last_updated": null
-          },
-          {
-            "pharmacy_id": "e681436e-8e56-4bb3-bed1-f4e63ec6e5d6",
-            "pharmacy_name": "Mrázová Apotheke",
-            "pharmacy_country": "SK",
-            "pharmacy_city": "Bratislava",
-            "pharmacy_address": "Galandova 56",
-            "price_cents": 1787,
-            "currency": "EUR",
-            "stock_quantity": 8,
-            "last_updated": null
-          }
-        ]
-      }
-    ],
-    "language": "en"
+    ]
+  },
+  {
+    "product_id": "63cc26cd-e9c5-4d79-a68d-b90498d4095c",
+    "inn_name": "Paracetamol",
+    "display_name": "Paracetamol",
+    "form": "ointment",
+    "strength": "200 mg",
+    "brand_names": [
+      "Paracetamol Classic",
+      "Paracetamol Plus"
+    ]
+  },
+  {
+    "product_id": "9da3ba58-2f44-47d8-8cea-cbeefda65325",
+    "inn_name": "Simvastatin",
+    "display_name": "Simvastatin",
+    "form": "syrup",
+    "strength": "200 mg",
+    "brand_names": [
+      "Simvastatin Plus"
+    ]
+  },
+  {
+    "product_id": "37953558-64c5-4595-87c0-45d0f3a1d959",
+    "inn_name": "Amoxicillin",
+    "display_name": "Amoxicillin",
+    "form": "tablet",
+    "strength": "300 mg",
+    "brand_names": [
+      "Amoxicillin Plus"
+    ]
+  },
+  {
+    "product_id": "1c316c32-8e93-4931-9487-7b7023215a0b",
+    "inn_name": "Aspirin",
+    "display_name": "Aspirin",
+    "form": "capsule",
+    "strength": "300 mg",
+    "brand_names": [
+      "Aspirin Fast"
+    ]
+  },
+  {
+    "product_id": "af5a0f62-dd81-428a-9dc8-058c917a0871",
+    "inn_name": "Hydrochlorothiazide",
+    "display_name": "Hydrochlorothiazide",
+    "form": "ointment",
+    "strength": "5 mg/ml",
+    "brand_names": [
+      "Hydrochlorothiazide Fast"
+    ]
+  },
+  {
+    "product_id": "6f66cebd-a859-4773-b4ab-06d0287ecb41",
+    "inn_name": "Omeprazole",
+    "display_name": "Omeprazole",
+    "form": "ointment",
+    "strength": "200 mg",
+    "brand_names": [
+      "Omeprazole Classic",
+      "Omeprazole Extra"
+    ]
   }
 ]

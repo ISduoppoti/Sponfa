@@ -1,12 +1,60 @@
 // data/models/product.dart
 import 'package:equatable/equatable.dart';
 
+// Simple search item for typeahead/search results
+class ProductSearchItem extends Equatable {
+  final String productId;
+  final String innName;
+  final String displayName;  // Translated name or inn_name
+  final String? form;
+  final String? strength;
+
+  const ProductSearchItem({
+    required this.productId,
+    required this.innName,
+    required this.displayName,
+    this.form,
+    this.strength,
+  });
+
+  factory ProductSearchItem.fromJson(Map<String, dynamic> json) => ProductSearchItem(
+    productId: json['product_id'],
+    innName: json['inn_name'],
+    displayName: json['display_name'],
+    form: json['form'],
+    strength: json['strength'],
+  );
+
+  Map<String, dynamic> toJson() => {
+    'product_id': productId,
+    'inn_name': innName,
+    'display_name': displayName,
+    'form': form,
+    'strength': strength,
+  };
+
+  // Helper getter for search display
+  String get searchDisplayName {
+    final parts = <String>[];
+    parts.add(displayName);
+    if (strength != null) parts.add(strength!);
+    if (form != null) parts.add(form!);
+    return parts.join(' ');
+  }
+
+  @override
+  List<Object?> get props => [productId, innName, displayName, form, strength];
+}
+
+// Detailed pharmacy location info
 class PharmacyLocationInfo extends Equatable {
   final String pharmacyId;
   final String pharmacyName;
   final String pharmacyAddress;
   final String pharmacyCity;
   final String pharmacyCountry;
+  final double? lat;
+  final double? lng;
   final int? priceCents;
   final String currency;
   final int stockQuantity;
@@ -18,6 +66,8 @@ class PharmacyLocationInfo extends Equatable {
     required this.pharmacyAddress,
     required this.pharmacyCity,
     required this.pharmacyCountry,
+    this.lat,
+    this.lng,
     this.priceCents,
     this.currency = 'EUR',
     required this.stockQuantity,
@@ -30,6 +80,8 @@ class PharmacyLocationInfo extends Equatable {
     pharmacyAddress: json['pharmacy_address'],
     pharmacyCity: json['pharmacy_city'],
     pharmacyCountry: json['pharmacy_country'],
+    lat: json['lat']?.toDouble(),
+    lng: json['lng']?.toDouble(),
     priceCents: json['price_cents'],
     currency: json['currency'] ?? 'EUR',
     stockQuantity: json['stock_quantity'],
@@ -42,6 +94,8 @@ class PharmacyLocationInfo extends Equatable {
     'pharmacy_address': pharmacyAddress,
     'pharmacy_city': pharmacyCity,
     'pharmacy_country': pharmacyCountry,
+    'lat': lat,
+    'lng': lng,
     'price_cents': priceCents,
     'currency': currency,
     'stock_quantity': stockQuantity,
@@ -57,13 +111,16 @@ class PharmacyLocationInfo extends Equatable {
 
   String get fullAddress => '$pharmacyAddress, $pharmacyCity, $pharmacyCountry';
 
+  bool get hasCoordinates => lat != null && lng != null;
+
   @override
   List<Object?> get props => [
     pharmacyId, pharmacyName, pharmacyAddress, pharmacyCity, 
-    pharmacyCountry, priceCents, currency, stockQuantity, lastUpdated
+    pharmacyCountry, lat, lng, priceCents, currency, stockQuantity, lastUpdated
   ];
 }
 
+// Package availability info with pharmacy locations
 class PackageAvailabilityInfo extends Equatable {
   final String packageId;
   final String? gtin;
@@ -136,7 +193,8 @@ class PackageAvailabilityInfo extends Equatable {
   ];
 }
 
-class ProductModel extends Equatable {
+// Detailed product model with full information
+class ProductDetailModel extends Equatable {
   final String productId;
   final String innName;
   final String displayName;  // Translated name
@@ -148,7 +206,7 @@ class ProductModel extends Equatable {
   final List<PackageAvailabilityInfo> availablePackages;
   final String language;
 
-  const ProductModel({
+  const ProductDetailModel({
     required this.productId,
     required this.innName,
     required this.displayName,
@@ -161,7 +219,7 @@ class ProductModel extends Equatable {
     required this.language,
   });
 
-  factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
+  factory ProductDetailModel.fromJson(Map<String, dynamic> json) => ProductDetailModel(
     productId: json['product_id'],
     innName: json['inn_name'],
     displayName: json['display_name'],
@@ -230,9 +288,22 @@ class ProductModel extends Equatable {
     return cities.toList()..sort();
   }
 
+  // Convert to search item
+  ProductSearchItem toSearchItem() => ProductSearchItem(
+    productId: productId,
+    innName: innName,
+    displayName: displayName,
+    form: form,
+    strength: strength,
+  );
+
   @override
   List<Object?> get props => [
     productId, innName, displayName, description, atcCode, 
     form, strength, brandNames, availablePackages, language
   ];
 }
+
+// Legacy aliases for backward compatibility
+@Deprecated('Use ProductPackagesModel instead')
+typedef ProductModel = ProductSearchItem;

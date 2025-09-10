@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glovoapotheka/data/models/product.dart';
+import 'package:glovoapotheka/data/models/city.dart';
+import 'package:glovoapotheka/features/packages_menu/view/packages_view.dart';
 import 'dart:math' as math;
 
 import 'package:glovoapotheka/features/search/cubit/search_cubit.dart';
@@ -14,13 +16,15 @@ import 'package:glovoapotheka/features/search/widgets/presearch_window_widget.da
 class UnifiedSearchBar extends StatefulWidget {
   final bool isCitySelector;
   final bool isNavBar;
+  String? controllerText;
   final VoidCallback? onCityTap;
   final double? width;
 
-  const UnifiedSearchBar({
+  UnifiedSearchBar({
     super.key,
     this.isCitySelector = true,
     this.isNavBar = false,
+    this.controllerText,
     this.onCityTap,
     this.width,
   });
@@ -41,6 +45,10 @@ class _UnifiedSearchBarState extends State<UnifiedSearchBar> {
     super.initState();
     _focusNode.addListener(() {
       if (_focusNode.hasFocus) {
+        if (widget.controllerText != null) {
+          _controller.text = widget.controllerText!;
+          widget.controllerText = null;
+        }
         _showOverlay();
       }
     });
@@ -164,15 +172,16 @@ void _showOverlay() {
     );
   }
 
-  Widget _buildProductTile(dynamic product) {
+  Widget _buildProductTile(ProductModel product) {
     return InkWell(
       onTap: () {
         _hideOverlay();
         _focusNode.unfocus();
-        Navigator.pushNamed(
-          context, 
-          '/product_view',
-          arguments: {'product_id': product.id}, // Adjust based on your product structure
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProductPackagesPage(productId: product.productId),
+          ),
         );
       },
       child: Container(
@@ -206,7 +215,7 @@ void _showOverlay() {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    product.displayName ?? product.inn_name ?? 'Unknown Product',
+                    product.displayName ?? product.innName ?? 'Unknown Product',
                     style: const TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 14,
@@ -216,7 +225,7 @@ void _showOverlay() {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '${product.form ?? 'Various forms'} • from ${product.lowestPriceFormatted ?? 'Price varies'} • ${product.totalPharmacies ?? "No info about"} pharmacies',
+                    '${product.form ?? 'Various forms'} • ${product.strength ?? "No strenght"}',
                     style: TextStyle(
                       color: Colors.grey[600],
                       fontSize: 12,
@@ -246,9 +255,25 @@ void _showOverlay() {
   }
 
   double _getSearchBarWidth() {
+    // Try to read the rendered width of the search container via the GlobalKey.
+    try {
+      final renderBox = _searchContainerKey.currentContext?.findRenderObject() as RenderBox?;
+      if (renderBox != null && renderBox.hasSize) {
+        final w = renderBox.size.width;
+        if (w.isFinite && w > 0) return w;
+      }
+    } catch (e) {
+      // ignore and fallback
+    }
+
+    // Fallback to MediaQuery (screen width) or a safe default.
     final screenWidth = MediaQuery.of(context).size.width;
-    return widget.width ?? 
-        (widget.isNavBar ? screenWidth : math.min(screenWidth * 0.8, 700));
+    if (widget.width != null) return widget.width!;
+    if (widget.isNavBar) {
+      // Prefer using full screen width as a fallback for navbar, but finite.
+      return screenWidth;
+    }
+    return math.min(screenWidth * 0.8, 700);
   }
 
   void _showCitySelector(BuildContext context) async {
@@ -258,11 +283,11 @@ void _showOverlay() {
     final cityService = context.read<CityService>();
     await cityService.loadCities();
 
-    final availableCities = cityService.cities.map((c) => c.name).toList();
+    final availableCities = cityService.cities;
 
     if (!context.mounted) return;
 
-    final selected = await showDialog<String>(
+    final selected = await showDialog<City>(
       context: context,
       builder: (context) {
         return SimpleDialog(
@@ -270,7 +295,7 @@ void _showOverlay() {
           children: availableCities.map((city) {
             return SimpleDialogOption(
               onPressed: () => Navigator.pop(context, city),
-              child: Text(city),
+              child: Text(city.name),
             );
           }).toList(),
         );
@@ -278,7 +303,6 @@ void _showOverlay() {
     );
 
     if (selected != null) {
-      cityService.detectCityFromLocation();
       cityService.setCity(selected);
     }
     
@@ -309,8 +333,8 @@ void _showOverlay() {
     // Determine container properties based on isNavBar
     final containerHeight = widget.isNavBar ? 50.0 : 60.0;
     final borderRadius = widget.isNavBar ? 10.0 : 15.0;
-    final containerWidth = widget.width ?? 
-        (widget.isNavBar ? double.infinity : math.min(screenWidth * 0.8, 700));
+    final double? containerWidth = widget.width ??
+        (widget.isNavBar ? null : math.min(screenWidth * 0.8, 700));
 
     final city = context.watch<CityService>().selectedCity;
 
@@ -352,9 +376,11 @@ void _showOverlay() {
                       context.read<SearchCubit>().search(query);
                     },
                     decoration: InputDecoration(
-                      hintText: widget.isNavBar
-                          ? 'Enter medication name...'
-                          : 'Search for products...',
+                      hintText: widget.controllerText ?? (
+                          widget.isNavBar
+                              ? 'Enter medication name...'
+                              : 'Search for products...'
+                      ),
                       suffixIcon: const Icon(Icons.search),
                       border: InputBorder.none,
                       contentPadding: EdgeInsets.symmetric(
@@ -401,7 +427,7 @@ void _showOverlay() {
                       const SizedBox(width: 8),
                       Flexible(
                         child: Text(
-                          city,
+                          city.name,
                           style: const TextStyle(
                               color: Color.fromARGB(255, 255, 255, 255)),
                           overflow: TextOverflow.ellipsis,

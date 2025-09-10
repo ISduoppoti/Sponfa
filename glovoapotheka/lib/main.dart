@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glovoapotheka/domain/repositories/auth_repository.dart';
 import 'package:glovoapotheka/domain/services/city_service.dart';
 import 'package:glovoapotheka/domain/services/popular_products_service.dart';
+import 'package:glovoapotheka/features/auth/cart/view/cart_view.dart';
 import 'package:glovoapotheka/features/auth/cubit/auth_cubit.dart';
 import 'package:glovoapotheka/features/auth/view/login_view.dart';
 import 'package:glovoapotheka/features/home/view/home_view.dart';
@@ -12,7 +13,10 @@ import 'package:glovoapotheka/features/home/view/home_view.dart';
 import 'package:glovoapotheka/domain/repositories/product_repository.dart'; // The abstract class/interface
 import 'package:glovoapotheka/domain/repositories/product_repository_impl.dart'; // The implementation
 import 'package:glovoapotheka/data/providers/product_api_provider.dart'; // The API provider
+import 'package:glovoapotheka/data/providers/cart_provider.dart';
+import 'package:glovoapotheka/features/packages_menu/view/packages_view.dart';
 import 'package:glovoapotheka/features/search/cubit/search_cubit.dart'; // The SearchCubit
+import 'package:glovoapotheka/features/packages_menu/cubit/product_packages_cubit.dart';
 import 'package:provider/provider.dart';
 
 // NOTE: Make sure you have your firebase_options.dart file from the FlutterFire CLI
@@ -57,6 +61,8 @@ class MyApp extends StatelessWidget {
           create: (context) => PopularProductsService(),
           child: const MyApp(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => CartProvider())
       ],
       child: MultiBlocProvider(
         providers: [

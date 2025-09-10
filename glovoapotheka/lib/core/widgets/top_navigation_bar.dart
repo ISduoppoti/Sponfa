@@ -13,6 +13,7 @@ class TopNavigationBar extends StatelessWidget {
   final double screenWidth;
   final bool isSearchBar;
   final bool isTextMenu;
+  final String? controllerText;
 
   const TopNavigationBar({
     super.key, 
@@ -20,6 +21,7 @@ class TopNavigationBar extends StatelessWidget {
     required this.screenWidth,
     this.isSearchBar = false,
     this.isTextMenu = false,
+    this.controllerText,
   });
 
   static const double minWidthForTextMenu = 1442;
@@ -123,7 +125,7 @@ class TopNavigationBar extends StatelessWidget {
           // Search bar
           if (isSearchBar)
             Expanded(
-              child: UnifiedSearchBar(isNavBar: true, isCitySelector: false,),
+              child: UnifiedSearchBar(isNavBar: true, isCitySelector: false, controllerText: controllerText),
             ),
 
           SizedBox(width: 12),

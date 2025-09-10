@@ -13,4 +13,13 @@ abstract class ProductRepository {
   });
 
   Future<ProductModel> getById(String id);
+
+  Future<ProductDetailModel> getProductPackages({
+    required String productId,
+    String language = 'en',
+    double? lat,
+    double? lng,
+    int? radiusKm,
+    bool onlyInStock = true,
+  });
 }

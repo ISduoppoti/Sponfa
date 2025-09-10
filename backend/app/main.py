@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .api.products import router as products_router
+from .api.pharmacies import router as pharmacy_router
 from .core.config import settings
 
 app = FastAPI()
@@ -20,3 +21,4 @@ async def health():
 
 
 app.include_router(products_router)
+app.include_router(pharmacy_router)

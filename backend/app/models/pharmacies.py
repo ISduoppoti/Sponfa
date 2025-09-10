@@ -15,7 +15,7 @@ class Pharmacy(Base):
     country: Mapped[str] = mapped_column(String(2), nullable=False)  # e.g. "AT"
     city: Mapped[str] = mapped_column(String, nullable=False)
     address: Mapped[str] = mapped_column(String, nullable=True)
-    lat: Mapped[str] = mapped_column(String, nullable=True)
+    lat: Mapped[str] = mapped_column(String, nullable=True) # TODO: Change to INT type
     lng: Mapped[str] = mapped_column(String, nullable=True)
     phone: Mapped[str] = mapped_column(String, nullable=True)
     opening_hours: Mapped[dict] = mapped_column(JSONB, nullable=True)
@@ -24,18 +24,36 @@ class Pharmacy(Base):
     inventories: Mapped[List["PharmacyInventory"]] = relationship("PharmacyInventory", back_populates="pharmacy", cascade="all, delete-orphan")
 
     @hybrid_method
-    def distance_to(self, lat: float, lng: float):
+    def distance_to(self, lat: float, lng: float) -> float:
         """
-        Returns the distance (in km) between this pharmacy and a given point.
+        Haversine (in km). Returns None if pharmacy lat/lng is null.
         """
-        # Explicitly cast lat and lng to Float
-        lat_f = cast(self.lat, Float)
-        lng_f = cast(self.lng, Float)
+        return 30
+    """
+        # NOTE: the Python version is not used in SQL; this is for in-Python calls if any
+        import math
+        if self.lat is None or self.lng is None:
+            return None
+        dlat = math.radians(int(self.lat) - lat)
+        dlng = math.radians(int(self.lng) - lng)
+        a = (math.sin(dlat/2)**2 +
+             math.cos(math.radians(lat)) * math.cos(math.radians(int(self.lat))) *
+             math.sin(dlng/2)**2)
+        return 2 * EARTH_RADIUS_KM * math.asin(math.sqrt(a))
 
-        return 6371 * func.acos(
-            func.cos(func.radians(lat)) *
-            func.cos(func.radians(lat_f)) *
-            func.cos(func.radians(lng_f) - func.radians(lng)) +
-            func.sin(func.radians(lat)) *
-            func.sin(func.radians(lat_f))
-        )
+    @distance_to.expression  # SQL expression used in WHERE/ORDER BY
+    def distance_to(cls, lat: float, lng: float):
+        lat1 = func.radians(literal(lat))
+        lng1 = func.radians(literal(lng))
+        lat2 = func.radians(int(cls.lat))
+        lng2 = func.radians(int(cls.lng))
+
+        dlat = lat2 - lat1
+        dlng = lng2 - lng1
+
+        a = func.pow(func.sin(dlat / 2), 2) + \
+            func.cos(lat1) * func.cos(lat2) * func.pow(func.sin(dlng / 2), 2)
+        c = 2 * func.asin(func.sqrt(a))
+        return literal(EARTH_RADIUS_KM) * c
+    """
+    

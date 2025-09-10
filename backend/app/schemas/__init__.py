@@ -1,4 +1,4 @@
-from .product import PharmacyLocationInfo, PackageAvailabilityInfo, ProductSearchResponse, ProductSimpleResponse
+from .product import ProductSearchItem, PharmacyLocationInfo, PackageAvailabilityInfo, ProductDetailModel, PharmaciesSearchRequest, PharmacyPackageLine, PharmacySearchResult
 from .package import PackageBase, PackageCreate, PackageUpdate, PackageOut
 from .translation import TranslationBase, TranslationCreate, TranslationOut, TranslationUpdate
 from .pharmacy import (

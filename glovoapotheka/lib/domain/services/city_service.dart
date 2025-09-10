@@ -8,91 +8,113 @@ import 'package:http/http.dart' as http;
 import 'package:glovoapotheka/data/models/city.dart';
 
 class CityService extends ChangeNotifier {
-  String _selectedCity = "Select City";
-  double _latitude = 48.1486; // Default to Bratislava
-  double _longitude = 17.1077;
+  City? _selectedCity; // Always hold a City object (or null if not selected)
+  City? _autoDetectedCity; // Stores auto-detected city (not forced)
   List<City> _cities = [];
 
-  String get selectedCity => _selectedCity;
-  double get latitude => _latitude;
-  double get longitude => _longitude;
+  /// Default city if nothing else applies
+  final City _defaultCity = City(name: "Bratislava", lat: 48.1486, lng: 17.1077);
+
   List<City> get cities => _cities;
 
-  /// Manual city selection
-  void setCity(String city) {
+  City get selectedCity => _selectedCity ?? _defaultCity;
+  City? get autoDetectedCity => _autoDetectedCity;
+
+  /// Manual city selection (always overrides auto)
+  void setCity(City city) {
     _selectedCity = city;
-
-    // If city exists in list, set lat/lng too (should exist)
-    final match = _cities.firstWhere(
-      (c) => c.name == city,
-      orElse: () => City(name: "Bratislava", lat: 48.1486, lng: 17.1077), // default if not found
-    );
-    _latitude = match.lat;
-    _longitude = match.lng;
-
     notifyListeners();
   }
 
   /// Fetch cities from backend
   Future<void> loadCities() async {
-    _cities = [City(name: "Bratislava", lat: 48.1486, lng: 17.1077), City(name: "Berlin", lat: 52.5200, lng: 13.4050)];
-    notifyListeners();
+    _cities = [
+      City(name: "Bratislava", lat: 48.1486, lng: 17.1077),
+      City(name: "Berlin", lat: 52.5200, lng: 13.4050),
+    ];
 
     /*
-    final response = await http.get(Uri.parse("https://example.com/cities"));
-    if (response.statusCode == 200) {
-      final List<dynamic> data = jsonDecode(response.body);
-      _cities = data.map((e) => City.fromJson(e)).toList();
-      notifyListeners();
-    } else {
-      _cities = [City(name: "Bratislava", lat: 48.1486, lng: 17.1077), City(name: "Berlin", lat: 52.5200, lng: 13.4050)];
-      notifyListeners();
+    try {
+      final response = await http.get(Uri.parse("https://example.com/cities"));
+      if (response.statusCode == 200) {
+        final List<dynamic> data = jsonDecode(response.body);
+        _cities = data.map((e) => City.fromJson(e)).toList();
+      }
+    } catch (e) {
+      debugPrint("Error loading cities: $e");
     }
     */
+
+    notifyListeners();
   }
 
-  /// Fetch user location and set nearest city
+  /// Fetch user location and suggest nearest city (does not override manual!)
   Future<void> detectCityFromLocation() async {
     try {
       final position = await Geolocator.getCurrentPosition(
         locationSettings: const LocationSettings(
           accuracy: LocationAccuracy.high,
-          distanceFilter: 100, // update when moved 100 meters, optional for now
+          distanceFilter: 100,
         ),
       );
-
-      _latitude = position.latitude;
-      _longitude = position.longitude;
-
-      print("User location: $_latitude, $_longitude");
-
 
       if (_cities.isEmpty) {
         await loadCities();
       }
 
-      final nearest = _findNearestCity(_cities, _latitude, _longitude);
-      _selectedCity = nearest.name;
-      //_latitude = nearest.lat;
-      //_longitude = nearest.lng;
+      final nearest = _findNearestCity(_cities, position.latitude, position.longitude);
+
+      // Save as auto-detected suggestion
+      _autoDetectedCity = nearest;
+
+      // Only apply if user hasn't chosen manually yet
+      _selectedCity ??= nearest;
+
+      // Edge case: nearest is not supported (shouldn’t happen if _findNearestCity runs on supported list)
+      // But if cities list didn’t contain user’s real city -> fallback to default
+      _selectedCity ??= _defaultCity;
+
       notifyListeners();
     } catch (e) {
       debugPrint("Error fetching location: $e");
     }
   }
 
-  /// Find nearest city based on coordinates
+  /// Force update city from user’s current location
+  Future<void> forceSetCityFromLocation() async {
+    try {
+      final position = await Geolocator.getCurrentPosition(
+        locationSettings: const LocationSettings(
+          accuracy: LocationAccuracy.high,
+          distanceFilter: 100,
+        ),
+      );
+
+      if (_cities.isEmpty) {
+        await loadCities();
+      }
+
+      final nearest = _findNearestCity(
+        _cities,
+        position.latitude,
+        position.longitude,
+      );
+
+      _autoDetectedCity = nearest;
+      _selectedCity = nearest; // overwrite manual choice
+      notifyListeners();
+    } catch (e) {
+      debugPrint("Error forcing city from location: $e");
+    }
+  }
+
+  /// Find nearest city from supported list
   City _findNearestCity(List<City> cities, double lat, double lng) {
     City nearest = cities.first;
     double minDistance = double.infinity;
 
     for (var city in cities) {
-      final dist = Geolocator.distanceBetween(
-        lat,
-        lng,
-        city.lat,
-        city.lng,
-      );
+      final dist = Geolocator.distanceBetween(lat, lng, city.lat, city.lng);
       if (dist < minDistance) {
         minDistance = dist;
         nearest = city;
@@ -100,5 +122,14 @@ class CityService extends ChangeNotifier {
     }
 
     return nearest;
+  }
+
+  /// Human-readable string for UI
+  String get cityLabel {
+    if (_selectedCity != null) return _selectedCity!.name;
+    if (_autoDetectedCity != null) {
+      return "${_autoDetectedCity!.name} (detected)";
+    }
+    return _defaultCity.name; // fallback
   }
 }

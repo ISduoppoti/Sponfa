@@ -17,4 +17,23 @@ class ProductRepositoryImpl implements ProductRepository {
     // TODO: call /products/{id}
     throw UnimplementedError();
   }
+
+  @override
+  Future<ProductDetailModel> getProductPackages({
+    required String productId,
+    String language = 'en',
+    double? lat,
+    double? lng,
+    int? radiusKm,
+    bool onlyInStock = true,
+  }) {
+    return api.getProductPackages(
+      productId: productId,
+      language: language,
+      lat: lat,
+      lng: lng,
+      radiusKm: radiusKm,
+      onlyInStock: onlyInStock,
+    );
+  }
 }

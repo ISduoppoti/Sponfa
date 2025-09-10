@@ -434,7 +434,7 @@ class ProductCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: Text(
-                          'from ${product.lowestPriceFormatted} €}',
+                          'from changed €}', //'from ${product.lowestPriceFormatted} €}',
                           style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
