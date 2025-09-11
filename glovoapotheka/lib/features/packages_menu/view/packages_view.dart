@@ -39,18 +39,7 @@ class ProductPackagesPage extends StatelessWidget {
 class ProductPackagesView extends StatelessWidget {
   const ProductPackagesView({super.key});
 
-void showCartPopup(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (_) => Dialog(
-      child: Container(
-        width: 1200,
-        height: 800,
-        child: CartPage(), // reuse
-      ),
-    ),
-  );
-}
+
 
 
   @override
@@ -168,13 +157,31 @@ void showCartPopup(BuildContext context) {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            state.productDetail.displayName,
-            style: const TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF2E2E2E),
-            ),
+          Row(
+            children: [
+              Text(
+                state.productDetail.displayName,
+                style: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF2E2E2E),
+                ),
+              ),
+              Text(
+                " • ${state.productDetail.strength}",
+                style: const TextStyle(
+                  fontSize: 20,
+                  color: Color.fromARGB(255, 66, 66, 66),
+                ),
+              ),
+              Text(
+                " • ${state.productDetail.form}",
+                style: const TextStyle(
+                  fontSize: 20,
+                  color: Color.fromARGB(255, 66, 66, 66),
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 4),
           Row(
@@ -362,8 +369,8 @@ void showCartPopup(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
         int crossAxisCount = 1; // Start with 1 column for the new horizontal layout
-        if (constraints.maxWidth > 900) crossAxisCount = 2;
-        if (constraints.maxWidth > 1400) crossAxisCount = 3;
+        if (constraints.maxWidth > 900) crossAxisCount = 3;
+        if (constraints.maxWidth > 1400) crossAxisCount = 4;
 
         return GridView.builder(
           itemCount: packages.length,
@@ -371,7 +378,7 @@ void showCartPopup(BuildContext context) {
             crossAxisCount: crossAxisCount,
             mainAxisSpacing: 16,
             crossAxisSpacing: 16,
-            childAspectRatio: 2.5, // Wider aspect ratio for horizontal layout
+            childAspectRatio: 1.9, // Wider aspect ratio for horizontal layout
           ),
           itemBuilder: (context, index) {
             return _buildPackageCard(context, packages[index]);
@@ -419,15 +426,15 @@ void showCartPopup(BuildContext context) {
                 children: [
                   // Left side - Image
                   Container(
-                    width: 80,
-                    height: 80,
+                    width: 150,
+                    height: 150,
                     decoration: BoxDecoration(
                       color: Colors.grey.shade100,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: const Icon(
                       Icons.medical_services_outlined,
-                      size: 32,
+                      size: 150,
                       color: Colors.grey,
                     ),
                   ),
@@ -516,33 +523,37 @@ void showCartPopup(BuildContext context) {
                             ),
                           ],
                         ),
+
+                        const SizedBox(height: 8),
+
+                        // Look pharmacies button
+                        ElevatedButton(
+                          onPressed: () {
+                            // context.read<ProductPackagesCubit>().onAddToCart(package);
+                            cart.addItem(CartItem(id: package.packageId, name: package.displayName, imageUrl: "someURL", price: package.lowestPrice));
+                            cart.showCartPopup(context);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.orange,
+                            foregroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            elevation: 0,
+                          ),
+                          child: const Text(
+                            "Add to cart",
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ],
               ),
 
-              // Look pharmacies button
-              ElevatedButton(
-                onPressed: () {
-                  // context.read<ProductPackagesCubit>().onAddToCart(package);
-                  cart.addItem(CartItem(id: package.packageId, name: package.displayName, imageUrl: "someURL", price: package.lowestPrice));
-                  showCartPopup(context);
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange,
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  elevation: 0,
-                ),
-                child: const Text(
-                  "Look pharmacies",
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
-                ),
-              ),
+
             ],
           ),
         ),

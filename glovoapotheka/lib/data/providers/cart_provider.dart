@@ -1,10 +1,24 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:glovoapotheka/data/models/cart_item.dart';
+import 'package:glovoapotheka/features/auth/cart/view/cart_view.dart';
 
 class CartProvider with ChangeNotifier {
   final List<CartGroup> _groups = [];
 
   List<CartGroup> get groups => _groups;
+
+  void showCartPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (_) => Dialog(
+        child: Container(
+          width: 1200,
+          height: 800,
+          child: CartPage(), // reuse
+        ),
+      ),
+    );
+  }
 
   void addItem(CartItem item) {
     if (_groups.isEmpty) {
