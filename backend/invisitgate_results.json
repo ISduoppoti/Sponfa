@@ -1,0 +1,14 @@
+{
+  "product_id": "63cc26cd-e9c5-4d79-a68d-b90498d4095c",
+  "inn_name": "Paracetamol",
+  "display_name": "Paracetamol",
+  "description": null,
+  "atc_code": "N02BE01",
+  "form": "ointment",
+  "strength": "200 mg",
+  "brand_names": [
+    "Paracetamol Classic",
+    "Paracetamol Plus"
+  ],
+  "available_packages": [
+    

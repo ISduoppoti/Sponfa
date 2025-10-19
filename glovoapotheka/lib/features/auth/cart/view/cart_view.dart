@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:glovoapotheka/data/models/cart_item.dart';
+import 'package:glovoapotheka/features/pharma_map/view/pharma_search_page.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:glovoapotheka/data/providers/cart_provider.dart';
 
@@ -302,7 +304,7 @@ class DraggableGroupWidget extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                // Show pharmacies for this group
+                context.go('/map', extra: context.read<CartProvider>().getCartItemsForGroup(group.id));
               },
               icon: Icon(Icons.local_pharmacy),
               label: Text("Show Pharmacies"),
@@ -352,11 +354,11 @@ class DraggableCartItemWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   color: Colors.orange.shade50,
                 ),
-                child: item.imageUrl != null
+                child: item.imageUrls != null
                     ? ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.network(
-                          item.imageUrl!,
+                          item.imageUrls![0],
                           fit: BoxFit.cover,
                           errorBuilder: (context, error, stackTrace) {
                             return Icon(Icons.medical_services,
@@ -406,11 +408,11 @@ class DraggableCartItemWidget extends StatelessWidget {
                   color: Colors.orange.shade50,
                   border: Border.all(color: Colors.orange.shade200),
                 ),
-                child: item.imageUrl != null
+                child: item.imageUrls != null
                     ? ClipRRect(
                         borderRadius: BorderRadius.circular(12),
                         child: Image.network(
-                          item.imageUrl!,
+                          item.imageUrls![0],
                           fit: BoxFit.cover,
                           errorBuilder: (context, error, stackTrace) {
                             return Icon(Icons.medical_services,

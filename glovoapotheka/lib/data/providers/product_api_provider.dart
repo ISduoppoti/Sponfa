@@ -94,4 +94,44 @@ class ProductApiProvider {
     
     return ProductDetailModel.fromJson(jsonDecode(res.body));
   }
+
+  Future<List<PharmacySearchResult>> searchPharma({
+    required List<String> packageIds,
+    double? lat,
+    double? lng,
+    int? radiusKm,
+    bool mustHaveAll = false,
+    String sortBy = "distance",
+    int limit = 20,
+  }) async {
+    final requestBody = PharmaciesSearchRequest(
+      packageIds: packageIds,
+      lat: lat,
+      lng: lng,
+      radiusKm: radiusKm,
+      mustHaveAll: mustHaveAll,
+      sortBy: sortBy,
+      limit: limit,
+    );
+
+    final uri = Uri.parse('$baseUrl/pharmacies/search');
+    
+    final headers = <String, String>{'Content-Type': 'application/json'};
+    final token = getIdToken != null ? await getIdToken!() : null;
+    if (token != null) headers['Authorization'] = 'Bearer $token';
+
+    final res = await http.post(
+      uri,
+      headers: headers,
+      body: jsonEncode(requestBody.toJson()),
+    );
+
+    if (res.statusCode != 200) {
+      throw Exception('Search pharmacies failed: ${res.statusCode} ${res.body}');
+    }
+
+    // The response is a list of PharmacySearchResult
+    final List<dynamic> jsonList = jsonDecode(res.body);
+    return jsonList.map((json) => PharmacySearchResult.fromJson(json)).toList();
+  }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginButtonWidget extends StatelessWidget {
   final bool isMobile;
@@ -21,7 +22,7 @@ class LoginButtonWidget extends StatelessWidget {
         ),
         onPressed: () {
           // Handle profile button tap
-          Navigator.pushNamed(context, '/login');
+          context.go('/login', extra: null);
         },
       )
     );

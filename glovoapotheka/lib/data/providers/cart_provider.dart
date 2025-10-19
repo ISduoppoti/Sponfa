@@ -165,4 +165,18 @@ class CartProvider with ChangeNotifier {
   int getTotalItems() {
     return _groups.fold(0, (sum, group) => sum + group.items.length);
   }
+
+  /// Returns a list of all unique package IDs from all items in the cart.
+  List<CartItem> getCartItemsForGroup(String groupId) {
+    try {
+      // Find group
+      final group = _groups.firstWhere((g) => g.id == groupId);
+
+      // Return copy of items (to avoid accidental mutations)
+      return List<CartItem>.from(group.items);
+    } catch (e) {
+      print("Group with ID $groupId not found.");
+      return [];
+    }
+  }
 }

@@ -15,7 +15,7 @@ class SearchCubit extends Cubit<SearchState> {
   SearchCubit(this._productRepository, this._cityService) : super(SearchInitial()) {
     // Debounce to prevent querying on every keystroke
     _searchController
-        .debounceTime(const Duration(milliseconds: 600))
+        .debounceTime(const Duration(milliseconds: 100))
         .distinct()
         .listen((query) {
       if (query.isNotEmpty) {

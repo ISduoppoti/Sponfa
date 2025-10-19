@@ -128,6 +128,7 @@ class PackageAvailabilityInfo extends Equatable {
   final String? brandName;
   final String? manufacturer;
   final String? countryCode;
+  final List<String>? imageUrls;
   final List<PharmacyLocationInfo> pharmacyLocations;
 
   const PackageAvailabilityInfo({
@@ -137,6 +138,7 @@ class PackageAvailabilityInfo extends Equatable {
     this.brandName,
     this.manufacturer,
     this.countryCode,
+    this.imageUrls,
     required this.pharmacyLocations,
   });
 
@@ -147,6 +149,9 @@ class PackageAvailabilityInfo extends Equatable {
     brandName: json['brand_name'],
     manufacturer: json['manufacturer'],
     countryCode: json['country_code'],
+    imageUrls: (json['image_urls'] as List?)
+        ?.map((e) => e as String)
+        .toList(),
     pharmacyLocations: (json['pharmacy_locations'] as List)
         .map((e) => PharmacyLocationInfo.fromJson(e))
         .toList(),
@@ -159,6 +164,7 @@ class PackageAvailabilityInfo extends Equatable {
     'brand_name': brandName,
     'manufacturer': manufacturer,
     'country_code': countryCode,
+    'image_urls': imageUrls,
     'pharmacy_locations': pharmacyLocations.map((e) => e.toJson()).toList(),
   };
 
@@ -301,6 +307,181 @@ class ProductDetailModel extends Equatable {
   List<Object?> get props => [
     productId, innName, displayName, description, atcCode, 
     form, strength, brandNames, availablePackages, language
+  ];
+}
+
+class PharmacyPackageLine extends Equatable {
+  final String packageId;
+  final int? priceCents;
+  final String? currency;
+  final int stockQuantity;
+  final String? lastUpdated;
+  final String brandName;
+
+  const PharmacyPackageLine({
+    required this.packageId,
+    this.priceCents,
+    this.currency,
+    required this.stockQuantity,
+    this.lastUpdated,
+    required this.brandName,
+  });
+
+  factory PharmacyPackageLine.fromJson(Map<String, dynamic> json) => PharmacyPackageLine(
+        packageId: json['package_id'],
+        priceCents: json['price_cents'],
+        currency: json['currency'],
+        stockQuantity: json['stock_quantity'],
+        lastUpdated: json['last_updated'],
+        brandName: json['brand_name'],
+      );
+
+  Map<String, dynamic> toJson() => {
+        'package_id': packageId,
+        'price_cents': priceCents,
+        'currency': currency,
+        'stock_quantity': stockQuantity,
+        'last_updated': lastUpdated,
+        'brand_name': brandName,
+      };
+
+  @override
+  List<Object?> get props => [
+        packageId,
+        priceCents,
+        currency,
+        stockQuantity,
+        lastUpdated,
+        brandName,
+      ];
+}
+
+class PharmacySearchResult extends Equatable {
+  final String pharmacyId;
+  final String pharmacyName;
+  final String? address;
+  final String? city;
+  final String? country;
+  final double? lat;
+  final double? lng;
+  final double? distanceKm;
+  final int? minPriceCents;
+  final int? totalPriceCents;
+  final int pkgCount;
+  final List<PharmacyPackageLine> packages;
+
+  const PharmacySearchResult({
+    required this.pharmacyId,
+    required this.pharmacyName,
+    this.address,
+    this.city,
+    this.country,
+    this.lat,
+    this.lng,
+    this.distanceKm,
+    this.minPriceCents,
+    this.totalPriceCents,
+    required this.pkgCount,
+    required this.packages,
+  });
+
+  factory PharmacySearchResult.fromJson(Map<String, dynamic> json) => PharmacySearchResult(
+        pharmacyId: json['pharmacy_id'],
+        pharmacyName: json['pharmacy_name'],
+        address: json['address'],
+        city: json['city'],
+        country: json['country'],
+        lat: json['lat']?.toDouble(),
+        lng: json['lng']?.toDouble(),
+        distanceKm: json['distance_km']?.toDouble(),
+        minPriceCents: json['min_price_cents'],
+        totalPriceCents: json['total_price_cents'],
+        pkgCount: json['pkg_count'],
+        packages: (json['packages'] as List)
+            .map((e) => PharmacyPackageLine.fromJson(e))
+            .toList(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'pharmacy_id': pharmacyId,
+        'pharmacy_name': pharmacyName,
+        'address': address,
+        'city': city,
+        'country': country,
+        'lat': lat,
+        'lng': lng,
+        'distance_km': distanceKm,
+        'min_price_cents': minPriceCents,
+        'total_price_cents': totalPriceCents,
+        'pkg_count': pkgCount,
+        'packages': packages.map((e) => e.toJson()).toList(),
+      };
+
+  @override
+  List<Object?> get props => [
+        pharmacyId,
+        pharmacyName,
+        address,
+        city,
+        country,
+        lat,
+        lng,
+        distanceKm,
+        minPriceCents,
+        totalPriceCents,
+        pkgCount,
+        packages,
+      ];
+}
+
+class PharmaciesSearchRequest extends Equatable {
+  final List<String> packageIds;
+  final double? lat;
+  final double? lng;
+  final int? radiusKm;
+  final bool mustHaveAll;
+  final String sortBy;
+  final int limit;
+
+  const PharmaciesSearchRequest({
+    required this.packageIds,
+    this.lat,
+    this.lng,
+    this.radiusKm = 120,
+    this.mustHaveAll = false,
+    this.sortBy = "distance",
+    this.limit = 20,
+  });
+
+  factory PharmaciesSearchRequest.fromJson(Map<String, dynamic> json) => PharmaciesSearchRequest(
+    packageIds: List<String>.from(json['package_ids'] ?? []),
+    lat: json['lat']?.toDouble(),
+    lng: json['lng']?.toDouble(),
+    radiusKm: json['radius_km'],
+    mustHaveAll: json['must_have_all'],
+    sortBy: json['sort_by'],
+    limit: json['limit'],
+  );
+
+  Map<String, dynamic> toJson() => {
+    'package_ids': packageIds,
+    'lat': lat,
+    'lng': lng,
+    'radius_km': radiusKm,
+    'must_have_all': mustHaveAll,
+    'sort_by': sortBy,
+    'limit': limit,
+  };
+
+  @override
+  List<Object?> get props => [
+    packageIds,
+    lat,
+    lng,
+    radiusKm,
+    mustHaveAll,
+    sortBy,
+    limit,
   ];
 }
 

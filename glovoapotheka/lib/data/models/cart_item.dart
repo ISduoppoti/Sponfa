@@ -2,7 +2,7 @@ class CartItem {
   final String id;
   final String name;
   final int? price; // Price in cents
-  final String? imageUrl;
+  final List<String>? imageUrls;
   final String? description;
   final int quantity;
 
@@ -10,7 +10,7 @@ class CartItem {
     required this.id,
     required this.name,
     this.price,
-    this.imageUrl,
+    this.imageUrls,
     this.description,
     this.quantity = 1,
   });
@@ -19,7 +19,7 @@ class CartItem {
     String? id,
     String? name,
     int? price,
-    String? imageUrl,
+    List<String>? imageUrls,
     String? description,
     int? quantity,
   }) {
@@ -27,7 +27,7 @@ class CartItem {
       id: id ?? this.id,
       name: name ?? this.name,
       price: price ?? this.price,
-      imageUrl: imageUrl ?? this.imageUrl,
+      imageUrls: imageUrls ?? this.imageUrls,
       description: description ?? this.description,
       quantity: quantity ?? this.quantity,
     );

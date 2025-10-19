@@ -22,4 +22,14 @@ abstract class ProductRepository {
     int? radiusKm,
     bool onlyInStock = true,
   });
+
+  Future<List<PharmacySearchResult>> searchPharma ({
+    required List<String> packageIds,
+    required double lat,
+    required double lng,
+    int? radiusKm,
+    bool mustHaveAll = false,
+    String sortBy = "distance",
+    int limit = 20
+  });
 }

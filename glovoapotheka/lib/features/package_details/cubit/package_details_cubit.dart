@@ -1,54 +1,25 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:glovoapotheka/domain/repositories/product_repository.dart';
-import 'package:glovoapotheka/domain/services/cart_service.dart';
+import 'package:glovoapotheka/data/models/cart_item.dart';
+import 'package:glovoapotheka/data/providers/cart_provider.dart';
 import 'package:glovoapotheka/features/package_details/cubit/package_details_state.dart';
+import 'package:glovoapotheka/data/models/product.dart';
 
 class PackageDetailCubit extends Cubit<PackageDetailState> {
-  final ProductRepository _productService;
-  final CartService _cartService;
+  final CartProvider _cartProvider;
 
   PackageDetailCubit({
-    required ProductRepository productService,
-    required CartService cartService,
-  })  : _productService = productService,
-        _cartService = cartService,
+    required CartProvider cartProvider,
+  })  : _cartProvider = cartProvider,
         super(PackageDetailInitial());
 
-  Future<void> loadPackageDetail(String productId) async {
-    emit(PackageDetailLoading());
-
-    try {
-      final product = await _productService.getProductPackages(productId);
-      final images = await _productService.getProductImages(productId);
-      
-      // Select first available package by default
-      String? selectedPackageId;
-      if (product.availablePackages.isNotEmpty) {
-        selectedPackageId = product.availablePackages.first.packageId;
-      }
-
-      emit(PackageDetailLoaded(
-        product: product,
-        selectedPackageId: selectedPackageId,
-        images: images,
-      ));
-    } catch (e) {
-      emit(PackageDetailError('Failed to load product details: ${e.toString()}'));
-    }
-  }
-
-  void selectPackage(String packageId) {
-    final state = this.state;
-    if (state is PackageDetailLoaded) {
-      emit(state.copyWith(selectedPackageId: packageId));
-    }
-  }
-
-  void selectImage(int index) {
-    final state = this.state;
-    if (state is PackageDetailLoaded) {
-      emit(state.copyWith(selectedImageIndex: index));
-    }
+  void initializeWithPackage(PackageAvailabilityInfo package, String descr, String strength, String form) {
+    emit(PackageDetailLoaded(
+      package: package,
+      descr: descr,
+      strength: strength,
+      form: form,
+      cartQuantity: 1,
+    ));
   }
 
   void updateQuantity(int quantity) {
@@ -58,14 +29,14 @@ class PackageDetailCubit extends Cubit<PackageDetailState> {
     }
   }
 
-  Future<void> addToCart() async {
+  void addToCart() {
     final state = this.state;
-    if (state is PackageDetailLoaded && state.selectedPackage != null) {
+    if (state is PackageDetailLoaded) {
       try {
-        await _cartService.addToCart(
-          packageId: state.selectedPackageId!,
-          quantity: state.cartQuantity,
-        );
+        _cartProvider.addItem(CartItem(
+          id: state.package.packageId,
+          name: state.package.displayName,
+        ));
         // You might want to show a success message here
       } catch (e) {
         // Handle error

@@ -26,7 +26,7 @@ class ShowcaseWidget extends StatelessWidget {
       case ShowcaseType.seasonal:
         return {
           "gradient": LinearGradient(
-            colors: [Colors.orange.shade400, Colors.deepOrange.shade600],
+            colors: [Colors.deepOrange.shade200, Colors.orange.shade100],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

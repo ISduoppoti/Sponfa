@@ -1,0 +1,94 @@
+[
+  {
+    "pharmacy_id": "201bb4bf-bb3c-4333-828c-559d2e114ad4",
+    "pharmacy_name": "Tom\u00e1\u0161ekov\u00e1 Lek\u00e1re\u0148",
+    "address": "\u0160amor\u00ednska 149",
+    "city": "Bratislava",
+    "country": "SK",
+    "lat": 48.163192,
+    "lng": 17.144295,
+    "distance_km": 3.1625305386086024,
+    "min_price_cents": 1113,
+    "total_price_cents": 1113,
+    "pkg_count": 1,
+    "packages": [
+      {
+        "package_id": "aaa02131-e59a-4904-938a-42e8f5f68d25",
+        "price_cents": 1113,
+        "currency": "EUR",
+        "stock_quantity": 1,
+        "last_updated": "2025-08-29T17:43:02.985940",
+        "brand_name": "Paracetamol Classic"
+      }
+    ]
+  },
+  {
+    "pharmacy_id": "92b56d5e-5479-46c5-87b2-2baef109fa7b",
+    "pharmacy_name": "Gavalier Same\u013eov\u00e1 s.r.o. Lek\u00e1re\u0148",
+    "address": "Mestsk\u00e1 73",
+    "city": "Bratislava",
+    "country": "SK",
+    "lat": 48.168443,
+    "lng": 17.14075,
+    "distance_km": 3.298205097532296,
+    "min_price_cents": 1802,
+    "total_price_cents": 1802,
+    "pkg_count": 1,
+    "packages": [
+      {
+        "package_id": "aaa02131-e59a-4904-938a-42e8f5f68d25",
+        "price_cents": 1802,
+        "currency": "EUR",
+        "stock_quantity": 5,
+        "last_updated": "2025-09-01T17:43:03.000489",
+        "brand_name": "Paracetamol Classic"
+      }
+    ]
+  },
+  {
+    "pharmacy_id": "83e06e7e-c77b-4a76-a9b6-734b366daef9",
+    "pharmacy_name": "Fabian Pavl\u00edkov\u00e1 v.o.s. Lek\u00e1re\u0148",
+    "address": "Moskovsk\u00e1 226",
+    "city": "Bratislava",
+    "country": "SK",
+    "lat": 48.141855,
+    "lng": 17.157211,
+    "distance_km": 3.7492144211737974,
+    "min_price_cents": 2537,
+    "total_price_cents": 2537,
+    "pkg_count": 1,
+    "packages": [
+      {
+        "package_id": "aaa02131-e59a-4904-938a-42e8f5f68d25",
+        "price_cents": 2537,
+        "currency": "EUR",
+        "stock_quantity": 3,
+        "last_updated": "2025-09-02T17:43:03.013661",
+        "brand_name": "Paracetamol Classic"
+      }
+    ]
+  },
+  {
+    "pharmacy_id": "9fadf158-12b0-4767-b4d5-f283f29cf4c6",
+    "pharmacy_name": "\u0160lahor Porubjakov\u00e1 a.s. Lek\u00e1re\u0148",
+    "address": "\u0160u\u0148avcova 651",
+    "city": "Bratislava",
+    "country": "SK",
+    "lat": 48.115648,
+    "lng": 17.077077,
+    "distance_km": 4.3116633399456346,
+    "min_price_cents": 1194,
+    "total_price_cents": 1194,
+    "pkg_count": 1,
+    "packages": [
+      {
+        "package_id": "aaa02131-e59a-4904-938a-42e8f5f68d25",
+        "price_cents": 1194,
+        "currency": "EUR",
+        "stock_quantity": 5,
+        "last_updated": "2025-09-10T17:43:03.010689",
+        "brand_name": "Paracetamol Classic"
+      }
+    ]
+  }
+]

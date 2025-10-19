@@ -117,7 +117,10 @@ async def get_product_packages(
     # 2) Load packages for product
     pkg_stmt = (
         select(Package)
-        .options(selectinload(Package.brand))
+        .options(
+            selectinload(Package.brand),
+            selectinload(Package.images)
+        )
         .where(Package.product_id == product_id)
     )
     pkg_res = await db.execute(pkg_stmt)
@@ -191,6 +194,9 @@ async def get_product_packages(
             continue
         # Only include packages that have at least one pharmacy location
         if locations:
+            print(pkg.images)
+            print("AAAA ", pkg.images[0].image_url)
+            image_urls = [img.image_url for img in pkg.images] if pkg.images else None
             available_packages.append(PackageAvailabilityInfo(
                 package_id=pid,
                 gtin=pkg.gtin,
@@ -198,10 +204,30 @@ async def get_product_packages(
                 brand_name=pkg.brand.brand_name if pkg.brand else None,
                 manufacturer=pkg.brand.manufacturer if pkg.brand else None,
                 country_code=pkg.country_code,
+                image_urls=image_urls,
                 pharmacy_locations=locations
             ))
 
-    return ProductDetailModel(
+    model = ProductDetailModel(
+        product_id=product.id,
+        inn_name=product.inn_name,
+        display_name=display_name,
+        description=description,
+        atc_code=product.atc_code,
+        form=product.form,
+        strength=product.strength,
+        brand_names=sorted({b.brand_name for b in product.brands}),
+        available_packages=available_packages,
+        language=language,
+    )
+
+    # Made for a debug. Only for some time
+    import json
+    with open("search_results.json", "w", encoding="utf-8") as f:
+        json.dump(model.model_dump(), f, ensure_ascii=False, indent=2)
+
+    return model
+    ProductDetailModel(
         product_id=product.id,
         inn_name=product.inn_name,
         display_name=display_name,

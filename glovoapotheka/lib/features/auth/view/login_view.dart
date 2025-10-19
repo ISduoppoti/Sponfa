@@ -6,6 +6,7 @@ import 'package:glovoapotheka/features/auth/view/login_view_desktop.dart';
 
 import 'package:glovoapotheka/features/auth/widgets/pc_right_login_side.dart';
 import 'package:glovoapotheka/features/auth/widgets/animated_bubles.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _LoginViewState extends State<LoginView> {
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state.status == AuthStatus.authenticated) {
-          Navigator.pushReplacementNamed(context, '/home');
+          context.goNamed('home', extra: null);
         }
       },
       child: BlocBuilder<AuthCubit, AuthState>(

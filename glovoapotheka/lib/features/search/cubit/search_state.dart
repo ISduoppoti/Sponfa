@@ -16,7 +16,7 @@ class SearchLoading extends SearchState {}
 
 // State when search results are successfully loaded
 class SearchLoaded extends SearchState {
-  final List<ProductModel> results;
+  final List<ProductSearchItem> results;
 
   const SearchLoaded({required this.results});
 

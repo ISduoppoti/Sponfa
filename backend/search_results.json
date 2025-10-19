@@ -1,199 +1,753 @@
-[
-  {
-    "product_id": "d0e30948-3487-440a-947e-ebe24d502e8f",
-    "inn_name": "Pantoprazole",
-    "display_name": "Pantoprazole",
-    "form": "syrup",
-    "strength": "400 mg",
-    "brand_names": [
-      "Pantoprazole Classic"
-    ]
-  },
-  {
-    "product_id": "70a3f363-e529-4d43-9606-469ca6def9cb",
-    "inn_name": "Atorvastatin",
-    "display_name": "Atorvastatin",
-    "form": "spray",
-    "strength": "300 mg",
-    "brand_names": [
-      "Atorvastatin Extra",
-      "Atorvastatin Plus"
-    ]
-  },
-  {
-    "product_id": "15877571-1d25-48b3-8271-af8e389a2790",
-    "inn_name": "Lisinopril",
-    "display_name": "Lisinopril",
-    "form": "capsule",
-    "strength": "100 mg",
-    "brand_names": [
-      "Lisinopril Fast"
-    ]
-  },
-  {
-    "product_id": "4b74c0a0-7cbd-408d-aba7-b4fcfe3b497e",
-    "inn_name": "Cetirizine",
-    "display_name": "Cetirizine",
-    "form": "spray",
-    "strength": "5 mg/ml",
-    "brand_names": [
-      "Cetirizine Extra",
-      "Cetirizine Fast"
-    ]
-  },
-  {
-    "product_id": "2cf284f6-a7b2-467a-afb4-bfb3563194c7",
-    "inn_name": "Losartan",
-    "display_name": "Losartan",
-    "form": "tablet",
-    "strength": "250 mg",
-    "brand_names": [
-      "Losartan Classic"
-    ]
-  },
-  {
-    "product_id": "b0418a0e-d7ad-47f5-9222-cd709eb9caaf",
-    "inn_name": "Diclofenac",
-    "display_name": "Diclofenac",
-    "form": "ointment",
-    "strength": "5 mg/ml",
-    "brand_names": [
-      "Diclofenac Classic"
-    ]
-  },
-  {
-    "product_id": "a4966fd6-2fb5-4456-9962-146e46688e33",
-    "inn_name": "Vitamin C",
-    "display_name": "Vitamin C",
-    "form": "capsule",
-    "strength": "200 mg",
-    "brand_names": [
-      "Vitamin C Fast"
-    ]
-  },
-  {
-    "product_id": "bc65d560-66a6-4c8b-b934-8e678a33c76d",
-    "inn_name": "Ibuprofen",
-    "display_name": "Ibuprofen",
-    "form": "tablet",
-    "strength": "400 mg",
-    "brand_names": [
-      "Ibuprofen Fast",
-      "Ibuprofen Plus"
-    ]
-  },
-  {
-    "product_id": "5504c4ff-25b7-4cce-b82d-a7a9ef40dbc0",
-    "inn_name": "Metformin",
-    "display_name": "Metformin",
-    "form": "tablet",
-    "strength": "100 mg",
-    "brand_names": [
-      "Metformin Extra"
-    ]
-  },
-  {
-    "product_id": "b94573f7-1e55-43c8-b906-0cfc294b8cd3",
-    "inn_name": "Furosemide",
-    "display_name": "Furosemide",
-    "form": "spray",
-    "strength": "400 mg",
-    "brand_names": [
-      "Furosemide Classic",
-      "Furosemide Plus"
-    ]
-  },
-  {
-    "product_id": "eaccf062-7b08-473d-8438-d786d229886d",
-    "inn_name": "Ranitidine",
-    "display_name": "Ranitidine",
-    "form": "tablet",
-    "strength": "500 mg",
-    "brand_names": [
-      "Ranitidine Classic"
-    ]
-  },
-  {
-    "product_id": "6bb85c51-97d5-464d-9bef-5a259f8f0f1b",
-    "inn_name": "Salbutamol",
-    "display_name": "Salbutamol",
-    "form": "capsule",
-    "strength": "300 mg",
-    "brand_names": [
-      "Salbutamol Classic",
-      "Salbutamol Plus"
-    ]
-  },
-  {
-    "product_id": "f8b0ac65-1f55-4a21-8fe4-2494cc4d0206",
-    "inn_name": "Levothyroxine",
-    "display_name": "Levothyroxine",
-    "form": "capsule",
-    "strength": "10 mg/ml",
-    "brand_names": [
-      "Levothyroxine Extra"
-    ]
-  },
-  {
-    "product_id": "63cc26cd-e9c5-4d79-a68d-b90498d4095c",
-    "inn_name": "Paracetamol",
-    "display_name": "Paracetamol",
-    "form": "ointment",
-    "strength": "200 mg",
-    "brand_names": [
-      "Paracetamol Classic",
-      "Paracetamol Plus"
-    ]
-  },
-  {
-    "product_id": "9da3ba58-2f44-47d8-8cea-cbeefda65325",
-    "inn_name": "Simvastatin",
-    "display_name": "Simvastatin",
-    "form": "syrup",
-    "strength": "200 mg",
-    "brand_names": [
-      "Simvastatin Plus"
-    ]
-  },
-  {
-    "product_id": "37953558-64c5-4595-87c0-45d0f3a1d959",
-    "inn_name": "Amoxicillin",
-    "display_name": "Amoxicillin",
-    "form": "tablet",
-    "strength": "300 mg",
-    "brand_names": [
-      "Amoxicillin Plus"
-    ]
-  },
-  {
-    "product_id": "1c316c32-8e93-4931-9487-7b7023215a0b",
-    "inn_name": "Aspirin",
-    "display_name": "Aspirin",
-    "form": "capsule",
-    "strength": "300 mg",
-    "brand_names": [
-      "Aspirin Fast"
-    ]
-  },
-  {
-    "product_id": "af5a0f62-dd81-428a-9dc8-058c917a0871",
-    "inn_name": "Hydrochlorothiazide",
-    "display_name": "Hydrochlorothiazide",
-    "form": "ointment",
-    "strength": "5 mg/ml",
-    "brand_names": [
-      "Hydrochlorothiazide Fast"
-    ]
-  },
-  {
-    "product_id": "6f66cebd-a859-4773-b4ab-06d0287ecb41",
-    "inn_name": "Omeprazole",
-    "display_name": "Omeprazole",
-    "form": "ointment",
-    "strength": "200 mg",
-    "brand_names": [
-      "Omeprazole Classic",
-      "Omeprazole Extra"
-    ]
-  }
-]
+{
+  "product_id": "0c9f5c26-2632-4126-b5a1-790788591a1f",
+  "inn_name": "Paracetamol",
+  "display_name": "Paracetamol 500 mg tablet",
+  "description": "High-quality medication with proven effectiveness. Popular choice among customers for its value.",
+  "atc_code": "N02BE01",
+  "form": "tablet",
+  "strength": "500 mg",
+  "brand_names": [
+    "Paracetamol",
+    "Paracetamol Classic",
+    "Paracetamol Fast",
+    "Paracetamol Forte"
+  ],
+  "available_packages": [
+    {
+      "package_id": "bed30101-3619-42c9-aad5-1fe7afd34f4f",
+      "gtin": "1712748467737",
+      "pack_size": "10 tablets",
+      "brand_name": "Paracetamol Classic",
+      "manufacturer": "Sandoz",
+      "country_code": "DE",
+      "image_urls": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7yG1lwrSpM3U467ur9N5X6qWxRUgTzev5NQ&s",
+        "https://www.apotheke.at/images/product_images/info_images/04088380.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN96qXKmWpIVhRwgFM1OGGa_uGA-JZ7axMMw&s"
+      ],
+      "pharmacy_locations": [
+        {
+          "pharmacy_id": "70de0f07-d4f3-419a-8a5f-232174ed04fc",
+          "pharmacy_name": "Masaríková s.r.o. Lekáreň",
+          "pharmacy_address": "Riečna 5",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.177089,
+          "lng": 17.134637,
+          "price_cents": 822,
+          "currency": "EUR",
+          "stock_quantity": 20,
+          "last_updated": "2025-09-09T17:43:02.949692"
+        },
+        {
+          "pharmacy_id": "f08f3536-8721-48fe-bb66-cd5552ed481b",
+          "pharmacy_name": "Jakubek a.s. Lekáreň",
+          "pharmacy_address": "Jakubíkova 9",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.155906,
+          "lng": 17.114276,
+          "price_cents": 2654,
+          "currency": "EUR",
+          "stock_quantity": 2,
+          "last_updated": "2025-09-07T17:43:02.981487"
+        },
+        {
+          "pharmacy_id": "f481783b-657b-4568-a2a3-af41ea8b71c6",
+          "pharmacy_name": "Ondrusek Kobielský v.o.s. Lekáreň",
+          "pharmacy_address": "Chotárna 60",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.116651,
+          "lng": 17.060106,
+          "price_cents": 2554,
+          "currency": "EUR",
+          "stock_quantity": 10,
+          "last_updated": "2025-09-05T17:43:02.989764"
+        }
+      ]
+    },
+    {
+      "package_id": "23d6f7eb-9c80-4110-b662-63139e99ea1d",
+      "gtin": "7217535408386",
+      "pack_size": "100 tablets",
+      "brand_name": "Paracetamol Forte",
+      "manufacturer": "Merck",
+      "country_code": "SK",
+      "image_urls": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7yG1lwrSpM3U467ur9N5X6qWxRUgTzev5NQ&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN96qXKmWpIVhRwgFM1OGGa_uGA-JZ7axMMw&s"
+      ],
+      "pharmacy_locations": [
+        {
+          "pharmacy_id": "70de0f07-d4f3-419a-8a5f-232174ed04fc",
+          "pharmacy_name": "Masaríková s.r.o. Lekáreň",
+          "pharmacy_address": "Riečna 5",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.177089,
+          "lng": 17.134637,
+          "price_cents": 3049,
+          "currency": "EUR",
+          "stock_quantity": 2,
+          "last_updated": "2025-08-26T17:43:02.950219"
+        },
+        {
+          "pharmacy_id": "c96dad48-ab0d-4911-b064-852a1cdd881c",
+          "pharmacy_name": "Riša Sanitrová s.r.o. Lekáreň",
+          "pharmacy_address": "Hospodárska 631",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.189523,
+          "lng": 17.05849,
+          "price_cents": 2454,
+          "currency": "EUR",
+          "stock_quantity": 3,
+          "last_updated": "2025-09-09T17:43:02.963113"
+        },
+        {
+          "pharmacy_id": "5e12c4fc-4f13-4abf-8e5a-dfd293b54021",
+          "pharmacy_name": "Pavlo k.s. Lekáreň",
+          "pharmacy_address": "Brumovická 750",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.171772,
+          "lng": 17.099392,
+          "price_cents": 3261,
+          "currency": "EUR",
+          "stock_quantity": 2,
+          "last_updated": "2025-09-12T17:43:02.975782"
+        },
+        {
+          "pharmacy_id": "7288d9f4-ab69-4ce1-b37d-30b7b1ed9350",
+          "pharmacy_name": "Mikulíková k.s. Lekáreň",
+          "pharmacy_address": "Pažítková 8",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.19077,
+          "lng": 17.069577,
+          "price_cents": 3807,
+          "currency": "EUR",
+          "stock_quantity": 5,
+          "last_updated": "2025-08-15T17:43:02.978739"
+        },
+        {
+          "pharmacy_id": "0c2d4624-9d26-4bc9-9cee-c2121862c672",
+          "pharmacy_name": "Kyseľová Huštáková a.s. Lekáreň",
+          "pharmacy_address": "Pavlovičova 956",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.155776,
+          "lng": 17.061728,
+          "price_cents": 1802,
+          "currency": "EUR",
+          "stock_quantity": 3,
+          "last_updated": "2025-08-22T17:43:02.979601"
+        },
+        {
+          "pharmacy_id": "fd331488-1bb2-462b-9b87-bc52b9ddc540",
+          "pharmacy_name": "Babjaková Bernardová k.s. Lekáreň",
+          "pharmacy_address": "Hanácka 5",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.098809,
+          "lng": 17.112454,
+          "price_cents": 3385,
+          "currency": "EUR",
+          "stock_quantity": 10,
+          "last_updated": "2025-09-06T17:43:02.981017"
+        },
+        {
+          "pharmacy_id": "8e0d3b0f-6e6b-4c5a-b258-ec288a270427",
+          "pharmacy_name": "Frimerová Lekáreň",
+          "pharmacy_address": "Mliekárenská 1",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.1325,
+          "lng": 17.062282,
+          "price_cents": 4636,
+          "currency": "EUR",
+          "stock_quantity": 5,
+          "last_updated": "2025-08-27T17:43:02.985052"
+        },
+        {
+          "pharmacy_id": "cbd8a9c6-b1f6-4d9a-8354-b36d7517a85a",
+          "pharmacy_name": "Andrášiková s.r.o. Lekáreň",
+          "pharmacy_address": "Sumbalova 7",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.154008,
+          "lng": 17.116317,
+          "price_cents": 4702,
+          "currency": "EUR",
+          "stock_quantity": 10,
+          "last_updated": "2025-08-15T17:43:02.995398"
+        },
+        {
+          "pharmacy_id": "c0ca35b8-e9a1-4318-8014-86be016d1afe",
+          "pharmacy_name": "Tomanová Lekáreň",
+          "pharmacy_address": "Budatínska 70",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.137275,
+          "lng": 17.141615,
+          "price_cents": 542,
+          "currency": "EUR",
+          "stock_quantity": 10,
+          "last_updated": "2025-09-02T17:43:03.006341"
+        }
+      ]
+    },
+    {
+      "package_id": "969c0c96-741e-458d-a98c-9beb4e5fedb2",
+      "gtin": "6995777387214",
+      "pack_size": "30 tablets",
+      "brand_name": "Paracetamol Fast",
+      "manufacturer": "GSK",
+      "country_code": "DE",
+      "image_urls": [
+        "https://www.apotheke.at/images/product_images/info_images/paracetamol-500-1a-pharma-20-stk-pzn-02481587.jpg",
+        "https://www.chemistwarehouse.com.au/_next/image?url=https%3A%2F%2Fstatic.chemistwarehouse.com.au%2Fams%2Fmedia%2Fpi%2F110144%2FF2D_800.jpg&w=3840&q=75"
+      ],
+      "pharmacy_locations": [
+        {
+          "pharmacy_id": "f4036fcd-8831-4999-82af-9c2099d56f49",
+          "pharmacy_name": "Bednáriková Lekáreň",
+          "pharmacy_address": "Bottova 212",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.139941,
+          "lng": 17.098631,
+          "price_cents": 2997,
+          "currency": "EUR",
+          "stock_quantity": 3,
+          "last_updated": "2025-08-18T17:43:02.958417"
+        },
+        {
+          "pharmacy_id": "9f9a8c89-acbc-47ce-88d2-7e53160002f2",
+          "pharmacy_name": "Pálka Martinkovič s.r.o. Lekáreň",
+          "pharmacy_address": "Kúkoľová 986",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.168347,
+          "lng": 17.146467,
+          "price_cents": 4412,
+          "currency": "EUR",
+          "stock_quantity": 2,
+          "last_updated": "2025-09-08T17:43:02.964663"
+        },
+        {
+          "pharmacy_id": "8da80586-f8d8-4825-9888-bb5c48eacd9e",
+          "pharmacy_name": "Valíček Ľuptáková v.o.s. Lekáreň",
+          "pharmacy_address": "Tajovského 521",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.122734,
+          "lng": 17.135116,
+          "price_cents": 4495,
+          "currency": "EUR",
+          "stock_quantity": 3,
+          "last_updated": "2025-08-17T17:43:02.967874"
+        },
+        {
+          "pharmacy_id": "7288d9f4-ab69-4ce1-b37d-30b7b1ed9350",
+          "pharmacy_name": "Mikulíková k.s. Lekáreň",
+          "pharmacy_address": "Pažítková 8",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.19077,
+          "lng": 17.069577,
+          "price_cents": 1017,
+          "currency": "EUR",
+          "stock_quantity": 20,
+          "last_updated": "2025-09-05T17:43:02.979082"
+        },
+        {
+          "pharmacy_id": "fd331488-1bb2-462b-9b87-bc52b9ddc540",
+          "pharmacy_name": "Babjaková Bernardová k.s. Lekáreň",
+          "pharmacy_address": "Hanácka 5",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.098809,
+          "lng": 17.112454,
+          "price_cents": 3745,
+          "currency": "EUR",
+          "stock_quantity": 3,
+          "last_updated": "2025-09-01T17:43:02.981164"
+        },
+        {
+          "pharmacy_id": "fcbb4f4f-f314-4d0d-bdcf-5ad63bd401a9",
+          "pharmacy_name": "Miklošová Lekáreň",
+          "pharmacy_address": "Vietnamská 209",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.17543,
+          "lng": 17.073123,
+          "price_cents": 3342,
+          "currency": "EUR",
+          "stock_quantity": 5,
+          "last_updated": "2025-08-17T17:43:02.991951"
+        },
+        {
+          "pharmacy_id": "caf745e6-89eb-4be2-a870-4ae7157cf63d",
+          "pharmacy_name": "Jurkovičová Jakubčo s.r.o. Lekáreň",
+          "pharmacy_address": "Jozefská 698",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.103148,
+          "lng": 17.131618,
+          "price_cents": 3235,
+          "currency": "EUR",
+          "stock_quantity": 10,
+          "last_updated": "2025-09-05T17:43:02.999686"
+        }
+      ]
+    },
+    {
+      "package_id": "4e28dc9c-3808-4fec-9248-856cf9d6622e",
+      "gtin": "0259094798515",
+      "pack_size": "50 tablets",
+      "brand_name": "Paracetamol Fast",
+      "manufacturer": "GSK",
+      "country_code": "DE",
+      "image_urls": [
+        "https://www.apotheke.at/images/product_images/popup_images/paracetamol-genericon-500-mg-tabletten-10-stk-pzn-08200656.jpg",
+        "https://www.pharmacyonline.co.uk/uploads/images/products/large/pharmacy-online-paracetamol-paracetamol-500mg-100-tablets-1602960473paracetamol-1.jpg"
+      ],
+      "pharmacy_locations": [
+        {
+          "pharmacy_id": "f4036fcd-8831-4999-82af-9c2099d56f49",
+          "pharmacy_name": "Bednáriková Lekáreň",
+          "pharmacy_address": "Bottova 212",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.139941,
+          "lng": 17.098631,
+          "price_cents": 2493,
+          "currency": "EUR",
+          "stock_quantity": 5,
+          "last_updated": "2025-08-18T17:43:02.958880"
+        },
+        {
+          "pharmacy_id": "295460b3-6aab-4594-ba37-70a1be427dae",
+          "pharmacy_name": "Janečková Lekáreň",
+          "pharmacy_address": "Pri Suchom mlyne 7",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.192974,
+          "lng": 17.101958,
+          "price_cents": 1122,
+          "currency": "EUR",
+          "stock_quantity": 3,
+          "last_updated": "2025-09-09T17:43:02.959173"
+        },
+        {
+          "pharmacy_id": "c96dad48-ab0d-4911-b064-852a1cdd881c",
+          "pharmacy_name": "Riša Sanitrová s.r.o. Lekáreň",
+          "pharmacy_address": "Hospodárska 631",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.189523,
+          "lng": 17.05849,
+          "price_cents": 1933,
+          "currency": "EUR",
+          "stock_quantity": 5,
+          "last_updated": "2025-08-29T17:43:02.962499"
+        },
+        {
+          "pharmacy_id": "b31585c3-3bd3-4c17-bcb0-82fc50ffbf81",
+          "pharmacy_name": "Matiaško a.s. Lekáreň",
+          "pharmacy_address": "Včelárska 8",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.13878,
+          "lng": 17.062198,
+          "price_cents": 4232,
+          "currency": "EUR",
+          "stock_quantity": 10,
+          "last_updated": "2025-08-22T17:43:02.988906"
+        },
+        {
+          "pharmacy_id": "c0ca35b8-e9a1-4318-8014-86be016d1afe",
+          "pharmacy_name": "Tomanová Lekáreň",
+          "pharmacy_address": "Budatínska 70",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.137275,
+          "lng": 17.141615,
+          "price_cents": 1879,
+          "currency": "EUR",
+          "stock_quantity": 5,
+          "last_updated": "2025-09-12T17:43:03.006360"
+        },
+        {
+          "pharmacy_id": "a08fdbe9-a0ac-4410-8158-f7dfb8ab190e",
+          "pharmacy_name": "Cyprichová k.s. Lekáreň",
+          "pharmacy_address": "Žabotova 741",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.123315,
+          "lng": 17.105058,
+          "price_cents": 947,
+          "currency": "EUR",
+          "stock_quantity": 5,
+          "last_updated": "2025-08-21T17:43:03.018697"
+        }
+      ]
+    },
+    {
+      "package_id": "ec03671b-7b1e-4a22-b32e-cced9d64daf5",
+      "gtin": "9593518638782",
+      "pack_size": "20 tablets",
+      "brand_name": "Paracetamol Classic",
+      "manufacturer": "Sandoz",
+      "country_code": "DE",
+      "image_urls": [
+        "https://www.travelpharm.com/uploads/images/products/large/peakpharmacy-everyday-essentials-paracetamol-500mg-pain-relief-tablets-x-16-1726474344Paracetamol-500mg-Pain-Relief-Tablets-x-16.jpg"
+      ],
+      "pharmacy_locations": [
+        {
+          "pharmacy_id": "9f9a8c89-acbc-47ce-88d2-7e53160002f2",
+          "pharmacy_name": "Pálka Martinkovič s.r.o. Lekáreň",
+          "pharmacy_address": "Kúkoľová 986",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.168347,
+          "lng": 17.146467,
+          "price_cents": 2262,
+          "currency": "EUR",
+          "stock_quantity": 3,
+          "last_updated": "2025-08-28T17:43:02.964810"
+        },
+        {
+          "pharmacy_id": "f481783b-657b-4568-a2a3-af41ea8b71c6",
+          "pharmacy_name": "Ondrusek Kobielský v.o.s. Lekáreň",
+          "pharmacy_address": "Chotárna 60",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.116651,
+          "lng": 17.060106,
+          "price_cents": 3406,
+          "currency": "EUR",
+          "stock_quantity": 10,
+          "last_updated": "2025-08-17T17:43:02.990169"
+        },
+        {
+          "pharmacy_id": "fcbb4f4f-f314-4d0d-bdcf-5ad63bd401a9",
+          "pharmacy_name": "Miklošová Lekáreň",
+          "pharmacy_address": "Vietnamská 209",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.17543,
+          "lng": 17.073123,
+          "price_cents": 4320,
+          "currency": "EUR",
+          "stock_quantity": 10,
+          "last_updated": "2025-09-05T17:43:02.992015"
+        },
+        {
+          "pharmacy_id": "cbd8a9c6-b1f6-4d9a-8354-b36d7517a85a",
+          "pharmacy_name": "Andrášiková s.r.o. Lekáreň",
+          "pharmacy_address": "Sumbalova 7",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.154008,
+          "lng": 17.116317,
+          "price_cents": 1590,
+          "currency": "EUR",
+          "stock_quantity": 3,
+          "last_updated": "2025-08-27T17:43:02.995345"
+        },
+        {
+          "pharmacy_id": "ca383aac-890e-410a-9b75-9554d07dcb4c",
+          "pharmacy_name": "Daňová Kubičko s.r.o. Lekáreň",
+          "pharmacy_address": "Murgašova 800",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.198524,
+          "lng": 17.141944,
+          "price_cents": 3500,
+          "currency": "EUR",
+          "stock_quantity": 2,
+          "last_updated": "2025-09-10T17:43:02.998669"
+        },
+        {
+          "pharmacy_id": "c0ca35b8-e9a1-4318-8014-86be016d1afe",
+          "pharmacy_name": "Tomanová Lekáreň",
+          "pharmacy_address": "Budatínska 70",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.137275,
+          "lng": 17.141615,
+          "price_cents": 1275,
+          "currency": "EUR",
+          "stock_quantity": 5,
+          "last_updated": "2025-08-18T17:43:03.006377"
+        }
+      ]
+    },
+    {
+      "package_id": "b8eb07ce-6047-40c0-8933-5313739d81ec",
+      "gtin": "9579472846392",
+      "pack_size": "50 tablets",
+      "brand_name": "Paracetamol",
+      "manufacturer": "Bayer",
+      "country_code": "SK",
+      "image_urls": [
+        "https://images.apopoint.at/dam/product/1181280/800/pimProductBatchZip_82306c806c7d6b8aec4ed6b01d862755.",
+        "https://m.media-amazon.com/images/I/71UAisL0eaL._UF894,1000_QL80_.jpg"
+      ],
+      "pharmacy_locations": [
+        {
+          "pharmacy_id": "9f9a8c89-acbc-47ce-88d2-7e53160002f2",
+          "pharmacy_name": "Pálka Martinkovič s.r.o. Lekáreň",
+          "pharmacy_address": "Kúkoľová 986",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.168347,
+          "lng": 17.146467,
+          "price_cents": 3422,
+          "currency": "EUR",
+          "stock_quantity": 5,
+          "last_updated": "2025-08-28T17:43:02.965045"
+        },
+        {
+          "pharmacy_id": "f08f3536-8721-48fe-bb66-cd5552ed481b",
+          "pharmacy_name": "Jakubek a.s. Lekáreň",
+          "pharmacy_address": "Jakubíkova 9",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.155906,
+          "lng": 17.114276,
+          "price_cents": 4236,
+          "currency": "EUR",
+          "stock_quantity": 15,
+          "last_updated": "2025-09-01T17:43:02.981598"
+        },
+        {
+          "pharmacy_id": "fcbb4f4f-f314-4d0d-bdcf-5ad63bd401a9",
+          "pharmacy_name": "Miklošová Lekáreň",
+          "pharmacy_address": "Vietnamská 209",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.17543,
+          "lng": 17.073123,
+          "price_cents": 1999,
+          "currency": "EUR",
+          "stock_quantity": 2,
+          "last_updated": "2025-08-16T17:43:02.991555"
+        },
+        {
+          "pharmacy_id": "cbd8a9c6-b1f6-4d9a-8354-b36d7517a85a",
+          "pharmacy_name": "Andrášiková s.r.o. Lekáreň",
+          "pharmacy_address": "Sumbalova 7",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.154008,
+          "lng": 17.116317,
+          "price_cents": 966,
+          "currency": "EUR",
+          "stock_quantity": 3,
+          "last_updated": "2025-09-12T17:43:02.995008"
+        },
+        {
+          "pharmacy_id": "e964b1ee-67fc-408c-9c32-996c72399852",
+          "pharmacy_name": "Húsová v.o.s. Lekáreň",
+          "pharmacy_address": "Repná 23",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.132763,
+          "lng": 17.10368,
+          "price_cents": 1676,
+          "currency": "EUR",
+          "stock_quantity": 3,
+          "last_updated": "2025-08-17T17:43:03.003219"
+        },
+        {
+          "pharmacy_id": "8f8e9e68-d452-4429-8d8b-88567dbdedc9",
+          "pharmacy_name": "Petrovická v.o.s. Lekáreň",
+          "pharmacy_address": "Kapicova 11",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.165825,
+          "lng": 17.092999,
+          "price_cents": 622,
+          "currency": "EUR",
+          "stock_quantity": 10,
+          "last_updated": "2025-08-22T17:43:03.006300"
+        }
+      ]
+    },
+    {
+      "package_id": "abc7925e-6d0c-4142-8200-e7e0c6a3a374",
+      "gtin": "8181845184894",
+      "pack_size": "20 tablets",
+      "brand_name": "Paracetamol Fast",
+      "manufacturer": "GSK",
+      "country_code": "SK",
+      "image_urls": [
+        "https://www.erste-hilfe-welt.de/wp-content/uploads/Paracetamol-1.jpg"
+      ],
+      "pharmacy_locations": [
+        {
+          "pharmacy_id": "8b745caf-5a28-4373-a681-254af446b3a8",
+          "pharmacy_name": "Andrašík k.s. Lekáreň",
+          "pharmacy_address": "Seberíniho 174",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.174768,
+          "lng": 17.124422,
+          "price_cents": 2391,
+          "currency": "EUR",
+          "stock_quantity": 3,
+          "last_updated": "2025-08-30T17:43:02.982897"
+        },
+        {
+          "pharmacy_id": "f3c6f239-3119-433e-8752-c5fbe9d2f863",
+          "pharmacy_name": "Bahnová a.s. Lekáreň",
+          "pharmacy_address": "Kožušnícka 31",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.154704,
+          "lng": 17.070078,
+          "price_cents": 2333,
+          "currency": "EUR",
+          "stock_quantity": 3,
+          "last_updated": "2025-09-11T17:43:02.986554"
+        },
+        {
+          "pharmacy_id": "77e159d5-b5f3-4263-929f-707b82735936",
+          "pharmacy_name": "Hlaváčová Lekáreň",
+          "pharmacy_address": "Rozvodná 7",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.162117,
+          "lng": 17.155664,
+          "price_cents": 2905,
+          "currency": "EUR",
+          "stock_quantity": 2,
+          "last_updated": "2025-09-04T17:43:03.001868"
+        },
+        {
+          "pharmacy_id": "af25abf3-e998-4cf1-8e72-252218bc30f8",
+          "pharmacy_name": "Vicen Lekáreň",
+          "pharmacy_address": "Vavrínova 852",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.179441,
+          "lng": 17.079815,
+          "price_cents": 1267,
+          "currency": "EUR",
+          "stock_quantity": 1,
+          "last_updated": "2025-08-30T17:43:03.009045"
+        }
+      ]
+    },
+    {
+      "package_id": "aec676f9-0809-49ef-8fa3-ac50a5325f9d",
+      "gtin": "7621267969278",
+      "pack_size": "10 tablets",
+      "brand_name": "Paracetamol",
+      "manufacturer": "Bayer",
+      "country_code": "DE",
+      "image_urls": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7yG1lwrSpM3U467ur9N5X6qWxRUgTzev5NQ&s"
+      ],
+      "pharmacy_locations": [
+        {
+          "pharmacy_id": "8e0d3b0f-6e6b-4c5a-b258-ec288a270427",
+          "pharmacy_name": "Frimerová Lekáreň",
+          "pharmacy_address": "Mliekárenská 1",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.1325,
+          "lng": 17.062282,
+          "price_cents": 2297,
+          "currency": "EUR",
+          "stock_quantity": 2,
+          "last_updated": "2025-09-05T17:43:02.985014"
+        },
+        {
+          "pharmacy_id": "f481783b-657b-4568-a2a3-af41ea8b71c6",
+          "pharmacy_name": "Ondrusek Kobielský v.o.s. Lekáreň",
+          "pharmacy_address": "Chotárna 60",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.116651,
+          "lng": 17.060106,
+          "price_cents": 971,
+          "currency": "EUR",
+          "stock_quantity": 10,
+          "last_updated": "2025-09-07T17:43:02.990263"
+        }
+      ]
+    },
+    {
+      "package_id": "aaa02131-e59a-4904-938a-42e8f5f68d25",
+      "gtin": "6572628498776",
+      "pack_size": "50 tablets",
+      "brand_name": "Paracetamol Classic",
+      "manufacturer": "Sandoz",
+      "country_code": "DE",
+      "image_urls": [
+        "https://pharmacysavings.com.au/cdn/shop/files/panamax_50_345x@2x.jpg?v=1743931266",
+        "https://www.travelpharm.com/uploads/images/products/large/peakpharmacy-everyday-essentials-paracetamol-500mg-pain-relief-tablets-x-16-1726474344Paracetamol-500mg-Pain-Relief-Tablets-x-16.jpg"
+      ],
+      "pharmacy_locations": [
+        {
+          "pharmacy_id": "201bb4bf-bb3c-4333-828c-559d2e114ad4",
+          "pharmacy_name": "Tomášeková Lekáreň",
+          "pharmacy_address": "Šamorínska 149",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.163192,
+          "lng": 17.144295,
+          "price_cents": 1113,
+          "currency": "EUR",
+          "stock_quantity": 1,
+          "last_updated": "2025-08-29T17:43:02.985940"
+        },
+        {
+          "pharmacy_id": "92b56d5e-5479-46c5-87b2-2baef109fa7b",
+          "pharmacy_name": "Gavalier Sameľová s.r.o. Lekáreň",
+          "pharmacy_address": "Mestská 73",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.168443,
+          "lng": 17.14075,
+          "price_cents": 1802,
+          "currency": "EUR",
+          "stock_quantity": 5,
+          "last_updated": "2025-09-01T17:43:03.000489"
+        },
+        {
+          "pharmacy_id": "9fadf158-12b0-4767-b4d5-f283f29cf4c6",
+          "pharmacy_name": "Šlahor Porubjaková a.s. Lekáreň",
+          "pharmacy_address": "Šuňavcova 651",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.115648,
+          "lng": 17.077077,
+          "price_cents": 1194,
+          "currency": "EUR",
+          "stock_quantity": 5,
+          "last_updated": "2025-09-10T17:43:03.010689"
+        },
+        {
+          "pharmacy_id": "83e06e7e-c77b-4a76-a9b6-734b366daef9",
+          "pharmacy_name": "Fabian Pavlíková v.o.s. Lekáreň",
+          "pharmacy_address": "Moskovská 226",
+          "pharmacy_city": "Bratislava",
+          "pharmacy_country": "SK",
+          "lat": 48.141855,
+          "lng": 17.157211,
+          "price_cents": 2537,
+          "currency": "EUR",
+          "stock_quantity": 3,
+          "last_updated": "2025-09-02T17:43:03.013661"
+        }
+      ]
+    }
+  ],
+  "language": "en"
+}

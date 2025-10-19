@@ -11,6 +11,7 @@ import 'package:glovoapotheka/features/search/cubit/search_state.dart';
 import 'package:glovoapotheka/domain/services/city_service.dart';
 
 import 'package:glovoapotheka/features/search/widgets/presearch_window_widget.dart';
+import 'package:go_router/go_router.dart';
 
 
 class UnifiedSearchBar extends StatefulWidget {
@@ -87,7 +88,7 @@ void _showOverlay() {
                   borderRadius: BorderRadius.circular(widget.isNavBar ? 10 : 8),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
+                      color: Colors.black.withValues(alpha: 0.1),
                       blurRadius: 10,
                       offset: const Offset(0, 5),
                     ),
@@ -135,7 +136,7 @@ void _showOverlay() {
 }
 
 
-  Widget _buildSearchResults(List<ProductModel> products) {
+  Widget _buildSearchResults(List<ProductSearchItem> products) {
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -172,17 +173,12 @@ void _showOverlay() {
     );
   }
 
-  Widget _buildProductTile(ProductModel product) {
+  Widget _buildProductTile(ProductSearchItem product) {
     return InkWell(
       onTap: () {
         _hideOverlay();
         _focusNode.unfocus();
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ProductPackagesPage(productId: product.productId),
-          ),
-        );
+        context.go('/packages/${product.productId}');
       },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -198,7 +194,7 @@ void _showOverlay() {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(0.1),
+                color: Colors.blue.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: const Icon(

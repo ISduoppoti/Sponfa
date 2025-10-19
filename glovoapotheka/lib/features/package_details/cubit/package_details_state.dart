@@ -1,5 +1,3 @@
-// product_detail_cubit.dart
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:glovoapotheka/data/models/product.dart';
 
@@ -13,55 +11,43 @@ abstract class PackageDetailState extends Equatable {
 
 class PackageDetailInitial extends PackageDetailState {}
 
-class PackageDetailLoading extends PackageDetailState {}
-
 class PackageDetailLoaded extends PackageDetailState {
-  final ProductDetailModel product;
-  final String? selectedPackageId;
-  final List<String> images;
-  final int selectedImageIndex;
+  final PackageAvailabilityInfo package;
+  final String descr;
+  final String strength;
+  final String form;
   final int cartQuantity;
 
   const PackageDetailLoaded({
-    required this.product,
-    this.selectedPackageId,
-    this.images = const [],
-    this.selectedImageIndex = 0,
+    required this.package,
+    required this.descr,
+    required this.strength,
+    required this.form,
     this.cartQuantity = 1,
   });
 
   PackageDetailLoaded copyWith({
-    ProductDetailModel? product,
-    String? selectedPackageId,
-    List<String>? images,
-    int? selectedImageIndex,
+    PackageAvailabilityInfo? package,
+    String? descr,
+    String? strength,
+    String? form,
     int? cartQuantity,
   }) {
     return PackageDetailLoaded(
-      product: product ?? this.product,
-      selectedPackageId: selectedPackageId ?? this.selectedPackageId,
-      images: images ?? this.images,
-      selectedImageIndex: selectedImageIndex ?? this.selectedImageIndex,
+      package: package ?? this.package,
+      descr: descr ?? this.descr,
+      strength: strength ?? this.strength,
+      form: form ?? this.form,
       cartQuantity: cartQuantity ?? this.cartQuantity,
     );
   }
 
-  PackageAvailabilityInfo? get selectedPackage {
-    if (selectedPackageId == null) return null;
-    try {
-      return product.availablePackages
-          .firstWhere((pkg) => pkg.packageId == selectedPackageId);
-    } catch (e) {
-      return null;
-    }
-  }
-
   @override
   List<Object?> get props => [
-        product,
-        selectedPackageId,
-        images,
-        selectedImageIndex,
+        package,
+        descr,
+        strength,
+        form,
         cartQuantity,
       ];
 }

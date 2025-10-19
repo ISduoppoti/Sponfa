@@ -36,4 +36,17 @@ class ProductRepositoryImpl implements ProductRepository {
       onlyInStock: onlyInStock,
     );
   }
+
+  @override
+  Future<List<PharmacySearchResult>> searchPharma({
+    required List<String> packageIds,
+    required double lat,
+    required double lng,
+    int? radiusKm,
+    bool mustHaveAll = false,
+    String sortBy = "distance",
+    int limit = 20
+  }) {
+    return api.searchPharma(packageIds: packageIds, lat: lat, lng: lng, radiusKm: radiusKm, mustHaveAll: mustHaveAll, sortBy: sortBy, limit: limit);
+  }
 }

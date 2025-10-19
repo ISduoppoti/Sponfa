@@ -39,6 +39,7 @@ class PackageAvailabilityInfo(BaseModel):
     brand_name: Optional[str] = None
     manufacturer: Optional[str] = None
     country_code: Optional[str] = None
+    image_urls: Optional[List[str]] = None
     pharmacy_locations: List[PharmacyLocationInfo]
 
     class Config:
@@ -68,7 +69,7 @@ class PharmaciesSearchRequest(BaseModel):
     radius_km: Optional[int] = 120
     must_have_all: bool = False
     sort_by: str = "distance"  # "distance", "price", "name"
-    limit: int = 50
+    limit: int = 20
 
 # Individual package line in pharmacy search results
 class PharmacyPackageLine(BaseModel):
@@ -77,6 +78,7 @@ class PharmacyPackageLine(BaseModel):
     currency: Optional[str] = "EUR"
     stock_quantity: int
     last_updated: Optional[str] = None
+    brand_name: str
 
     class Config:
         from_attributes = True
@@ -91,6 +93,9 @@ class PharmacySearchResult(BaseModel):
     lat: Optional[float] = None
     lng: Optional[float] = None
     distance_km: Optional[float] = None
+    min_price_cents: Optional[int]
+    total_price_cents: Optional[int]
+    pkg_count: int
     packages: List[PharmacyPackageLine]
 
     class Config:
