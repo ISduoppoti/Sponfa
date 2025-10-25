@@ -1,93 +1,162 @@
 [
   {
-    "pharmacy_id": "201bb4bf-bb3c-4333-828c-559d2e114ad4",
-    "pharmacy_name": "Tom\u00e1\u0161ekov\u00e1 Lek\u00e1re\u0148",
-    "address": "\u0160amor\u00ednska 149",
+    "pharmacy_id": "58928ba4-07cb-47a7-be27-ec560354cc18",
+    "pharmacy_name": "Kuba Lek\u00e1re\u0148",
+    "address": "Sienkiewiczova 35",
     "city": "Bratislava",
     "country": "SK",
-    "lat": 48.163192,
-    "lng": 17.144295,
-    "distance_km": 3.1625305386086024,
-    "min_price_cents": 1113,
-    "total_price_cents": 1113,
+    "lat": 48.106407,
+    "lng": 17.125382,
+    "distance_km": 4.871738205652772,
+    "min_price_cents": 1468,
+    "total_price_cents": 1468,
     "pkg_count": 1,
     "packages": [
       {
-        "package_id": "aaa02131-e59a-4904-938a-42e8f5f68d25",
-        "price_cents": 1113,
+        "package_id": "10ffb007-f515-4b8c-8f4d-8e425fcf7190",
+        "price_cents": 1468,
+        "currency": "EUR",
+        "stock_quantity": 20,
+        "last_updated": "2025-08-28T17:43:02.973309",
+        "brand_name": "Ibuprofen Recharge"
+      }
+    ]
+  },
+  {
+    "pharmacy_id": "7288d9f4-ab69-4ce1-b37d-30b7b1ed9350",
+    "pharmacy_name": "Mikul\u00edkov\u00e1 k.s. Lek\u00e1re\u0148",
+    "address": "Pa\u017e\u00edtkov\u00e1 8",
+    "city": "Bratislava",
+    "country": "SK",
+    "lat": 48.19077,
+    "lng": 17.069577,
+    "distance_km": 5.475435233761584,
+    "min_price_cents": 1849,
+    "total_price_cents": 1849,
+    "pkg_count": 1,
+    "packages": [
+      {
+        "package_id": "10ffb007-f515-4b8c-8f4d-8e425fcf7190",
+        "price_cents": 1849,
+        "currency": "EUR",
+        "stock_quantity": 5,
+        "last_updated": "2025-08-18T17:43:02.978540",
+        "brand_name": "Ibuprofen Recharge"
+      }
+    ]
+  },
+  {
+    "pharmacy_id": "5e12c4fc-4f13-4abf-8e5a-dfd293b54021",
+    "pharmacy_name": "Pavlo k.s. Lek\u00e1re\u0148",
+    "address": "Brumovick\u00e1 750",
+    "city": "Bratislava",
+    "country": "SK",
+    "lat": 48.171772,
+    "lng": 17.099392,
+    "distance_km": 2.649273042368603,
+    "min_price_cents": 1863,
+    "total_price_cents": 1863,
+    "pkg_count": 1,
+    "packages": [
+      {
+        "package_id": "10ffb007-f515-4b8c-8f4d-8e425fcf7190",
+        "price_cents": 1863,
+        "currency": "EUR",
+        "stock_quantity": 10,
+        "last_updated": "2025-09-05T17:43:02.975703",
+        "brand_name": "Ibuprofen Recharge"
+      }
+    ]
+  },
+  {
+    "pharmacy_id": "f3c6f239-3119-433e-8752-c5fbe9d2f863",
+    "pharmacy_name": "Bahnov\u00e1 a.s. Lek\u00e1re\u0148",
+    "address": "Ko\u017eu\u0161n\u00edcka 31",
+    "city": "Bratislava",
+    "country": "SK",
+    "lat": 48.154704,
+    "lng": 17.070078,
+    "distance_km": 2.8723306669820703,
+    "min_price_cents": 2375,
+    "total_price_cents": 2375,
+    "pkg_count": 1,
+    "packages": [
+      {
+        "package_id": "10ffb007-f515-4b8c-8f4d-8e425fcf7190",
+        "price_cents": 2375,
         "currency": "EUR",
         "stock_quantity": 1,
-        "last_updated": "2025-08-29T17:43:02.985940",
-        "brand_name": "Paracetamol Classic"
+        "last_updated": "2025-08-22T17:43:02.987033",
+        "brand_name": "Ibuprofen Recharge"
       }
     ]
   },
   {
-    "pharmacy_id": "92b56d5e-5479-46c5-87b2-2baef109fa7b",
-    "pharmacy_name": "Gavalier Same\u013eov\u00e1 s.r.o. Lek\u00e1re\u0148",
-    "address": "Mestsk\u00e1 73",
+    "pharmacy_id": "77e159d5-b5f3-4263-929f-707b82735936",
+    "pharmacy_name": "Hlav\u00e1\u010dov\u00e1 Lek\u00e1re\u0148",
+    "address": "Rozvodn\u00e1 7",
     "city": "Bratislava",
     "country": "SK",
-    "lat": 48.168443,
-    "lng": 17.14075,
-    "distance_km": 3.298205097532296,
-    "min_price_cents": 1802,
-    "total_price_cents": 1802,
+    "lat": 48.162117,
+    "lng": 17.155664,
+    "distance_km": 3.862393273334008,
+    "min_price_cents": 3286,
+    "total_price_cents": 3286,
     "pkg_count": 1,
     "packages": [
       {
-        "package_id": "aaa02131-e59a-4904-938a-42e8f5f68d25",
-        "price_cents": 1802,
+        "package_id": "10ffb007-f515-4b8c-8f4d-8e425fcf7190",
+        "price_cents": 3286,
         "currency": "EUR",
-        "stock_quantity": 5,
-        "last_updated": "2025-09-01T17:43:03.000489",
-        "brand_name": "Paracetamol Classic"
+        "stock_quantity": 10,
+        "last_updated": "2025-09-05T17:43:03.002286",
+        "brand_name": "Ibuprofen Recharge"
       }
     ]
   },
   {
-    "pharmacy_id": "83e06e7e-c77b-4a76-a9b6-734b366daef9",
-    "pharmacy_name": "Fabian Pavl\u00edkov\u00e1 v.o.s. Lek\u00e1re\u0148",
-    "address": "Moskovsk\u00e1 226",
+    "pharmacy_id": "70de0f07-d4f3-419a-8a5f-232174ed04fc",
+    "pharmacy_name": "Masar\u00edkov\u00e1 s.r.o. Lek\u00e1re\u0148",
+    "address": "Rie\u010dna 5",
     "city": "Bratislava",
     "country": "SK",
-    "lat": 48.141855,
-    "lng": 17.157211,
-    "distance_km": 3.7492144211737974,
-    "min_price_cents": 2537,
-    "total_price_cents": 2537,
+    "lat": 48.177089,
+    "lng": 17.134637,
+    "distance_km": 3.7452238628988725,
+    "min_price_cents": 3925,
+    "total_price_cents": 3925,
     "pkg_count": 1,
     "packages": [
       {
-        "package_id": "aaa02131-e59a-4904-938a-42e8f5f68d25",
-        "price_cents": 2537,
+        "package_id": "10ffb007-f515-4b8c-8f4d-8e425fcf7190",
+        "price_cents": 3925,
         "currency": "EUR",
         "stock_quantity": 3,
-        "last_updated": "2025-09-02T17:43:03.013661",
-        "brand_name": "Paracetamol Classic"
+        "last_updated": "2025-09-07T17:43:02.950366",
+        "brand_name": "Ibuprofen Recharge"
       }
     ]
   },
   {
-    "pharmacy_id": "9fadf158-12b0-4767-b4d5-f283f29cf4c6",
-    "pharmacy_name": "\u0160lahor Porubjakov\u00e1 a.s. Lek\u00e1re\u0148",
-    "address": "\u0160u\u0148avcova 651",
+    "pharmacy_id": "d05a8edb-1702-4375-8023-d68a4ab836e3",
+    "pharmacy_name": "Holi\u010dkov\u00e1 s.r.o. Lek\u00e1re\u0148",
+    "address": "Uhorkov\u00e1 63",
     "city": "Bratislava",
     "country": "SK",
-    "lat": 48.115648,
-    "lng": 17.077077,
-    "distance_km": 4.3116633399456346,
-    "min_price_cents": 1194,
-    "total_price_cents": 1194,
+    "lat": 48.193536,
+    "lng": 17.084629,
+    "distance_km": 5.281443949767682,
+    "min_price_cents": 4417,
+    "total_price_cents": 4417,
     "pkg_count": 1,
     "packages": [
       {
-        "package_id": "aaa02131-e59a-4904-938a-42e8f5f68d25",
-        "price_cents": 1194,
+        "package_id": "10ffb007-f515-4b8c-8f4d-8e425fcf7190",
+        "price_cents": 4417,
         "currency": "EUR",
         "stock_quantity": 5,
-        "last_updated": "2025-09-10T17:43:03.010689",
-        "brand_name": "Paracetamol Classic"
+        "last_updated": "2025-08-15T17:43:02.993617",
+        "brand_name": "Ibuprofen Recharge"
       }
     ]
   }

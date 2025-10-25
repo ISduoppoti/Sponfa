@@ -106,7 +106,7 @@ class MyApp extends StatelessWidget {
           create: (context) => ProductRepositoryImpl(
             ProductApiProvider(
               //baseUrl: 'http://127.0.0.1:8000',
-              baseUrl: 'http://192.168.0.101:25565'
+              baseUrl: 'http://192.168.0.105:25565'
             ),
           ),
         ),

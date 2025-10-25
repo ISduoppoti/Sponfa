@@ -44,7 +44,7 @@ class _HomeViewMobileState extends State<HomeViewMobile> {
                     SizedBox(height: 20),
                     ShowcaseWidget(
                       type: ShowcaseType.seasonal,
-                      title: "Popular Products",
+                      title: "Seasonal Products",
                       description: "Some description",
                       products: context.read<PopularProductsService>().getPopularProducts(),
                     ),
